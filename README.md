@@ -10,5 +10,5 @@
 * [Creating a New Github Project](https://github.com/devonapple/JPDocu-TechnicalWriting-20190731/wiki/Creating-a-new-Github-project "Creating a New Github Project") 
 * [Working with OpenOffice Calc](https://github.com/devonapple/Technical-Writing-Portfolio/wiki/Working-with-OpenOffice-Calc "Working with OpenOffice Calc") (Produced in Oxygen)
 * [User Guide, Playing in a Tabletop Roleplaying Game, Full Document](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/userguide_TTRPG_fullprint_20190830.pdf) (DITA, Produced in Oxygen; uses profiling)
-* * [User Guide, Playing in a Tabletop Roleplaying Game, GM only](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/userguide_TTRPG_GMonly_20190830.pdf) (DITA, Produced in Oxygen; uses profiling)
-* * [User Guide, Playing in a Tabletop Roleplaying Game, Player only](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/userguide_TTRPG_playeronly_20190830.pdf) (DITA, Produced in Oxygen; uses profiling)
+** [User Guide, Playing in a Tabletop Roleplaying Game, GM only](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/userguide_TTRPG_GMonly_20190830.pdf) (DITA, Produced in Oxygen; uses profiling)
+** [User Guide, Playing in a Tabletop Roleplaying Game, Player only](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/userguide_TTRPG_playeronly_20190830.pdf) (DITA, Produced in Oxygen; uses profiling)
