@@ -1,10 +1,9 @@
-
 # One Day's Forecast
 
 The list of elements in a day's weather forecast.
 
 |Element|Description|Type|Notes|
-|-|-|-|-|-|
+|-|-|-|-|
 |date|date of forecast|string|format YYYY-MM-DD|
 |description|description of weather|string|valid values: sunny, overcast, partly cloudy, raining, and snowing|
 |maxTemp|highest temperature forecasted for the day|number|measured in degrees Celsius|
