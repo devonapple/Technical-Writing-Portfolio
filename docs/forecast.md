@@ -1,6 +1,8 @@
 
 # One Day's Forecast
+
 The list of elements in a day's weather forecast.
+
 |Element|Description|Type|Notes|
 |-|-|-|-|-|
 |date|date of forecast|string|format YYYY-MM-DD|
@@ -13,7 +15,9 @@ The list of elements in a day's weather forecast.
 
 
 # Multiple-day Forecast
+
 The list of elements in a weather forecast, in a particular location, over one or more days.
+
 |Element|Description|Type|Notes|
 |-|-|-|-|
 |longitude|longitude for the location of the current weather forecast|string|two decimal places|
@@ -28,7 +32,9 @@ The list of elements in a weather forecast, in a particular location, over one o
 
 
 # Meeting Request
+
 The list of elements in a new meeting request for an online calendar.
+
 |Element|Description|Type|Required|Notes|
 |-|-|-|-|-|
 |meeting|top level; list of details for a new meeting request|meeting data objects|required|
