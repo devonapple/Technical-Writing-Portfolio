@@ -1,7 +1,6 @@
 # Portfolio, User-Assistance Developer
 
 ## APIs
-
 * [Music Server, ReST API](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_MusicAPI_20190606.pdf)
 * [Weather Forecast API Definitions](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_forecast.md)
 
