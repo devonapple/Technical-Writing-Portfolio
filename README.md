@@ -4,6 +4,8 @@
 * [Ergo Wallet, ReST API](https://github.com/devonapple/ergo_wiki/blob/master/Ergo-REST-API_temp.md)
 * [Music Server, ReST API](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_MusicAPI_20190606.pdf)
 * [Weather Forecast API Definitions](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_forecast.md)
+* [Meme Creation Server: API to create memes (Swagger)](https://app.swaggerhub.com/apis/devonapple/meme-meister/0.1.0)
+* [Music Server API with playlists (Swagger)](https://app.swaggerhub.com/apis/devonapple/music-api/0.3.0)
 
 
 ## DITA
