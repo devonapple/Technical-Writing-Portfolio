@@ -47,11 +47,11 @@ This is an outline of the documentation workflow for this project.
 1. Submit a PR to publish edited code samples. Edit per PR review.
 1. Preview the approved samples in the production environment.
 1. Use the Inspect tool in your browser to view and copy the HTML code for each sample request and response.
-1. Save the HTML copies of to add to the User guide.
+1. Save the HTML copies to include in the user guide.
 
 **User guide**
 1. Add Markdown tables to the object library.
-1. Add infrastructure for each endpoint using the Markdown Endpoint Template.
+1. Add infrastructure for each endpoint using the [Markdown Endpoint Template](#markdown-endpoint-template).
 1. Incorporate Markdown tables into the user guide.
 1. Add request and response tables for each endpoint.
 1. Integrate the HTML copies of the code samples for each endpoint into the user guide.
@@ -64,16 +64,20 @@ This is an outline of the documentation workflow for this project.
 
 ## What does the documentation work look like
 
+You need to interact with several different systems to support the documentation push. 
+
 ### APIs and repositories
 
 Developers create application program interfaces (APIs) that support operations. The technical writing team uses the company's development environment to locate and update the needed documentation.
 
-API documentation is organized as follows:
+The API documentation is organized as follows:
 
 *Table redacted*
 
 ### Object library
 
-A critical element of the documentation is producing a user guide that contains a complete inventory of all of the parameters used by that API. The team reframes existing parameter information into a more easily consumable and searchable developer resource. To make that work easier and ensure consistency, we transcribe the parameter tables for the JSON objects and enumerators into a Markdown file that we can easily paste into the user guide. Each object needs a unique filename. The filename matches the original JSON file unless that name is already taken by another resource. A JSON file can have several nested elements: we need to break these down into their own parameter tables and link them together in the user guide.
+A critical element of the documentation is producing a user guide that contains a complete inventory of all of the parameters used by that API. The team reframes existing parameter information into a more easily consumable and searchable developer resource. To make that work easier and ensure consistency, we transcribe the parameter tables for the JSON objects and enumerators into a Markdown file that we can easily paste into the user guide. Each object needs a unique filename. The filename matches the original JSON file unless that name is already taken by another resource. When a JSON file has one or more nested elements, we need to break these down into their own parameter tables and link them together in the user guide.
 
 *Additional content redacted*
+
+<a name="markdown-endpoint-template"></a>
