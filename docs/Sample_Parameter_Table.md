@@ -1,7 +1,5 @@
 # Operation API
 
-The operation API returns resource details from local, market, and global lists. You can select a summary or a full report.
-
 - [Operation endpoint](#operation-endpoint)   
    - [Get a resource using the operation endpoint](#get-a-resource-using-the-operation-endpoint)   
 - [Asset library](#asset-library)   
@@ -13,33 +11,40 @@ The operation API returns resource details from local, market, and global lists.
       - [query_mode](#query_mode)   
       - [status_code](#status_code)   
 
-
 ## Operation endpoint
 
-**URI** `POST server/operation-network/operation/{path}`
+The operation API returns resource details from local, market, and global lists. You can select a summary or a full report.
 
-This operation returns `HTTP 201` when the request is successful. The operation returns `HTTP 200` when the operation request is already being processed. Use `query_mode` to limit the information returned and change the format of the response. See the [query_mode table](#mode_query_tables) for details.
+**URI** `POST server/operation-network/operation/{resource_id}`
 
+Shows details about a resource in the system of record (SOR). Use `query_mode` to limit the information returned and change the format of the response. The [query_mode table](#mode_query_tables) has a list of available modes.
+
+This endpoint returns `HTTP 201` and the resource details when the request is successful. The endpoint returns `HTTP 200` when the system already has a pending operation request for the `operation_id`.
 
 <a name="operation_request_unique_id"></a>
 
 ### Get a resource using the operation endpoint
 
-Query schema for the operation.
+**Path**
 
- | Element | Description | Type | Required | Notes |
+ | Parameter | Description | Type | Required | Notes |
+ | :--- | :--- | :--- | :--- | :--- |
+ | `resource_id` | The unique identifier of the resource in the system. | string | Required | <p>Minimum length: `1`</p><p>Maximum length: `100`</p> |
+
+**Query**
+
+ | Parameter | Description | Type | Required | Notes |
  | :--- | :--- | :--- | :--- | :--- |
  | `query_mode` | The query mode for this request. | string | &nbsp; | <p>Minimum length: `1`</p><p>Maximum length: `100`</p><p>Pattern: `^[0-9A-Z_]+$`</p><p>ENUM: [query_mode](#mode_query_tables)</p><p>Default: `LOCAL`</p> |
 
-Request schema for the operation.
+**Request**
 
  | Element | Description | Type | Required | Notes |
  | :--- | :--- | :--- | :--- | :--- |
  | `operation_id` | The unique idempotent identifier of this operation. | string | Required | <p>Minimum length: `0`</p><p>Maximum length: `100`</p> |
- | `id` | The unique identifier of the resource in the system. | string | Required | <p>Minimum length: `0`</p><p>Maximum length: `100`</p> |
  | `mode` | The operation mode for this request. | string | Required | <p>Minimum length: `1`</p><p>Maximum length: `100`</p><p>Pattern: `^[0-9A-Z_]+$`</p><p>ENUM: [mode](#mode_common_assets) |
 
- Response schema for the operation.
+**Response**
 
  | Element | Description | Type | Required | Notes |
  | :--- | :--- | :--- | :--- | :--- |
