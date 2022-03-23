@@ -1,4 +1,4 @@
-# Portfolio, User-Assistance Developer
+# Portfolio, Technical Writer and User-Assistance Developer
 
 ## Standards
 * [Sample API Style Guide](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_style_guide.md)
@@ -19,6 +19,7 @@
     * [User Guide, Playing in a Tabletop Roleplaying Game, Player only](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/userguide_TTRPG_playeronly_20190830.pdf) (uses profiling)
 
 ## User Assistance
+* [Granting Credit for Mental Health First Aid in KP Learn](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_KPLearn_AwardCreditMHFA_20220322.pdf "Granting Credit for Mental Health First Aid in KP Learn")
 * [Microsoft Teams Job Aid](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_MicrosoftTeamsJobAid_20190610.pdf "Microsoft Teams Job Aid")
 * [KP Learn, Task Overview](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_KPLearn_TaskOverview_20190726.pdf "KP Learn, Task Overview")
 * [How to Purchase a Bus Ticket in San Francisco](https://github.com/devonapple/JPDocu-TechnicalWriting-20190731/wiki/How-to-Purchase-a-Bus-Ticket-in-San-Francisco "How to Purchase a Bus Ticket in San Francisco")
