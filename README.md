@@ -3,6 +3,9 @@
 ## Standards
 * [Sample API Style Guide](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_style_guide.md)
 
+## Conceptual
+* [REST and SOAP APIs: Which is Better for Your Service?](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_REST_vs_SOAP.md)
+
 ## APIs
 * [Sample Parameter Table, REST API](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_Parameter_Table.md)
 * [Ergo Wallet, REST API](https://github.com/devonapple/ergo_wiki/blob/master/Ergo-REST-API_temp.md)
