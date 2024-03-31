@@ -1,10 +1,15 @@
 # Portfolio, Technical Writer and User-Assistance Developer
 
-## Standards
-* [Sample API Style Guide](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_style_guide.md)
-
-## Conceptual
-* [REST and SOAP APIs: Which is Better for Your Service?](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_REST_vs_SOAP.md)
+## Integration guides
+* [Integrate card payments in Android apps](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_PayPal_Android_20240307.pdf) - PayPal
+* [Integrate card payments in iOS apps](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_PayPal_iOS_20240307.pdf) - PayPal
+* [Integrate card payments with JavaScript SDK for direct merchants](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_PayPal_AXO_v2_20240307.pdf) - PayPal
+* [Integrate Apple Pay with JavaScrip SDK for direct merchants](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_PayPal_ApplePay_20240307.pdf) - PayPal
+* [Integrate Google Pay with JavaScrip SDK for direct merchants](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_PayPal_GooglePay_20240307.pdf) - PayPal
+* [Payload Encryption](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_Hyperwallet_PayloadEncryption_20240307.pdf) - Hyperwallet
+* [Supplemental Data, REST API](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_Hyperwallet_SupplementalData_20240307.pdf) - Hyperwallet
+* [Error Codes](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_Hyperwallet_ErrorHandling_20240307.pdf) - Hyperwallet
+* [OneBatch Guide](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_Hyperwallet_OneBatchGuide_20240307.pdf) - Hyperwallet
 
 ## APIs
 * [Sample Parameter Table, REST API](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_Parameter_Table.md)
@@ -14,6 +19,11 @@
 * [Meme Creation Server: API to create memes (Swagger)](https://app.swaggerhub.com/apis/devonapple/meme-meister/0.1.0)
 * [Music Server API with playlists (Swagger)](https://app.swaggerhub.com/apis/devonapple/music-api/0.3.0)
 
+## Standards
+* [Sample API Style Guide](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_style_guide.md)
+
+## Conceptual
+* [REST and SOAP APIs: Which is Better for Your Service?](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_REST_vs_SOAP.md)
 
 ## DITA
 * [Entertainment Center User Guide](https://github.com/devonapple/JPDocu-TechnicalWriting-20190731/blob/master/docs/DITA_Assignment_20190806.pdf "Entertainment Center User Guide")
@@ -21,7 +31,7 @@
     * [User Guide, Playing in a Tabletop Roleplaying Game, GM only](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/userguide_TTRPG_GMonly_20190830.pdf) (uses profiling)
     * [User Guide, Playing in a Tabletop Roleplaying Game, Player only](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/userguide_TTRPG_playeronly_20190830.pdf) (uses profiling)
 
-## User Assistance
+## User assistance
 * [Granting Credit for Mental Health First Aid in KP Learn](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_KPLearn_AwardCreditMHFA_20220322.pdf "Granting Credit for Mental Health First Aid in KP Learn")
 * [Microsoft Teams Job Aid](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_MicrosoftTeamsJobAid_20190610.pdf "Microsoft Teams Job Aid")
 * [KP Learn, Task Overview](https://github.com/devonapple/Technical-Writing-Portfolio/blob/master/docs/Sample_DevonApple_KPLearn_TaskOverview_20190726.pdf "KP Learn, Task Overview")
