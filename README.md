@@ -5,7 +5,7 @@
 ### PayPal
 * Integrate card payments in iOS apps: [sample document](/docs/paypal/paypal_iossdk_sample_devonapple_20240307.pdf)
 * Integrate card payments with JavaScript SDK for direct merchants: [sample document](/docs/paypal/paypal_axointegration_sample_devonapple_20240307.pdf)
-* Integrate Apple Pay with JavaScrip SDK for direct merchants: [sample document](/docs/paypal/paypal_applepay_sample_devonapple__20240307.pdf)
+* Integrate Apple Pay with JavaScrip SDK for direct merchants: [sample document](/docs/paypal/paypal_applepay_sample_devonapple_20240307.pdf)
 * Integrate Google Pay with JavaScrip SDK for direct merchants: [sample document](/docs/paypal/paypal_googlepay_sample_devonapple_20240307.pdf)
 
 ### Hyperwallet
