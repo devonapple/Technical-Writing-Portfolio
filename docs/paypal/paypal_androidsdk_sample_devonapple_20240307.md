@@ -119,7 +119,7 @@ val cardClient = CardClient(config)
 
 On your server:
 
-1. Create an `ORDER_ID` by using the <a href="/docs/api/orders/v2">Orders v2 API</a>.
+1. Create an `ORDER_ID` by using the <a href="https://developer.paypal.com/docs/api/orders/v2" target="_blank">Orders v2 API</a>.
 2. Pass your `ACCESS_TOKEN` in the `Authorization` header. To get an `ACCESS_TOKEN`, use the [Authentication API](https://developer.paypal.com/api/rest/authentication/).
    > **Note:** This access token is only for the sandbox environment. When you're ready to go live, request a live access token by changing the request sandbox endpoint to https://api-m.paypal.com/v1/oauth2/token.
 3. Pass the `intent`. You'll need to pass either `AUTHORIZE` or `CAPTURE` as the `intent` type. This type must match the `/authorize` or `/capture` endpoint you use to process your order.
@@ -516,13 +516,13 @@ To update the paysheet with a new shipping method, or when `onPayPalNativeShippi
     * Optional: Update the amount to reflect the new shipping cost.
 2. Call `approve()` or `reject()` to accept or reject the changes and continue the payment flow.
 
-For more information, visit the <a href="/docs/api/orders/v2/#orders_patch">Update order</a> endpoint of the Orders v2 API.
+For more information, visit the <a href="https://developer.paypal.com/docs/api/orders/v2/#orders_patch" target="_blank">Update order</a> endpoint of the Orders v2 API.
 
 ### 4. Get Order ID
 
 On your server:
 
-1. Create an `ORDER_ID` by using the <a href="/docs/api/orders/v2">Orders v2 API</a>.
+1. Create an `ORDER_ID` by using the <a href="https://developer.paypal.com/docs/api/orders/v2" target="_blank">Orders v2 API</a>.
 2. Pass your `ACCESS_TOKEN` in the `Authorization` header. To get an `ACCESS_TOKEN`, use the [Authentication API](https://developer.paypal.com/api/rest/authentication/).
    > **Note:** This access token is only for the sandbox environment. When you're ready to go live, request a live access token by changing the request sandbox endpoint to https://api-m.paypal.com/v1/oauth2/token.
 3. Pass the `intent`. You'll need to pass either `AUTHORIZE` or `CAPTURE` as the `intent` type. This type must match the `/authorize` or `/capture` endpoint you use to process your order.
@@ -701,7 +701,7 @@ payPalWebCheckoutClient.listener = object : PayPalWebCheckoutListener {
 
 On your server:
 
-1. Create an `ORDER_ID` by using the <a href="/docs/api/orders/v2">Orders v2 API</a>.
+1. Create an `ORDER_ID` by using the <a href="https://developer.paypal.com/docs/api/orders/v2" target="_blank">Orders v2 API</a>.
 2. Pass your `ACCESS_TOKEN` in the `Authorization` header. To get an `ACCESS_TOKEN`, use the [Authentication API](https://developer.paypal.com/api/rest/authentication/).
    > **Note:** This access token is only for the sandbox environment. When you're ready to go live, request a live access token by changing the request sandbox endpoint to https://api-m.paypal.com/v1/oauth2/token.
 3. Pass the `intent`. You'll need to pass either `AUTHORIZE` or `CAPTURE` as the `intent` type. This type must match the `/authorize` or `/capture` endpoint you use to process your order.

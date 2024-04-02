@@ -13,7 +13,7 @@ This integration is available:
   * European Union
   * United Kingdom
 
-For more information, contact [Sales](https://www.paypal.com/us/business/contact-sales).
+For more information, contact <a href="https://www.paypal.com/us/business/contact-sales" target="_blank">Sales</a>.
 
 ## Tokenization
 
@@ -51,7 +51,7 @@ Integrate with third-party network token payments as follows:
 
 ## Know before you code
 
-* You'll need an [advanced credit and debit card payments](https://developer.paypal.com/docs/checkout/advanced/) integration.
+* You'll need an <a href="https://developer.paypal.com/docs/checkout/advanced/" target="_blank">advanced credit and debit card payments</a> integration.
 * You acknowledge and agree that you are solely responsible for any third-party vaulting functionality (not provided by PayPal) that you use and PayPal will, under no circumstances, be responsible or liable for any damages, losses or costs whatsoever suffered or incurred by you as a result of using a third-party vaulting functionality on PayPal’s platforms (including Products), services or APIs.
 
 > **Note:** Third-party network token integrations don’t support reference or future transactions. Don’t pass a reference transaction ID using the `payment_source.token.id` parameter.
@@ -60,7 +60,7 @@ Integrate with third-party network token payments as follows:
 
 Review this section to learn how to integrate third-party network tokens in your PayPal integration.
 
-This code sample shows a third-party network token in the body of a `POST` call to the [Create order](https://developer.paypal.com/docs/api/orders/v2/#orders_create) endpoint of the Orders v2 API. This request creates a new order and completes the payment in a single step by declaring the `intent` as `CAPTURE`:
+This code sample shows a third-party network token in the body of a `POST` call to the <a href="https://developer.paypal.com/docs/api/orders/v2/#orders_create" target="_blank">Create order</a> endpoint of the Orders v2 API. This request creates a new order and completes the payment in a single step by declaring the `intent` as `CAPTURE`:
 
 ### Sample request
 
@@ -105,7 +105,7 @@ curl -v -X POST https://api-m.sandbox.paypal.com/v2/checkout/orders \
   }'
 ```
 
-* Lines 19-24: The `payment_source.card.network_token` object contains details about the third-party network token. PayPal passes this information to the issuer. See [`network_token`](https://developer.paypal.com/docs/api/orders/v2/#definition-network_token_request) for more details.
+* Lines 19-24: The `payment_source.card.network_token` object contains details about the third-party network token. PayPal passes this information to the issuer. See <a href="https://developer.paypal.com/docs/api/orders/v2/#definition-network_token_request" target="_blank"><code>network_token</code></a> for more details.
 * Line 22: Token service providers give each third-party network token a 2-digit Electronic Commerce Indicator (ECI) code. When you make a payment using a third-party network token, your integration needs to change the 2-digit ECI code to the corresponding string from the table below. Pass this value using the `payment_source.card.network_token.eci_flag` parameter. This value is required for customer-initiated payments and optional for merchant-initiated payments:
 
     | Numeric ECI code | String |
@@ -113,7 +113,7 @@ curl -v -X POST https://api-m.sandbox.paypal.com/v2/checkout/orders \
     | `00` | `MASTERCARD_NON_3D_SECURE_TRANSACTION`
     | `07` | `NON_3D_SECURE_TRANSACTION` |
 
-* Lines 25-33: The `payment_source.card.stored_credential` object contains details about the type of card-on-file payment. See [`stored_credential`](https://developer.paypal.com/docs/api/orders/v2/#definition-card_stored_credential) for more details.
+* Lines 25-33: The `payment_source.card.stored_credential` object contains details about the type of card-on-file payment. See <a href="https://developer.paypal.com/docs/api/orders/v2/#definition-card_stored_credential" target="_blank"><code>stored_credential</code></a> for more details.
 
 ### Sample response
 
@@ -196,5 +196,5 @@ The HTTP `201` response includes the new `bin_details` and `network_transaction_
 }
 ```
 
-* Lines 14-18: The `payment_source.card.bin_details` object contains the bank identification number (BIN) information. See [`bin_details`](https://developer.paypal.com/docs/api/orders/v2/#definition-bin_details) for more details.
-* Lines 59-62: The `purchase_units.payments.captures.network_transaction_reference` object includes the `id` and `network` name. See [`network_transaction_reference`](https://developer.paypal.com/docs/api/orders/v2/#definition-network_transaction_reference) for more details.
+* Lines 14-18: The `payment_source.card.bin_details` object contains the bank identification number (BIN) information. See <a href="https://developer.paypal.com/docs/api/orders/v2/#definition-bin_details" target="_blank"><code>bin_details</code></a> for more details.
+* Lines 59-62: The `purchase_units.payments.captures.network_transaction_reference` object includes the `id` and `network` name. See <a href="https://developer.paypal.com/docs/api/orders/v2/#definition-network_transaction_reference" target="_blank"><code>network_transaction_reference</code></a> for more details.
