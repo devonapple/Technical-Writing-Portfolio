@@ -20,7 +20,7 @@ Hyperwallet uses the following standards in our Payload Encryption process:
 
 ### REST API Authentication
 
-Hyperwallet offers 2 second factor options for authentication:
+Hyperwallet offers 2 second-factor options for authentication:
 
 *   IP address allowlisting
 *   Layer 7 encryption using Javascript Object Signing and Encryption (JOSE) and JSON Web Tokens (JWT)

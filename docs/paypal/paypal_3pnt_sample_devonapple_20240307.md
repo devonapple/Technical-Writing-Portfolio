@@ -67,7 +67,7 @@ This code sample shows a third-party network token in the body of a `POST` call 
 
 The payment request includes the new `network_token` and `stored_credential` objects:
 
-```jsx=
+```javascript=
 curl -v -X POST https://api-m.sandbox.paypal.com/v2/checkout/orders \
 -H 'Content-Type: application/json' \
 -H 'PayPal-Request-Id: REQUEST-ID' \

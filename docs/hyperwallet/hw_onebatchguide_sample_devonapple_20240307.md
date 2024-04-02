@@ -1,7 +1,7 @@
 # OneBatch Guide
 
 <blockquote style="width:20%;border-radius:30px;background-color:#e9faeb;border-left:0;padding:20px;margin:0 auto 40px;text-align:center;float:right;">
-<p style="color:#3abf36!important;font-weight:400!important;font-size:16px!important;"><a href="/assets/docs/pay-portal-admin/onebatch/OneBatchGuide.pdf" target="_blank">Download</a></p>
+<p style="color:#3abf36!important;font-weight:400!important;font-size:16px!important;"><a href="https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/OneBatchGuide.pdf" target="_blank">Download</a></p>
 </blockquote>
 <br /><br /><br />
 
@@ -290,7 +290,7 @@ Upload a batch request file using the Client Portal or SFTP.
 
 #### Uploading using the Client Portal
 
-![Upload Batch Jobs](/assets/docs/pay-portal-admin/onebatch/batch_uploadjobs.png "The upload batch jobs screen has a button to choose a program for the batch job, a pulldown menu for batch type, a button named select file, a text entry field labelled file reference, and 2 radio buttons labelled process immediately and process at a schedule date and time. Process immediately is selected. After that is an entry field labelled process day and time, with a calendar icon, and a note showing that the calendar is in Greenwich Mean Time. After this is a button labelled upload file.")
+![Upload Batch Jobs](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch_uploadjobs.png "The upload batch jobs screen has a button to choose a program for the batch job, a pulldown menu for batch type, a button named select file, a text entry field labelled file reference, and 2 radio buttons labelled process immediately and process at a schedule date and time. Process immediately is selected. After that is an entry field labelled process day and time, with a calendar icon, and a note showing that the calendar is in Greenwich Mean Time. After this is a button labelled upload file.")
 
 1.	Select a **Batch Processing** in the left menu of the Client Portal.
 2.	Select a **Upload Batch Jobs**.
@@ -305,7 +305,7 @@ After you upload the file, the page shows a message indicating that the upload i
 
 > **Note:** The program ID selected in step 3 needs to match the one specified in your request data, or be superior to it in your program hierarchy.
 
-![Batch, Successful Upload](/assets/docs/pay-portal-admin/onebatch/batch_uploadsuccess.png "The upload batch jobs screen shows a message saying that the file was successfully loaded, and includes the name of the file. After this is a button to choose a program for the batch job, a pulldown menu for batch type, a button named select file, a text entry field labelled file reference, and 2 radio buttons labelled process immediately and process at a schedule date and time. Process immediately is selected. After that is an entry field labelled process day and time, with a calendar icon, and a note showing that the calendar is in Greenwich Mean Time. After this is a button labelled upload file. After this are buttons labelled view batch and batch list.")
+![Batch, Successful Upload](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch_uploadsuccess.png "The upload batch jobs screen shows a message saying that the file was successfully loaded, and includes the name of the file. After this is a button to choose a program for the batch job, a pulldown menu for batch type, a button named select file, a text entry field labelled file reference, and 2 radio buttons labelled process immediately and process at a schedule date and time. Process immediately is selected. After that is an entry field labelled process day and time, with a calendar icon, and a note showing that the calendar is in Greenwich Mean Time. After this is a button labelled upload file. After this are buttons labelled view batch and batch list.")
 
 #### Uploading using SFTP
 
@@ -319,7 +319,7 @@ After you upload a request file, manage the batch job from the following pages i
 
 The **Batch Overview** page shows the current overview of a job. Use this page to complete actions on the batch job, such as approve or process.
 
-![batch-overviewpage.png](/assets/docs/pay-portal-admin/onebatch/batch-overviewpage.png "The batch overview screen shows the name of the file, followed by a link labelled batch step. There is a table with 6 batch steps: file upload, file approval, file schedule, file processing, download batch input file, and download batch acknowledgement. Each batch step has 5 columns. The first 4 are labelled batch step, date, user ID, and status. An unlabelled 5th column contains buttons or pulldown menus for some of the entries. The file approval step has a pulldown menu labelled approve. The  download batch input file, and download batch acknowledgement steps each have a download button. After this is a payment transactions summary table that shows information about the payment totals for each currency. This includes the currency name, amount processed, amount to be processed, amount invalid, amount failed, amount schedules, amount waiting, and the total payment amount for that currency. After this is a record summary table showing the number of records processed, records to be processed, invalid payments, failed payments, and total records. This is followed by 3 buttons labelled refresh, batch list, and batch details.")
+![batch-overviewpage.png](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-overviewpage.png "The batch overview screen shows the name of the file, followed by a link labelled batch step. There is a table with 6 batch steps: file upload, file approval, file schedule, file processing, download batch input file, and download batch acknowledgement. Each batch step has 5 columns. The first 4 are labelled batch step, date, user ID, and status. An unlabelled 5th column contains buttons or pulldown menus for some of the entries. The file approval step has a pulldown menu labelled approve. The  download batch input file, and download batch acknowledgement steps each have a download button. After this is a payment transactions summary table that shows information about the payment totals for each currency. This includes the currency name, amount processed, amount to be processed, amount invalid, amount failed, amount schedules, amount waiting, and the total payment amount for that currency. After this is a record summary table showing the number of records processed, records to be processed, invalid payments, failed payments, and total records. This is followed by 3 buttons labelled refresh, batch list, and batch details.")
 
 ##### Accessing the Batch Overview page
 
@@ -362,11 +362,11 @@ The **Batch Step** section includes up to 7 rows from the following list:
 
 After selecting **Approve**, details show up in the **File Approval** row. If the request was scheduled to be processed in the future it'll be mentioned in the **File Schedule** row, and the **Process** button won't show up until then. However, if the request is scheduled to be processed immediately then the request has the `IMMEDIATE` status and the **Process** button shows up immediately.
 
-![Batch Steps](/assets/docs/pay-portal-admin/onebatch/batch-batchstep.png "The batch step section screen shows a table with 6 batch steps: file upload, file approval, file schedule, file processing, download batch input file, and download batch acknowledgement. Each batch step has 5 columns. The first 4 are labelled batch step, date, user ID, and status. An unlabelled 5th column contains buttons or pulldown menus for some of the entries. The file approval step has a pulldown menu labelled approve. The  download batch input file, and download batch acknowledgement steps each have a download button.")
+![Batch Steps](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-batchstep.png "The batch step section screen shows a table with 6 batch steps: file upload, file approval, file schedule, file processing, download batch input file, and download batch acknowledgement. Each batch step has 5 columns. The first 4 are labelled batch step, date, user ID, and status. An unlabelled 5th column contains buttons or pulldown menus for some of the entries. The file approval step has a pulldown menu labelled approve. The  download batch input file, and download batch acknowledgement steps each have a download button.")
 
 Cancel a job by selecting **Cancel Batch** from the **Approve** or **Process** button's dropdown menu. The **Process** button shows up on the **File Processing** row when the request is approved, immediately or at a scheduled time, as long as there are no input errors.
 
-![Batch, Approve Button](/assets/docs/pay-portal-admin/onebatch/batch-approvebutton.png "A pulldown menu button labelled approve, with a popup box that says cancel batch. The popup box has an x to close the box.")
+![Batch, Approve Button](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-approvebutton.png "A pulldown menu button labelled approve, with a popup box that says cancel batch. The popup box has an x to close the box.")
 
 Selecting **Process** starts the batch job. Depending on the batch processing queue, a **Pause** button may show up. Select the **Pause** button to set the job status to `STOPPED` and temporarily stop processing. When a job is `STOPPED`, the **Resume** button shows up in place of the **Pause** button. Select **Resume** to set the job status to `PROCESSING` and resume processing the job.
 
@@ -381,7 +381,7 @@ Download one of the following files when it is available by selecting the corres
 * **Response**
 * **Error**
 
-![Batch Response Files](/assets/docs/pay-portal-admin/onebatch/batch-responsefiles.png "The batch overview screen shows the name of the file, followed by a link labelled batch step. There is a table with 6 batch steps: file upload, file approval, file schedule, file processing, download batch input file, and download batch acknowledgement. Each batch step has 5 columns. The first 4 are labelled batch step, date, user ID, and status. An unlabelled 5th column contains buttons or pulldown menus for some of the entries. The file upload, approval, schedule, and processing steps are completed. The download batch input file, download batch acknowledgement, download response file, and download response error file steps each have a download button.")
+![Batch Response Files](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-responsefiles.png "The batch overview screen shows the name of the file, followed by a link labelled batch step. There is a table with 6 batch steps: file upload, file approval, file schedule, file processing, download batch input file, and download batch acknowledgement. Each batch step has 5 columns. The first 4 are labelled batch step, date, user ID, and status. An unlabelled 5th column contains buttons or pulldown menus for some of the entries. The file upload, approval, schedule, and processing steps are completed. The download batch input file, download batch acknowledgement, download response file, and download response error file steps each have a download button.")
 
 > **Note:** You can select the file format while downloading. Files are downloaded to the default download folder for your browser.
 
@@ -402,7 +402,7 @@ Each row in the **Payment Transactions** section shows data about the payments, 
 
 > **Note:** Only currencies supported by your program show up.
 
-![Batch Payment Transactions](/assets/docs/pay-portal-admin/onebatch/batch-paymenttransactions.png "The payment transactions summary table shows information about the payment totals for each currency. This includes the currency name, amount processed, amount to be processed, amount invalid, amount failed, amount schedules, amount waiting, and the total payment amount for that currency.")
+![Batch Payment Transactions](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-paymenttransactions.png "The payment transactions summary table shows information about the payment totals for each currency. This includes the currency name, amount processed, amount to be processed, amount invalid, amount failed, amount schedules, amount waiting, and the total payment amount for that currency.")
 
 Payments with an incorrect amount show up in the **Invalid** column.
 
@@ -430,7 +430,7 @@ The **Record Summary** section provides a summary of records included in your ba
 * **Pending Records:** Number of records in the job that are pending approval
 * **Total Records:** Total number of records in the batch job
 
-![Batch Record Summary](/assets/docs/pay-portal-admin/onebatch/batch-recordsummary.png "The record summary table shows the number of records processed, records to be processed, invalid payments, failed payments, and total records.")
+![Batch Record Summary](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-recordsummary.png "The record summary table shows the number of records processed, records to be processed, invalid payments, failed payments, and total records.")
 
 When there are no processing errors, the number of **Processed Records** equals the number of **Total Records**.
 
@@ -443,7 +443,7 @@ The **Process Summary** section shows up after the job has been processed. The d
 * **Scheduled/Waiting Operations:** Number of operations that are scheduled to be processed later or awaiting payment method registration. See **Payment Transactions**.
 * **Total Operations:** Total number of operations included in the job for the operation type
 
-![Batch Process Summary](/assets/docs/pay-portal-admin/onebatch/batch-processsummary.png "The batch process summary shows data about processed operations, failed operations, schedule operations, waiting operations, and total operations. There are summaries for profile, bank account, prepaid card, and payments.")
+![Batch Process Summary](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-processsummary.png "The batch process summary shows data about processed operations, failed operations, schedule operations, waiting operations, and total operations. There are summaries for profile, bank account, prepaid card, and payments.")
 
 Assuming all errors were resolved and no operations are scheduled or waiting, the number of **Processed Operations** for a given operation type would be equal to the number of **Total Operations** for the same kind of operation.
 
@@ -456,7 +456,7 @@ Assuming all errors were resolved and no operations are scheduled or waiting, th
 
 Look up information about a batch job's status by using the **Batch Details** page.
 
-![Batch Details page](/assets/docs/pay-portal-admin/onebatch/batch-batchdetailspage.png "The batch results screen shows the batch name, the issuer, batch type, and creation date. There are pulldown fields for status and operation results. There is a text entry field for identifier. There are two buttons labelled search and reset. There is a list of payments for the batch, including the identifier, the operation results, and the status, with buttons to download each record detail. Each operation has a flag showing whether it was a success or failure. There are buttons labeled batch list and batch overview.")
+![Batch Details page](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-batchdetailspage.png "The batch results screen shows the batch name, the issuer, batch type, and creation date. There are pulldown fields for status and operation results. There is a text entry field for identifier. There are two buttons labelled search and reset. There is a list of payments for the batch, including the identifier, the operation results, and the status, with buttons to download each record detail. Each operation has a flag showing whether it was a success or failure. There are buttons labeled batch list and batch overview.")
 
 #### Accessing the Batch Overview page
 
@@ -516,7 +516,7 @@ The following list defines the operation results for an individual record in a b
 
 Review operation-level details of an individual batch record using the **Batch Record Detail** page.
 
-![Batch Record Detail page](/assets/docs/pay-portal-admin/onebatch/batch-batchrecorddetailspage.png "The batch record detail page has 2 tabs, profile and payment. The profile tab is selected. The page shows details that identify the batch record: first name, last name, and pay portal ID. Then there is an address section, followed by a preferences section that shows the payee's preferred contact method. There is a button labelled return to batch details.")
+![Batch Record Detail page](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-batchrecorddetailspage.png "The batch record detail page has 2 tabs, profile and payment. The profile tab is selected. The page shows details that identify the batch record: first name, last name, and pay portal ID. Then there is an address section, followed by a preferences section that shows the payee's preferred contact method. There is a button labelled return to batch details.")
 
 #### Accessing the Batch Record Detail page
 
@@ -533,25 +533,25 @@ The **Batch Record Detail** page shows a tab for each operation in the request. 
 
 Records that couldn't or haven't been processed don't have visual markers.
 
-![Batch Record Detail tabs](/assets/docs/pay-portal-admin/onebatch/batch-batchrecorddetailstabs.png "The batch record detail page has 2 tabs, profile and payment. The profile tab is selected.")
+![Batch Record Detail tabs](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-batchrecorddetailstabs.png "The batch record detail page has 2 tabs, profile and payment. The profile tab is selected.")
 
 > **Note:** The page only shows tabs for the operations included in the record.
 
 Select a tab to reveal details about that operation, including errors.
 
-![Batch Record Detail page with warnings](/assets/docs/pay-portal-admin/onebatch/batch-batchrecorddetailserrors.png "The batch record detail page has 2 tabs, profile and payment. Each has a red flag with a white x that indicates failure. The profile tab is selected. There are 2 messages warning that data requirements aren't met, and that there needs to be a first name in the first name field. The page shows details that identify the batch record: last name, pay portal ID, and owner type. Then there is an address section, followed by a preferences section that shows the payee's preferred contact method. There is a button labelled return to batch details.")
+![Batch Record Detail page with warnings](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-batchrecorddetailserrors.png "The batch record detail page has 2 tabs, profile and payment. Each has a red flag with a white x that indicates failure. The profile tab is selected. There are 2 messages warning that data requirements aren't met, and that there needs to be a first name in the first name field. The page shows details that identify the batch record: last name, pay portal ID, and owner type. Then there is an address section, followed by a preferences section that shows the payee's preferred contact method. There is a button labelled return to batch details.")
 
 ### Using the Batch Job Reports page
 
 Get a report of past batch jobs using the **Batch Job Reports** page.
 
-![Batch Job Reports page](/assets/docs/pay-portal-admin/onebatch/batch-jobreportspage.png "The batch job reports screen has a button to choose a program for the batch job, pulldown menus for start date, end date, status, and batch type. There is a text entry field labelled batch name. The start and end date fields have a calendar icon, and note saying they are in Greenwich Mean Time. After this are 2 buttons labelled search and reset. There is a list of batch files that show the batch type, program name, domain, batch name, batch status, number of records in the batch, date uploaded, date scheduled, and date processed. Each batch has either an action button, or a pulldown button labelled approve.")
+![Batch Job Reports page](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-jobreportspage.png "The batch job reports screen has a button to choose a program for the batch job, pulldown menus for start date, end date, status, and batch type. There is a text entry field labelled batch name. The start and end date fields have a calendar icon, and note saying they are in Greenwich Mean Time. After this are 2 buttons labelled search and reset. There is a list of batch files that show the batch type, program name, domain, batch name, batch status, number of records in the batch, date uploaded, date scheduled, and date processed. Each batch has either an action button, or a pulldown button labelled approve.")
 
 #### Accessing the Batch Record Detail page
 
 Open the **Batch Record Detail** page by selecting **Batch Processing** in the left menu pane of the Client Portal. You can also select **Batch Processing > Batch Job Reports**.
 
-![Batch Record Detail page](/assets/docs/pay-portal-admin/onebatch/batch-batchrecorddetailmenu.png "The batch processing pulldown menu shows 2 options, upload batch jobs, and batch jobs report.")
+![Batch Record Detail page](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-batchrecorddetailmenu.png "The batch processing pulldown menu shows 2 options, upload batch jobs, and batch jobs report.")
 
 #### Understanding the page
 
@@ -603,13 +603,13 @@ A job report consists of the following columns:
 * **Scheduled:** The date and time that the job was scheduled for processing. This applies to scheduled jobs.
 * **Processed:** The date and time that the job was processed. This applies to processed jobs. When none of the jobs in the following screenshot have been processed yet, this column is empty.
 
-![Batch Job Report columns](/assets/docs/pay-portal-admin/onebatch/batch-batchjobreportscolumn.png "The batch job reports table has a list of batch files that show the batch type, program name, domain, batch name, batch status, number of records in the batch, date uploaded, date scheduled, and date processed. Each batch has an action button.")
+![Batch Job Report columns](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-batchjobreportscolumn.png "The batch job reports table has a list of batch files that show the batch type, program name, domain, batch name, batch status, number of records in the batch, date uploaded, date scheduled, and date processed. Each batch has an action button.")
 
 #### Job sorting and navigation options
 
 Sort values in ascending or descending order by selecting the upward or downward arrow that shows up on a column header. By default, the **Batch Job Reports** page shows a maximum of 20 matching jobs. You can use the page navigation buttons to show more jobs, or increase the number of matching jobs to show on the page to 50 or 100. The total number of matching batch jobs shows up in the table header. See the following screenshot:
 
-![Job sorting and navigation](/assets/docs/pay-portal-admin/onebatch/batch-jobsortingnavigation.png "The job sorting interface shows the number of pages, 1 of 1, with a pulldown menu with the option to select twenty, fifty, or one hundred jobs per page. The twenty option is selected. There are navigations buttons with arrows that control how many records you can advance or rewind in the report. A number 1 shows how many reports on the current page.")
+![Job sorting and navigation](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-jobsortingnavigation.png "The job sorting interface shows the number of pages, 1 of 1, with a pulldown menu with the option to select twenty, fifty, or one hundred jobs per page. The twenty option is selected. There are navigations buttons with arrows that control how many records you can advance or rewind in the report. A number 1 shows how many reports on the current page.")
 
 #### Viewing job summaries
 
@@ -621,7 +621,7 @@ Perform a job-specific action using the corresponding button in the last column.
 
 > **Note:** Regardless of button color, the job and its status determine which  actions are available.
 
-![Job-specific actions](/assets/docs/pay-portal-admin/onebatch/batch-jobspecificactions.png "There is a job marked as immediate, with a date and time, and a pulldown menu labelled action. The pulldown menu shows options for batch overview, batch details, download batch input file, download batch acknowledgement, download response file, and download response error file.")
+![Job-specific actions](https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/batch-jobspecificactions.png "There is a job marked as immediate, with a date and time, and a pulldown menu labelled action. The pulldown menu shows options for batch overview, batch details, download batch input file, download batch acknowledgement, download response file, and download response error file.")
 
 The following table lists all possible actions and shows whether they open a dropdown menu:
 

@@ -46,7 +46,7 @@ To qualify for Levels 2 and 3 processing, merchants must send the following info
 
 This code sample shows Level 2 and 3 data in the body of a `POST` call to the [Create order](/docs/api/orders/v2/#orders_create) endpoint of the Orders v2 API. This request creates a new order and completes the payment in a single step by declaring the `intent` as `CAPTURE`:
 
-```jsx=
+```javascript=
 curl -v -X POST https://api-m.sandbox.paypal.com/v2/checkout/orders \
 -H 'Content-Type: application/json' \
 -H 'PayPal-Request-Id: REQUEST-ID' \
@@ -137,7 +137,6 @@ curl -v -X POST https://api-m.sandbox.paypal.com/v2/checkout/orders \
          },
          "amount": {
             "currency_code": "USD",
-            "value": "100.30",
             "breakdown": {
                "item_total": {
                   "currency_code": "USD",
