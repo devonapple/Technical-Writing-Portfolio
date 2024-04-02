@@ -48,9 +48,6 @@ Integrate 3 different types of payments using the PayPal Mobile SDK:
 * **PayPal native payments:** Launch a checkout page within your app, instead of a popup.
 * **PayPal web payments:** A lighter integration that launches a checkout page in a browser within your app.
 
-<ContentTabs>
-<ContentTab label="Card">
-
 ### Integrate with card payments
 
 Build and customize the card fields to align with your branding.
@@ -72,15 +69,10 @@ Add the `CardPayments` package dependency for your app using **Swift Package Man
 
 Include `PayPal/CardPayments` in your Podfile:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 # Podfile
 pod 'PayPal/CardPayments'
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 </Pill>
 </Pills>
@@ -93,15 +85,10 @@ In your iOS app:
 1. Use the `CLIENT_ID` to construct a `CoreConfig`.
 2. Construct a `CardClient` using your `CoreConfig` object.
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let coreConfig = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
 let cardClient = CardClient(config: coreConfig)
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 ### 3. Get Order ID
 
@@ -112,12 +99,9 @@ On your server:
    > **Note:** This access token is only for the sandbox environment. When you're ready to go live, request a live access token by changing the request sandbox endpoint to https://api-m.paypal.com/v1/oauth2/token.
 3. Pass the `intent`. You'll need to pass either `AUTHORIZE` or `CAPTURE` as the `intent` type. This type must match the `/authorize` or `/capture` endpoint you use to process your order.
 
-<Tabs>
-<Tab label="Sample request">
-<CodeBlockWrapper>
-<CodeBlock
-className="language-curl"
-children={`
+#### Sample request
+
+```curl=
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -132,22 +116,16 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
       }
     ]
   }'
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-</Tab>
-<Tab label="Sample response">
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```
+
+#### Sample response
+
+```javascript=
 {
   "id":"ORDER_ID",
   "status":"CREATED"
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 </Tab>
 </Tabs>
 
@@ -163,10 +141,7 @@ A `CardRequest` object:
 
 Build a `card` object with the buyer's card details:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let card = Card(
   number: "4005519200000004",
   expirationMonth: "01",
@@ -182,9 +157,7 @@ let card = Card(
     countryCode: "US"
   )
 )
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 Collecting a billing address can reduce the number of  authentication challenges to customers.
 
@@ -192,18 +165,13 @@ Collecting a billing address can reduce the number of  authentication challenges
 
 Build a `CardRequest` with the `card` object and your `ORDER_ID`:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let cardRequest = CardRequest(
   orderID: "ORDER_ID",
   card: card,
   sca: .scaAlways // default value is .scaWhenRequired
 )
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 [3D Secure](/api/nvp-soap/payflow/3d-secure-overview/) is supported for all card payments to comply with the [Second Payment Services Directive (PSD2)](https://www.paypal.com/uk/webapps/mpp/PSD2?_ga=1.18434873.1625369690.1652045188). PSD2 is a European Union regulation that introduces [Strong Customer Authentication (SCA)](https://www.ukfinance.org.uk/our-expertise/payments-and-innovation/strong-customer-authentication) and other security requirements.
 
@@ -215,27 +183,19 @@ Select your SCA launch option type using the `sca` parameter in the `CardRequest
 
 After your `CardRequest` has the card details, call `cardClient.approveOrder()` to process the payment.
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 class MyViewController: UIViewController {
   func cardCheckoutTapped(cardRequest: CardRequest) {
     cardClient.approveOrder(request: cardRequest)
   }
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 ### 6. Handle payment result scenarios
 
 Set up your `CardDelegate` to handle successful payments, errors, cancellations, and 3D Secure transaction flows.
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 extension MyViewController: CardDelegate {
   func setupCardClient() {
     cardClient.delegate = self
@@ -257,9 +217,7 @@ extension MyViewController: CardDelegate {
     // 3D Secure auth did finish successfully
   }
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 ### 7. Authorize and capture order
 
@@ -269,34 +227,23 @@ Call the [`authorize`](/docs/api/orders/v2/#orders_authorize) endpoint of the Or
 
 #### Sample request: Authorize order
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-curl"
-children={`
+```curl=
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/authorize' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
   --data-raw ''
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-<br />
+```
 
 Call the [`capture`](/docs/api/orders/v2/#orders_capture) endpoint of the Orders V2 API to capture the money immediately:
 
 #### Sample request: Capture order
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-curl"
-children={`
+```curl=
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/capture' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
   --data-raw ''
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 ### 8. Test integration
 
@@ -314,9 +261,6 @@ Learn more about the following resources on the [Card Testing](/tools/sandbox/ca
 When prompted for required data for the sandbox business request, such as a phone number, enter any number that fits the required format. Because this is a sandbox request, the data doesn't have to be factual.
 
 Before you go live, you'll need to complete [live onboarding](https://www.paypal.com/bizsignup/entry/product/ppcp) to be eligible to process cards with your live PayPal account.
-
-</ContentTab>
-<ContentTab label="Native payments">
 
 ### Use PayPal native payments
 
@@ -350,15 +294,10 @@ Add the `PayPal/PayPalNativePayments` package dependency for your app using **Sw
 
 Include `PayPal/PayPalNativePayments` in your Podfile:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 # Podfile
 pod 'PayPal/PayPalNativePayments'
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 </Pill>
 </Pills>
@@ -384,38 +323,23 @@ Use the following steps to set up the PayPal Native Checkout client for your app
 
 In your iOS app, use the `CLIENT_ID` to construct a `CoreConfig`.
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let config = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-<br />
+```
 
 #### 2. Create native checkout request
 
 Create a `PayPalNativeCheckoutClient` request to approve an order with a PayPal payment method:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let payPalNativeClient = PayPalNativeCheckoutClient(config: config)
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-<br />
+```
 
 #### 3. Set up payment delegate
 
 Set a `PayPalNativeCheckoutDelegate` to listen for result notifications from the SDK:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 extension MyViewController: PayPalNativeCheckoutDelegate {
   func paypal(_ payPalClient: PayPalNativeCheckoutClient, didFinishWithResult approvalResult: Approval) {
     // order was approved and is ready to be captured/authorized (see step 5)
@@ -430,10 +354,7 @@ extension MyViewController: PayPalNativeCheckoutDelegate {
     // the PayPal paysheet is about to show up. Handle loading views, spinners, etc.
   }
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-<br />
+```
 
 #### 4. Listen for shipping details
 
@@ -445,10 +366,7 @@ You can only implement `PayPalNativeShippingDelegate` if the [`shipping_preferen
 
 Set a `shippingDelegate` on the `PayPalNativeCheckoutClient` to send notifications to your app when the user updates their shipping address or shipping method.
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-swift"
-children={`
+```swift=
 extension MyViewModel: PayPalNativeShippingDelegate {
   func setup() {
     paypalNativeClient.delegate = self         // always required
@@ -479,10 +397,7 @@ extension MyViewModel: PayPalNativeShippingDelegate {
     }
   }
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-<br />
+```
 
 #### 5. Modify shipping details
 
@@ -508,12 +423,9 @@ On your server:
    > **Note:** This access token is only for the sandbox environment. When you're ready to go live, request a live access token by changing the request sandbox endpoint to https://api-m.paypal.com/v1/oauth2/token.
 3. Pass the `intent`. You'll need to pass either `AUTHORIZE` or `CAPTURE` as the `intent` type. This type must match the `/authorize` or `/capture` endpoint you use to process your order.
 
-<Tabs>
-<Tab label="Sample request">
-<CodeBlockWrapper>
-<CodeBlock
-className="language-curl"
-children={`
+#### Sample request
+
+```curl=
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -528,22 +440,16 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
       }
     ]
   }'
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-</Tab>
-<Tab label="Sample response">
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```
+
+#### Sample response
+
+```javascript=
 {
   "id":"ORDER_ID",
   "status":"CREATED"
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 </Tab>
 </Tabs>
 
@@ -553,15 +459,10 @@ When a buyer starts a payment, send the `ORDER_ID` from your server to your clie
 
 To start the PayPal Native Payments flow, call the `startCheckout` function in `PayPalNativeCheckoutClient`, with a `PayPalNativeCheckoutRequest`:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let request = PayPalNativeCheckoutRequest(orderID: "ORDER_ID")
 paypalNativeClient.start(request: request)
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 ### 6. Authorize and capture order
 
@@ -571,37 +472,23 @@ Call the [`authorize`](/docs/api/orders/v2/#orders_authorize) endpoint of the Or
 
 #### Sample request: Authorize order
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-curl"
-children={`
+```curl=
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/authorize' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
   --data-raw ''
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-<br />
+```
 
 Call the [`capture`](/docs/api/orders/v2/#orders_capture) endpoint of the Orders V2 API to capture the money immediately:
 
 #### Sample request: Capture order
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-curl"
-children={`
+```curl=
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/capture' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
   --data-raw ''
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-
-</ContentTab>
-<ContentTab label="Web payments">
+```
 
 ### PayPal Web Payments
 
@@ -626,15 +513,10 @@ Add the `PayPalWebPayments` package dependency for your app using **Swift Packag
 
 Include `PayPal/PayPalWebPayments` in your Podfile:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 # Podfile
 pod 'PayPal/PayPalWebPayments'
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 </Pill>
 </Pills>
@@ -647,28 +529,17 @@ Use the following steps to set up the PayPal Native Checkout client for your app
 
 In your iOS app, use the `CLIENT_ID` to construct a `CoreConfig`.
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let config = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-<br />
+```
 
 #### 2. Create web checkout request
 
 Create a `PayPalWebCheckoutClient` to approve an order with a PayPal payment method:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let payPalClient = PayPalWebCheckoutClient(config: config)
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 ### 3. Get Order ID
 
@@ -679,12 +550,9 @@ On your server:
    > **Note:** This access token is only for the sandbox environment. When you're ready to go live, request a live access token by changing the request sandbox endpoint to https://api-m.paypal.com/v1/oauth2/token.
 3. Pass the `intent`. You'll need to pass either `AUTHORIZE` or `CAPTURE` as the `intent` type. This type must match the `/authorize` or `/capture` endpoint you use to process your order.
 
-<Tabs>
-<Tab label="Sample request">
-<CodeBlockWrapper>
-<CodeBlock
-className="language-curl"
-children={`
+#### Sample request
+
+```curl=
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -699,22 +567,16 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
       }
     ]
   }'
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-</Tab>
-<Tab label="Sample response">
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```
+
+#### Sample response
+
+```javascript=
 {
  "id":"ORDER_ID",
  "status":"CREATED"
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 </Tab>
 </Tabs>
 
@@ -726,23 +588,15 @@ When a buyer starts a payment, send the `ORDER_ID` from your server to your clie
 
 Configure your `PayPalWebCheckoutRequest` with the `ORDER_ID`. You can also specify one of the following funding sources for your order: `PayPal` (default), `PayLater`, or `PayPalCredit`.
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let payPalWebRequest = PayPalWebCheckoutRequest(orderID: "ORDER_ID", fundingSource: .paypal)
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 ### 5. Approve order
 
 Call `PayPalWebCheckoutClient.start()` to process the payment. Implement `PayPalWebCheckoutDelegate` in your `ViewController` to listen for result notifications from the SDK:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 extension MyViewController: PayPalWebCheckoutDelegate {
   func checkoutWithPayPal(payPalWebRequest: PayPalWebCheckoutRequest) {
     payPalWebCheckoutClient.delegate = self
@@ -759,9 +613,7 @@ extension MyViewController: PayPalWebCheckoutDelegate {
     // the user canceled
   }
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 ### 6. Authorize and capture order
 
@@ -771,44 +623,27 @@ Call the [`authorize`](/docs/api/orders/v2/#orders_authorize) endpoint of the Or
 
 #### Sample request: Authorize order
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-curl"
-children={`
+```curl=
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/authorize' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
   --data-raw ''
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-<br />
+```
 
 Call the [`capture`](/docs/api/orders/v2/#orders_capture) endpoint of the Orders V2 API to capture the money immediately:
 
 #### Sample request: Capture order
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-curl"
-children={`
+```curl=
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/capture' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
   --data-raw ''
-`}
-></CodeBlock>
-</CodeBlockWrapper>
-
-</ContentTab>
-</ContentTabs>
+```
 
 ## Payment buttons and fraud protection
 
 After you integrate a payment method, add a payment button to your page to start the payment process. You can also add fraud protection to your app.
-
-<ContentTabs>
-<ContentTab label="Payment buttons">
 
 ### Use PayPal buttons in your UI
 
@@ -833,15 +668,10 @@ Add the `PaymentButtons` package dependency for your app using **Swift Package M
 
 Include `PayPal/PaymentButtons` in your Podfile:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 # Podfile
 pod 'PayPal/PaymentButtons'
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 </Pill>
 </Pills>
@@ -861,7 +691,7 @@ These buttons include customization options such as color, shape, size, and labe
 | Value  | Description | Button |
 |--------|-------------|--------|
 | `rectangle` | Button shape with sharp corners. | |
-| `rounded` | **Recommended**<br />Button shape with rounded corner radius. The default button shape. | <iframe src="https://www.paypal.com/webapps/hermes/button?version=4&env=production&style.color=gold&style.shape=rect&style.size=medium&sessionID=46171950e0&locale.x=en_US&logLevel=warn&uid=f6713002fd&xcomponent=1&style.label=paypal" width="250" height="70" frameBorder="0"></iframe> |
+| `rounded` | **Recommended**Button shape with rounded corner radius. The default button shape. | <iframe src="https://www.paypal.com/webapps/hermes/button?version=4&env=production&style.color=gold&style.shape=rect&style.size=medium&sessionID=46171950e0&locale.x=en_US&logLevel=warn&uid=f6713002fd&xcomponent=1&style.label=paypal" width="250" height="70" frameBorder="0"></iframe> |
 | `pill` | Button in pill shape. | <iframe src="https://www.paypal.com/webapps/hermes/button?version=4&env=production&style.color=gold&style.shape=pill&style.size=medium&sessionID=46171950e0&locale.x=en_US&logLevel=warn&uid=f6713002fd&xcomponent=1&style.label=paypal" width="250" height="70" frameBorder="0"></iframe> |
 | `custom(CGFloat)` | Customize the button's corner radius. The minimum value is 10 px and is applied to all 4 corners. | |
 
@@ -870,10 +700,7 @@ Add buttons using either `UKit` or `SwiftUI` as follows:
 <Pills>
 <Pill label="UKit">
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-swift"
-children={`
+```swift=
 class MyViewController: UIViewController {
   lazy var payPalButton: PayPalButton = {
     let payPalButton = PayPalButton()
@@ -888,17 +715,12 @@ class MyViewController: UIViewController {
     view.addSubview(payPalButton)
   }
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 </Pill>
 <Pill label="SwiftUI">
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-swiftui"
-children={`
+```swiftui=
 struct MyApp: View {
   @ViewBuilder
   var body: some View {
@@ -909,15 +731,10 @@ struct MyApp: View {
     }
   }
 }
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 </Pill>
 </Pills>
-
-</ContentTab>
-<ContentTab label="Fraud protection">
 
 ### Protect from fraud
 
@@ -940,15 +757,10 @@ Add the `FraudProtection` package dependency for your app using **Swift Package 
 
 Include `PayPal/FraudProtection` in your Podfile:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 # Podfile
 pod 'PayPal/FraudProtection'
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 </Pill>
 </Pills>
@@ -959,33 +771,20 @@ In your iOS app:
 1. Use the `CLIENT_ID` to construct a `CoreConfig`.
 2. Construct a `PayPalDataCollector` using your `CoreConfig` object.
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 let coreConfig = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
 let dataCollector = PayPalDataCollector(config: coreConfig)
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 ### 3. Collect client metadata
 
 Collect the client metadata ID before starting a payment from a mobile device:
 
-<CodeBlockWrapper>
-<CodeBlock
-className="language-javascript"
-children={`
+```javascript=
 val clientMetadataId = dataCollector.collectDeviceData()
-`}
-></CodeBlock>
-</CodeBlockWrapper>
+```
 
 Pass the result to your server, and include the client metadata ID in the payment request you send to PayPal. Don't cache or store this value.
-
-</ContentTab>
-</ContentTabs>
 
 ## Go live
 
