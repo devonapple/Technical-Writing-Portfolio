@@ -56,7 +56,6 @@ Integrate with third-party network token payments as follows:
 
 > **Note:** Third-party network token integrations don’t support reference or future transactions. Don’t pass a reference transaction ID using the `payment_source.token.id` parameter.
 
-
 ## Using third-party network tokens with PayPal
 
 Review this section to learn how to integrate third-party network tokens in your PayPal integration.
