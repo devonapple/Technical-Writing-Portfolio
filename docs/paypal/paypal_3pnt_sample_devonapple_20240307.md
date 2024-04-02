@@ -66,7 +66,7 @@ This code sample shows a third-party network token in the body of a `POST` call 
 
 The payment request includes the new `network_token` and `stored_credential` objects:
 
-```javascript=
+```javascript
 curl -v -X POST https://api-m.sandbox.paypal.com/v2/checkout/orders \
 -H 'Content-Type: application/json' \
 -H 'PayPal-Request-Id: REQUEST-ID' \
@@ -119,7 +119,7 @@ curl -v -X POST https://api-m.sandbox.paypal.com/v2/checkout/orders \
 
 The HTTP `201` response includes the new `bin_details` and `network_transaction_reference` objects:
 
-```jsx=
+```jsx
 {
     "id": "1C882901H6992113A",
     "status": "COMPLETED",

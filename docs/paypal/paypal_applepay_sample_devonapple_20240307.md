@@ -122,7 +122,7 @@ Before you can accept Apple Pay on your website, verify that your sandbox busine
 
 If you created a sandbox business account through <a target="_blank" href="https://sandbox.paypal.com/">sandbox.paypal.com</a>, and the Apple Pay status for the account shows as disabled, <a target="_blank" href="https://www.sandbox.paypal.com/bizsignup/add-product?product=payment_methods&capabilities=APPLE_PAY&_ga=1.255056589.491931369.1702610895">complete the sandbox onboarding steps</a> to enable Apple Pay.
 
-> **Tip:** When your integration is ready to go live, read the <span className="boldArchText">Go live</span> section for details about the additional steps needed for Apple Pay onboarding.
+> **Tip:** When your integration is ready to go live, read the <strong>Go live</strong> section for details about the additional steps needed for Apple Pay onboarding.
 
 ## 2. Getting started in your testing environment
 
@@ -213,7 +213,7 @@ The following example uses the <a href="https://developer.paypal.com/docs/api/or
 
 #### server.js
 
-```javascript=
+```javascript
 import * as PayPal from "./paypal-api.js";\n
 /* Create Order route Handler */
 app.post("/api/orders", async (req, res) => {
@@ -232,7 +232,7 @@ app.post("/api/orders/:orderID/capture", async (req, res) => {
 
 #### paypal-api.js
 
-```javascript=
+```javascript
 // create an order
 export async function createOrder() {
   const purchaseAmount = "100.00";
@@ -327,11 +327,11 @@ button.
 
 To check eligibility, use the PayPal JavaScript SDK API <code>paypal.Applepay().config()</code>.
 
-```html=
+```html
 <div id="applepay-container"></div>
 ```
 
-```javascript=
+```javascript
 if (!window.ApplePaySession) {
   console.error('This device does not support Apple Pay');
 }
@@ -378,7 +378,7 @@ in the <code>ApplePayPaymentRequest</code> object:
   <li><code>supportedNetworks</code></li>
 </ul>
 
-```javascript=
+```javascript
 const paymentRequest = {
   countryCode: applepayConfig.countryCode,
   merchantCapabilities: applepayConfig.merchantCapabilities,
@@ -415,7 +415,7 @@ exception if any of the following occurs:
 Use <code>paypal.Applepay().validateMerchant()</code> in the <code>onvalidatemerchant</code> callback to create a validated Apple Pay
 session object:
 
-```javascript=
+```javascript
       children={`session.onvalidatemerchant = (event) => {
   applepay.validateMerchant({
     validationUrl: event.validationURL,
@@ -440,7 +440,7 @@ Safari calls the <code>onpaymentauthorized</code> callback with an 
 
 Capture the order using the <a href="https://developer.paypal.com/api/orders/v2" target="_blank">PayPal Orders V2 API</a>. Use <code>paypal.Applepay().confirmOrder()</code> to send the <code>orderID</code>, the Apple Pay token, billing contact details, and confirm the order.
 
-```javascript=
+```javascript
 session.onpaymentauthorized = (event) => {
     console.log('Your billing address is:', event.payment.billingContact);
     console.log('Your shipping address is:', event.payment.shippingContact);

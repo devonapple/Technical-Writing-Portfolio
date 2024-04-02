@@ -42,7 +42,7 @@ Visit our [3D Secure](https://developer.paypal.com/docs/checkout/advanced/custom
 
 The PayPal Mobile SDK is available through Maven Central. Add the `mavenCentral` repository to the `build.gradle` file of your project root:
 
-```javascript=
+```javascript
 allprojects {
   repositories {
     mavenCentral()
@@ -58,7 +58,7 @@ You can also use snapshot builds to test upcoming features before release. To in
 
 Add the snapshots repository to the `build.gradle` file of your project root.
 
-```javascript=
+```javascript
 allprojects {
   repositories {
     mavenCentral()
@@ -74,7 +74,7 @@ allprojects {
 
 Then, add a snapshot build by adding `-SNAPSHOT` to the current dependency version. For example, if you want to add a snapshot build for `CardPayments`, add the following:
 
-```javascript=
+```javascript
 dependencies {
   implementation 'com.paypal.android:card-payments:CURRENT-VERSION-SNAPSHOT'
 }
@@ -96,7 +96,7 @@ Build and customize the card fields to align with your branding.
 
 Add the `card-payments` package dependency in your app's `build.gradle` file:
 
-```javascript=
+```javascript
 dependencies {
   implementation "com.paypal.android:card-payments:CURRENT-VERSION"
 }
@@ -110,7 +110,7 @@ In your Android app:
 1. Use the `CLIENT_ID` to construct a `CoreConfig`.
 2. Construct a `CardClient` using your `CoreConfig` object.
 
-```javascript=
+```javascript
 val config = CoreConfig("CLIENT_ID", environment = Environment.SANDBOX)\n
 val cardClient = CardClient(config)
 ```
@@ -126,7 +126,7 @@ On your server:
 
 #### Sample request
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -145,7 +145,7 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 
 #### Sample response
 
-```javascript=
+```javascript
 {
   "id":"ORDER_ID",
   "status":"CREATED"
@@ -164,7 +164,7 @@ A `CardRequest` object:
 
 Build a `card` object with the buyer's card details:
 
-```javascript=
+```javascript
 val card = Card(
   number = "4005519200000004",
   expirationMonth = "01",
@@ -187,7 +187,7 @@ Collecting a billing address can reduce the number of  authentication challenges
 
 Build a `CardRequest` with the `card` object and your `ORDER_ID`:
 
-```javascript=
+```javascript
 val cardRequest  = CardRequest(
   orderID = "ORDER_ID",
   card = card,
@@ -212,7 +212,7 @@ Provide a `returnUrl` so the browser returns to your application after the `sca`
 
 The `returnUrl` should have the following format:
 
-```url=
+```url
 myapp://return_url
 ```
 
@@ -229,7 +229,7 @@ Update your app's `AndroidManifest.xml` with details about the card payment acti
 
 > Note: `android:exported` is required if your app compile SDK version is API 31 (Android 12) or later.
 
-```javascript=
+```javascript
 <activity
   android:name=".MyCardPaymentActivity"
   android:launchMode="singleTop"
@@ -249,7 +249,7 @@ Update your app's `AndroidManifest.xml` with details about the card payment acti
 
 Add `onNewIntent` to your activity:
 
-```javascript=
+```javascript
 override fun onNewIntent(newIntent: Intent?) {
   super.onNewIntent(intent)
   intent = newIntent
@@ -260,7 +260,7 @@ override fun onNewIntent(newIntent: Intent?) {
 
 After your `CardRequest` has the card details, call `cardClient.approveOrder()` to process the payment.
 
-```javascript=
+```javascript
 class MyCardPaymentActivity: FragmentActivity {
   fun cardCheckoutTapped(cardRequest: CardRequest) {
     cardClient.approveOrder(this, cardRequest)
@@ -272,7 +272,7 @@ class MyCardPaymentActivity: FragmentActivity {
 
 Set up your `ApproveOrderListener` to handle successful payments, errors, cancellations, and 3D Secure transaction flows.
 
-```javascript=
+```javascript
 class MyCardPaymentActivity: FragmentActivity, ApproveOrderListener {
   fun cardCheckoutTapped(cardRequest: CardRequest) {
     val result = cardClient.approveOrder(this, cardRequest)
@@ -306,7 +306,7 @@ Call the [`authorize`](https://developer.paypal.com/docs/api/orders/v2/#orders_a
 
 #### Sample request: Authorize order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/authorize' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -318,7 +318,7 @@ Call the [`capture`](https://developer.paypal.com/docs/api/orders/v2/#orders_cap
 
 #### Sample request: Capture order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/capture' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -361,7 +361,7 @@ Follow these steps to add `PayPalNativePayments`:
 
 Add the `paypal-native-payments` package dependency in your app's `build.gradle` file:
 
-```javascript=
+```javascript
 dependencies {
   implementation "com.paypal.android:paypal-native-payments:CURRENT-VERSION"
 }
@@ -369,7 +369,7 @@ dependencies {
 
 Add the following Cardinal SDK Maven repository to your project’s top-level `build.gradle` file to pass credentials to Gradle:
 
-```javascript=
+```javascript
 allprojects {
   repositories {
     maven {
@@ -420,7 +420,7 @@ Use the following steps to set up the PayPal Native Checkout client for your app
 
 In your Android app, use the `CLIENT_ID` to construct a `CoreConfig`.
 
-```javascript=
+```javascript
 val coreConfig = CoreConfig("CLIENT_ID", environment = Environment.SANDBOX)
 ```
 <br />
@@ -429,7 +429,7 @@ val coreConfig = CoreConfig("CLIENT_ID", environment = Environment.SANDBOX)
 
 Create a `PayPalNativeCheckoutClient` request to approve an order with a PayPal payment method and include the `RETURN_URL`:
 
-```javascript=
+```javascript
 val payPalNativeClient = PayPalNativeCheckoutClient(
   application = requireActvitiy().application,
   coreConfig = coreConfig,
@@ -442,7 +442,7 @@ val payPalNativeClient = PayPalNativeCheckoutClient(
 
 Implement the `PayPalNativeCheckoutListener` on the `PayPalNativeCheckoutClient` to listen for result notifications from the SDK.
 
-```javascript=
+```javascript
 payPalNativeClient.listener = object : PayPalNativeCheckoutListener {
   override fun onPayPalCheckoutStart() {
     // the PayPal paysheet is about to show up
@@ -472,7 +472,7 @@ Set a `shippingListener` on the `PayPalNativeCheckoutClient` to send notificatio
 
 This code sample uses a `try…catch` function to handle the response:
 
-```javascript=
+```javascript
 payPalNativeClient.shippingListener = object : PayPalNativeShippingListener {
   override fun onPayPalNativeShippingAddressChange(
     actions: PayPalNativePaysheetActions,
@@ -529,7 +529,7 @@ On your server:
 
 <Tabs>
 <Tab label="Sample request">
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -547,7 +547,7 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 ```
 </Tab>
 <Tab label="Sample response">
-```javascript=
+```javascript
 {
   "id":"ORDER_ID",
   "status":"CREATED"
@@ -562,7 +562,7 @@ When a buyer starts a payment, send the `ORDER_ID` from your server to your clie
 
 To start the PayPal Native Payments flow, call the `startCheckout` function in `PayPalNativeCheckoutClient`, with a `PayPalNativeCheckoutRequest`:
 
-```javascript=
+```javascript
 val request = PayPalNativeCheckoutRequest("ORDER_ID")
 paypalNativeClient.startCheckout(request)
 ```
@@ -575,7 +575,7 @@ Call the [`authorize`](https://developer.paypal.com/docs/api/orders/v2/#orders_a
 
 #### Sample request: Authorize order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/authorize' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -587,7 +587,7 @@ Call the [`capture`](https://developer.paypal.com/docs/api/orders/v2/#orders_cap
 
 #### Sample request: Capture order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/capture' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -604,7 +604,7 @@ Follow these steps to integrate `PayPalWebPayments`:
 
 Add the `paypal-web-payments` package dependency in your app's `build.gradle` file:
 
-```javascript=
+```javascript
 dependencies {
   implementation "com.paypal.android:paypal-web-payments:CURRENT-VERSION"
 }
@@ -623,7 +623,7 @@ Update your app's `AndroidManifest.xml` with details about the card payment acti
 
 > Note: `android:exported` is required if your app compile SDK version is API 31 (Android 12) or later.
 
-```javascript=
+```javascript
 <activity android:name="com.company.app.MyPaymentsActivity"
           android:exported="true"
           android:launchMode="singleTop">
@@ -639,7 +639,7 @@ Update your app's `AndroidManifest.xml` with details about the card payment acti
 
 Also, add `onNewIntent` to the host activity in your app:
 
-```javascript=
+```javascript
 override fun onNewIntent(newIntent: Intent?) {
   super.onNewIntent(intent)
   intent = newIntent
@@ -654,7 +654,7 @@ Use the following steps to set up the PayPal Native Checkout client for your app
 
 In your Android app, use the `CLIENT_ID` to construct a `CoreConfig`.
 
-```javascript=
+```javascript
 val config = CoreConfig("CLIENT_ID", environment = Environment.SANDBOX)
 ```
 <br />
@@ -663,7 +663,7 @@ val config = CoreConfig("CLIENT_ID", environment = Environment.SANDBOX)
 
 Set a return URL using the custom scheme you configured in the `ActivityManifest.xml`:
 
-```javascript=
+```javascript
 val returnUrl = "custom-url-scheme"
 ```
 <br />
@@ -672,7 +672,7 @@ val returnUrl = "custom-url-scheme"
 
 Create a `PayPalWebCheckoutClient` to approve an order with a PayPal payment method:
 
-```javascript=
+```javascript
     val payPalWebCheckoutClient = PayPalWebCheckoutClient(requireActivity(), config, returnUrl)
 ```
 <br />
@@ -681,7 +681,7 @@ Create a `PayPalWebCheckoutClient` to approve an order with a PayPal payment met
 
 Set a `PayPalWebCheckoutListener` on the client to receive payment flow callbacks:
 
-```javascript=
+```javascript
 payPalWebCheckoutClient.listener = object : PayPalWebCheckoutListener {
   override fun onPayPalWebSuccess(result: PayPalWebCheckoutResult) {
     // order was approved and is ready to be captured/authorized (see step 7)
@@ -708,7 +708,7 @@ On your server:
 
 <Tabs>
 <Tab label="Sample request">
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -726,7 +726,7 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 ```
 </Tab>
 <Tab label="Sample response">
-```javascript=
+```javascript
 {
  "id":"ORDER_ID",
  "status":"CREATED"
@@ -741,7 +741,7 @@ When a buyer starts a payment, send the `ORDER_ID` from your server to your clie
 
 Configure your `PayPalWebCheckoutRequest` with the `ORDER_ID`. You can also specify one of the following funding sources for your order: `PayPal` (default), `PayLater`, or `PayPalCredit`.
 
-```javascript=
+```javascript
 val payPalWebCheckoutRequest = PayPalWebCheckoutRequest("ORDER_ID", fundingSource = PayPalWebCheckoutFundingSource.PAYPAL)
 ```
 
@@ -749,7 +749,7 @@ val payPalWebCheckoutRequest = PayPalWebCheckoutRequest("ORDER_ID", fundingSourc
 
 Call `payPalWebCheckoutClient.start()` to process the payment.
 
-```javascript=
+```javascript
 class MyCardPaymentActivity: FragmentActivity {
   fun payPalWebCheckoutTapped(payPalWebCheckoutRequest: PayPalWebCheckoutRequest) {
     payPalWebCheckoutClient.start(payPalWebCheckoutRequest)
@@ -765,7 +765,7 @@ Call the [`authorize`](https://developer.paypal.com/docs/api/orders/v2/#orders_a
 
 #### Sample request: Authorize order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/authorize' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -777,7 +777,7 @@ Call the [`capture`](https://developer.paypal.com/docs/api/orders/v2/#orders_cap
 
 #### Sample request: Capture order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/capture' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -798,7 +798,7 @@ Follow these steps to add PayPal buttons to your integration:
 
 Add the `payment-buttons` package dependency in your app's `build.gradle` file:
 
-```kotlin=
+```kotlin
 dependencies {
   implementation "com.paypal.android:payment-buttons:CURRENT-VERSION"
 }
@@ -825,7 +825,7 @@ These buttons include customization options such as color, edges, size, and labe
 
 Add <code>PayPalButton</code> to your layout XML:
 
-```kotlin=
+```kotlin
 <com.paypal.android.paymentbuttons.PayPalButton
   android:id="@+id/paypal_button"
   android:layout_width="match_parent"
@@ -836,7 +836,7 @@ Add <code>PayPalButton</code> to your layout XML:
 
 Add the PayPal button to your code:
 
-```kotlin=
+```kotlin
 val payPalButton = findViewById<PayPalButton>(R.id.paypal_button)
 payPalButton.setOnClickListener {
   // start the PayPal web or native
@@ -853,7 +853,7 @@ The `FraudProtection` module helps you collect data about a customer's device an
 
 Add the `fraud-protection` package dependency in your app's `build.gradle` file:
 
-```javascript=
+```javascript
 dependencies {
   implementation "com.paypal.android:fraud-protection:CURRENT-VERSION"
 }
@@ -865,7 +865,7 @@ In your Android app:
 1. Use the `CLIENT_ID` to construct a `CoreConfig`.
 2. Construct a `PayPalDataCollector` using your `CoreConfig` object.
 
-```kotlin=
+```kotlin
 val config = CoreConfig("CLIENT_ID", environment = Environment.SANDBOX)\n
 val dataCollector = PayPalDataCollector(coreConfig = coreConfig)
 ```
@@ -874,7 +874,7 @@ val dataCollector = PayPalDataCollector(coreConfig = coreConfig)
 
 Collect the client metadata ID before starting a payment from a mobile device:
 
-```javascript=
+```javascript
 val clientMetadataId = dataCollector.getClientMetadataId(context)
 ```
 

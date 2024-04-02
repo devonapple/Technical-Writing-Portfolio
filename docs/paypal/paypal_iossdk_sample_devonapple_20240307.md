@@ -69,7 +69,7 @@ Add the `CardPayments` package dependency for your app using **Swift Package Man
 
 Include `PayPal/CardPayments` in your Podfile:
 
-```javascript=
+```javascript
 # Podfile
 pod 'PayPal/CardPayments'
 ```
@@ -85,7 +85,7 @@ In your iOS app:
 1. Use the `CLIENT_ID` to construct a `CoreConfig`.
 2. Construct a `CardClient` using your `CoreConfig` object.
 
-```javascript=
+```javascript
 let coreConfig = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
 let cardClient = CardClient(config: coreConfig)
 ```
@@ -101,7 +101,7 @@ On your server:
 
 #### Sample request
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -120,7 +120,7 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 
 #### Sample response
 
-```javascript=
+```javascript
 {
   "id":"ORDER_ID",
   "status":"CREATED"
@@ -141,7 +141,7 @@ A `CardRequest` object:
 
 Build a `card` object with the buyer's card details:
 
-```javascript=
+```javascript
 let card = Card(
   number: "4005519200000004",
   expirationMonth: "01",
@@ -165,7 +165,7 @@ Collecting a billing address can reduce the number of  authentication challenges
 
 Build a `CardRequest` with the `card` object and your `ORDER_ID`:
 
-```javascript=
+```javascript
 let cardRequest = CardRequest(
   orderID: "ORDER_ID",
   card: card,
@@ -183,7 +183,7 @@ Select your SCA launch option type using the `sca` parameter in the `CardRequest
 
 After your `CardRequest` has the card details, call `cardClient.approveOrder()` to process the payment.
 
-```javascript=
+```javascript
 class MyViewController: UIViewController {
   func cardCheckoutTapped(cardRequest: CardRequest) {
     cardClient.approveOrder(request: cardRequest)
@@ -195,7 +195,7 @@ class MyViewController: UIViewController {
 
 Set up your `CardDelegate` to handle successful payments, errors, cancellations, and 3D Secure transaction flows.
 
-```javascript=
+```javascript
 extension MyViewController: CardDelegate {
   func setupCardClient() {
     cardClient.delegate = self
@@ -227,7 +227,7 @@ Call the [`authorize`](/docs/api/orders/v2/#orders_authorize) endpoint of the Or
 
 #### Sample request: Authorize order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/authorize' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -238,7 +238,7 @@ Call the [`capture`](/docs/api/orders/v2/#orders_capture) endpoint of the Orders
 
 #### Sample request: Capture order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/capture' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -294,7 +294,7 @@ Add the `PayPal/PayPalNativePayments` package dependency for your app using **Sw
 
 Include `PayPal/PayPalNativePayments` in your Podfile:
 
-```javascript=
+```javascript
 # Podfile
 pod 'PayPal/PayPalNativePayments'
 ```
@@ -323,7 +323,7 @@ Use the following steps to set up the PayPal Native Checkout client for your app
 
 In your iOS app, use the `CLIENT_ID` to construct a `CoreConfig`.
 
-```javascript=
+```javascript
 let config = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
 ```
 
@@ -331,7 +331,7 @@ let config = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
 
 Create a `PayPalNativeCheckoutClient` request to approve an order with a PayPal payment method:
 
-```javascript=
+```javascript
 let payPalNativeClient = PayPalNativeCheckoutClient(config: config)
 ```
 
@@ -339,7 +339,7 @@ let payPalNativeClient = PayPalNativeCheckoutClient(config: config)
 
 Set a `PayPalNativeCheckoutDelegate` to listen for result notifications from the SDK:
 
-```javascript=
+```javascript
 extension MyViewController: PayPalNativeCheckoutDelegate {
   func paypal(_ payPalClient: PayPalNativeCheckoutClient, didFinishWithResult approvalResult: Approval) {
     // order was approved and is ready to be captured/authorized (see step 5)
@@ -366,7 +366,7 @@ You can only implement `PayPalNativeShippingDelegate` if the [`shipping_preferen
 
 Set a `shippingDelegate` on the `PayPalNativeCheckoutClient` to send notifications to your app when the user updates their shipping address or shipping method.
 
-```swift=
+```swift
 extension MyViewModel: PayPalNativeShippingDelegate {
   func setup() {
     paypalNativeClient.delegate = self         // always required
@@ -425,7 +425,7 @@ On your server:
 
 #### Sample request
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -444,7 +444,7 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 
 #### Sample response
 
-```javascript=
+```javascript
 {
   "id":"ORDER_ID",
   "status":"CREATED"
@@ -459,7 +459,7 @@ When a buyer starts a payment, send the `ORDER_ID` from your server to your clie
 
 To start the PayPal Native Payments flow, call the `startCheckout` function in `PayPalNativeCheckoutClient`, with a `PayPalNativeCheckoutRequest`:
 
-```javascript=
+```javascript
 let request = PayPalNativeCheckoutRequest(orderID: "ORDER_ID")
 paypalNativeClient.start(request: request)
 ```
@@ -472,7 +472,7 @@ Call the [`authorize`](/docs/api/orders/v2/#orders_authorize) endpoint of the Or
 
 #### Sample request: Authorize order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/authorize' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -483,7 +483,7 @@ Call the [`capture`](/docs/api/orders/v2/#orders_capture) endpoint of the Orders
 
 #### Sample request: Capture order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/capture' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -513,7 +513,7 @@ Add the `PayPalWebPayments` package dependency for your app using **Swift Packag
 
 Include `PayPal/PayPalWebPayments` in your Podfile:
 
-```javascript=
+```javascript
 # Podfile
 pod 'PayPal/PayPalWebPayments'
 ```
@@ -529,7 +529,7 @@ Use the following steps to set up the PayPal Native Checkout client for your app
 
 In your iOS app, use the `CLIENT_ID` to construct a `CoreConfig`.
 
-```javascript=
+```javascript
 let config = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
 ```
 
@@ -537,7 +537,7 @@ let config = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
 
 Create a `PayPalWebCheckoutClient` to approve an order with a PayPal payment method:
 
-```javascript=
+```javascript
 let payPalClient = PayPalWebCheckoutClient(config: config)
 ```
 
@@ -552,7 +552,7 @@ On your server:
 
 #### Sample request
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -571,7 +571,7 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 
 #### Sample response
 
-```javascript=
+```javascript
 {
  "id":"ORDER_ID",
  "status":"CREATED"
@@ -588,7 +588,7 @@ When a buyer starts a payment, send the `ORDER_ID` from your server to your clie
 
 Configure your `PayPalWebCheckoutRequest` with the `ORDER_ID`. You can also specify one of the following funding sources for your order: `PayPal` (default), `PayLater`, or `PayPalCredit`.
 
-```javascript=
+```javascript
 let payPalWebRequest = PayPalWebCheckoutRequest(orderID: "ORDER_ID", fundingSource: .paypal)
 ```
 
@@ -596,7 +596,7 @@ let payPalWebRequest = PayPalWebCheckoutRequest(orderID: "ORDER_ID", fundingSour
 
 Call `PayPalWebCheckoutClient.start()` to process the payment. Implement `PayPalWebCheckoutDelegate` in your `ViewController` to listen for result notifications from the SDK:
 
-```javascript=
+```javascript
 extension MyViewController: PayPalWebCheckoutDelegate {
   func checkoutWithPayPal(payPalWebRequest: PayPalWebCheckoutRequest) {
     payPalWebCheckoutClient.delegate = self
@@ -623,7 +623,7 @@ Call the [`authorize`](/docs/api/orders/v2/#orders_authorize) endpoint of the Or
 
 #### Sample request: Authorize order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/authorize' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -634,7 +634,7 @@ Call the [`capture`](/docs/api/orders/v2/#orders_capture) endpoint of the Orders
 
 #### Sample request: Capture order
 
-```curl=
+```curl
 curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/orders/ORDER_ID/capture' \\
   -H 'Content-Type: application/json' \\
   -H 'Authorization: Bearer ACCESS_TOKEN' \\
@@ -668,7 +668,7 @@ Add the `PaymentButtons` package dependency for your app using **Swift Package M
 
 Include `PayPal/PaymentButtons` in your Podfile:
 
-```javascript=
+```javascript
 # Podfile
 pod 'PayPal/PaymentButtons'
 ```
@@ -700,7 +700,7 @@ Add buttons using either `UKit` or `SwiftUI` as follows:
 <Pills>
 <Pill label="UKit">
 
-```swift=
+```swift
 class MyViewController: UIViewController {
   lazy var payPalButton: PayPalButton = {
     let payPalButton = PayPalButton()
@@ -720,7 +720,7 @@ class MyViewController: UIViewController {
 </Pill>
 <Pill label="SwiftUI">
 
-```swiftui=
+```swiftui
 struct MyApp: View {
   @ViewBuilder
   var body: some View {
@@ -757,7 +757,7 @@ Add the `FraudProtection` package dependency for your app using **Swift Package 
 
 Include `PayPal/FraudProtection` in your Podfile:
 
-```javascript=
+```javascript
 # Podfile
 pod 'PayPal/FraudProtection'
 ```
@@ -771,7 +771,7 @@ In your iOS app:
 1. Use the `CLIENT_ID` to construct a `CoreConfig`.
 2. Construct a `PayPalDataCollector` using your `CoreConfig` object.
 
-```javascript=
+```javascript
 let coreConfig = CoreConfig(clientID: "CLIENT_ID", environment: .sandbox)
 let dataCollector = PayPalDataCollector(config: coreConfig)
 ```
@@ -780,7 +780,7 @@ let dataCollector = PayPalDataCollector(config: coreConfig)
 
 Collect the client metadata ID before starting a payment from a mobile device:
 
-```javascript=
+```javascript
 val clientMetadataId = dataCollector.collectDeviceData()
 ```
 

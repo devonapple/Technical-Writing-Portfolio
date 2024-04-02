@@ -127,7 +127,7 @@ Find the complete sample code in the <a href="https://github.com/paypal-examples
 
 #### server.js
 
-```javascript=
+```javascript
 import * as PayPal from "./paypal-api.js";
 
 /* Create Order route Handler */
@@ -148,7 +148,7 @@ app.post("/api/orders/:orderID/capture", async (req, res) => {
 
 #### paypal-api.js
 
-```javascript=
+```javascript
 // create an order
 export async function createOrder() {
   const purchaseAmount = "100.00";
@@ -200,7 +200,7 @@ You need to integrate with the Google Pay JavaScript SDK and PayPal JavaScript S
 
 Use this script to integrate with the PayPal JavaScript SDK:
 
-```javascript=
+```javascript
 <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD&buyer-country=US&merchant-id=SUB_MERCHANT_ID&components=googlepay"></script>
 ```
 
@@ -210,7 +210,7 @@ Include <code>googlepay</code> in the <code>components</code> list.
 
 Use this script to integrate with the Google Pay JavaScript SDK:
 
-```javascript=
+```javascript
 <script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
 ```
 
@@ -237,7 +237,7 @@ Check whether the Google Pay API supports a device, browser, and payment method:
   <li>Call the <code>isReadyToPay()</code> method to check compatibility and render the Google Pay Button.</li>
 </ul>
 
-```javascript=
+```javascript
 /**
  * Initialize Google PaymentsClient after Google-hosted JavaScript has loaded
  *
@@ -286,7 +286,7 @@ The response object of the PayPal JavaScript SDK API <code>paypal.Googlepay().co
   <li><code>merchantInfo</code></li>
 </ul>
 
-```javascript=
+```javascript
 /* Note: the \`googlePayConfig\` object in this request is the response from \`paypal.Googlepay().config()\` */
 async function getGooglePaymentDataRequest() {
   const googlePayConfig = await paypal.Googlepay().config();
@@ -316,7 +316,7 @@ For more details about how Google Pay handles <code>paymentDataRequest</code>, r
 
 Register a click event handler for the Google Pay purchase button. Call <code>loadPaymentData()</code> in the event handler when the user interacts with the purchase button and pass the <code>PaymentDataRequest</code> object.
 
-```javascript=
+```javascript
 /* Show Google Pay payment sheet when Google Pay payment button is clicked */
 async function onGooglePaymentButtonClicked() {
   const paymentDataRequest = await getGooglePaymentDataRequest();
@@ -345,7 +345,7 @@ For more details, see step 11 of <a target="_blank" href="https://developers.goo
 
 > **Tip:** You can see an <a target="_blank" href="https://developers.google.com/pay/api/web/guides/tutorial#authorize-payments_1">example of an Authorize Payments call</a> in the <strong>Put it all together</strong> section of Google's developer documentation.
 
-```javascript=
+```javascript
 async function processPayment(paymentData) {
   return new Promise(async function (resolve, reject) {
     try {
@@ -435,7 +435,7 @@ The following code samples show a Google Pay integration:
 
 ### HTML
 
-```html=
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -467,7 +467,7 @@ The following code samples show a Google Pay integration:
 
 ### JavaScript
 
-```javascript=
+```javascript
 /*
 * Define the version of the Google Pay API referenced when creating your
 * configuration
@@ -642,7 +642,7 @@ When the payer completes authentication, confirm that the <code>liability_shift<
   </li>
 </ul>
 
-```javascript=
+```javascript
 ...
 const { status } = await paypal.Googlepay().confirmOrder({
   orderId: id,
