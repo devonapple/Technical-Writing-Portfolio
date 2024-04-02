@@ -4,18 +4,18 @@ Accept PayPal, credit, and debit card payments in a web or native experience usi
 
 ## Know before you code
 
-You need a [developer account](/tools/sandbox/accounts/) to get sandbox credentials:
+You need a [developer account](https://developer.paypal.com/tools/sandbox/accounts/) to get sandbox credentials:
 
-* PayPal uses REST API credentials which you can get from the [developer dashboard](/dashboard/).
+* PayPal uses REST API credentials which you can get from the [developer dashboard](https://developer.paypal.com/dashboard/).
 * Client ID: Authenticates your account with PayPal and identifies an app in your sandbox.
 * Client secret: Authorizes an app in your sandbox. Keep this secret safe and don’t share it.
 
-Read [Get started with PayPal APIs](/api/rest/) for more information.
+Read [Get started with PayPal APIs](https://developer.paypal.com/api/rest/) for more information.
 
 You need a combination of PayPal and third-party tools:
 
 * [Android SDK](https://github.com/paypal/paypal-android): Adds PayPal-supported payment methods for Android.
-* [Orders REST API](/docs/api/orders/v2/): Create, update, retrieve, authorize, and capture orders.
+* [Orders REST API](https://developer.paypal.com/docs/api/orders/v2/): Create, update, retrieve, authorize, and capture orders.
 
 ## 1. Before you begin your integration
 
@@ -25,7 +25,7 @@ This integration requires a sandbox business account with the Advanced Credit an
 
 To confirm that Advanced Credit and Debit Card Payments are enabled for you, check your sandbox business account as follows:
 
-1. Log into the [**PayPal Developer Dashboard**](/dashboard/), toggle **Sandbox**, and go to **Apps & Credentials**.
+1. Log into the [**PayPal Developer Dashboard**](https://developer.paypal.com/dashboard/), toggle **Sandbox**, and go to **Apps & Credentials**.
 2. In **REST API apps**, select the name of your app.
 3. Go to **Features** > **Accept payments**.
 4. Select the **Advanced Credit and Debit Card Payments** checkbox and select **Save Changes**.
@@ -36,7 +36,7 @@ To confirm that Advanced Credit and Debit Card Payments are enabled for you, che
 
 Add 3D Secure to reduce the chance of fraud and improve the payment experience by authenticating a cardholder through their card issuer.
 
-Visit our [3D Secure](/docs/checkout/advanced/customize/3d-secure/) page to see if 3D Secure is required in your region and learn more about implementing 3DS in your app.
+Visit our [3D Secure](https://developer.paypal.com/docs/checkout/advanced/customize/3d-secure/) page to see if 3D Secure is required in your region and learn more about implementing 3DS in your app.
 
 ## 2. Integrate the SDK into your app
 
@@ -47,7 +47,7 @@ allprojects {
   repositories {
     mavenCentral()
   }
-}    
+}
 ```
 
 ### Snapshot builds
@@ -66,7 +66,7 @@ allprojects {
       url 'https://oss.sonatype.org/content/repositories/snapshots/'
     }
   }
-}  
+}
 ```
 <br />
 
@@ -120,7 +120,7 @@ val cardClient = CardClient(config)
 On your server:
 
 1. Create an `ORDER_ID` by using the <a href="/docs/api/orders/v2">Orders v2 API</a>.
-2. Pass your `ACCESS_TOKEN` in the `Authorization` header. To get an `ACCESS_TOKEN`, use the [Authentication API](/api/rest/authentication/).
+2. Pass your `ACCESS_TOKEN` in the `Authorization` header. To get an `ACCESS_TOKEN`, use the [Authentication API](https://developer.paypal.com/api/rest/authentication/).
    > **Note:** This access token is only for the sandbox environment. When you're ready to go live, request a live access token by changing the request sandbox endpoint to https://api-m.paypal.com/v1/oauth2/token.
 3. Pass the `intent`. You'll need to pass either `AUTHORIZE` or `CAPTURE` as the `intent` type. This type must match the `/authorize` or `/capture` endpoint you use to process your order.
 
@@ -196,7 +196,7 @@ val cardRequest  = CardRequest(
 )
 ```
 
-[3D Secure](/api/nvp-soap/payflow/3d-secure-overview/) is supported for all card payments to comply with the [Second Payment Services Directive (PSD2)](https://www.paypal.com/uk/webapps/mpp/PSD2?_ga=1.18434873.1625369690.1652045188). PSD2 is a European Union regulation that introduces [Strong Customer Authentication (SCA)](https://www.ukfinance.org.uk/our-expertise/payments-and-innovation/strong-customer-authentication) and other security requirements.
+[3D Secure](https://developer.paypal.com/api/nvp-soap/payflow/3d-secure-overview/) is supported for all card payments to comply with the [Second Payment Services Directive (PSD2)](https://www.paypal.com/uk/webapps/mpp/PSD2?_ga=1.18434873.1625369690.1652045188). PSD2 is a European Union regulation that introduces [Strong Customer Authentication (SCA)](https://www.ukfinance.org.uk/our-expertise/payments-and-innovation/strong-customer-authentication) and other security requirements.
 
 Select your SCA launch option type using the `sca` parameter in the `CardRequest` initializer:
 * `SCA.SCA_WHEN_REQUIRED` launches an SCA challenge when applicable. This is enabled by default.
@@ -302,7 +302,7 @@ class MyCardPaymentActivity: FragmentActivity, ApproveOrderListener {
 
 Submit your `ORDER_ID` for authorization or capture when the PayPal Android SDK calls the `onApproveOrderSuccess` method.
 
-Call the [`authorize`](/docs/api/orders/v2/#orders_authorize) endpoint of the Orders V2 API to place the money on hold:
+Call the [`authorize`](https://developer.paypal.com/docs/api/orders/v2/#orders_authorize) endpoint of the Orders V2 API to place the money on hold:
 
 #### Sample request: Authorize order
 
@@ -314,7 +314,7 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 ```
 <br />
 
-Call the [`capture`](/docs/api/orders/v2/#orders_capture) endpoint of the Orders V2 API to capture the money immediately:
+Call the [`capture`](https://developer.paypal.com/docs/api/orders/v2/#orders_capture) endpoint of the Orders V2 API to capture the money immediately:
 
 #### Sample request: Capture order
 
@@ -327,16 +327,16 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 
 ### 8. Test integration
 
-Before going live, test your integration in the [sandbox environment](/tools/sandbox/).
+Before going live, test your integration in the [sandbox environment](https://developer.paypal.com/tools/sandbox/).
 
-Learn more about the following resources on the [Card Testing](/tools/sandbox/card-testing/) page:
+Learn more about the following resources on the [Card Testing](https://developer.paypal.com/tools/sandbox/card-testing/) page:
 
 * Use [test card numbers](tools/sandbox/card-testing/#link-testcardnumbers) to simulate successful payments for advanced checkout integrations.
-* Use [rejection triggers](/tools/sandbox/card-testing/#link-rejectiontriggers) to simulate card error scenarios.
-* Test [3D Secure authentication](/tools/sandbox/card-testing/#link-simulate3dsecurecardpayments) scenarios.
-* Test your integration by following [these recommended use cases](/tools/sandbox/card-testing/#link-testintegration). See the [Orders v2 API](/docs/api/orders/v2/) for details about billing address fields and other parameters. For example, use the [2-character country code](/api/rest/reference/country-codes/) to test the billing address.
+* Use [rejection triggers](https://developer.paypal.com/tools/sandbox/card-testing/#link-rejectiontriggers) to simulate card error scenarios.
+* Test [3D Secure authentication](https://developer.paypal.com/tools/sandbox/card-testing/#link-simulate3dsecurecardpayments) scenarios.
+* Test your integration by following [these recommended use cases](https://developer.paypal.com/tools/sandbox/card-testing/#link-testintegration). See the [Orders v2 API](https://developer.paypal.com/docs/api/orders/v2/) for details about billing address fields and other parameters. For example, use the [2-character country code](https://developer.paypal.com/api/rest/reference/country-codes/) to test the billing address.
 
-> **Note:** Use the [credit card generator](/tools/sandbox/card-testing/#link-creditcardgenerator) to generate additional test credit cards for sandbox testing.
+> **Note:** Use the [credit card generator](https://developer.paypal.com/tools/sandbox/card-testing/#link-creditcardgenerator) to generate additional test credit cards for sandbox testing.
 
 When prompted for required data for the sandbox business request, such as a phone number, enter any number that fits the required format. Because this is a sandbox request, the data doesn't have to be factual.
 
@@ -385,13 +385,13 @@ allprojects {
 
 ### 2. Enable Native Checkout SDK
 
-You'll need to set up authorization to use the Native Checkout SDK. To create a client ID and secret, follow the steps in [Get Started](/api/rest/#link-getstarted). You need these values to generate an `ACCESS_TOKEN`.
+You'll need to set up authorization to use the Native Checkout SDK. To create a client ID and secret, follow the steps in [Get Started](https://developer.paypal.com/api/rest/#link-getstarted). You need these values to generate an `ACCESS_TOKEN`.
 
 #### Sandbox business account
 
 Set up your sandbox business account to use native checkout as follows:
 
-1. Log into the [**PayPal Developer Dashboard**](/dashboard/), toggle **Sandbox**, and go to **Apps & Credentials**.
+1. Log into the [**PayPal Developer Dashboard**](https://developer.paypal.com/dashboard/), toggle **Sandbox**, and go to **Apps & Credentials**.
 2. In **REST API apps**, select the name of your app.
 3. Go to **Features** > **Accept payments** and select ***Native Checkout SDK**.
 4. Select **Save Changes**.
@@ -410,7 +410,7 @@ A return URL redirects users to the app after authenticating. Use the following 
 
 > **Note:** If you change the return URL in the Developer Dashboard, PayPal must review your app again. The review period automatically begins any time the return URL changes.
 
-3. Select the **Full Name** and **Email** checkboxes found within the **Advanced Settings**. These are scopes of the [Identity API](/api/identity/v1/).
+3. Select the **Full Name** and **Email** checkboxes found within the **Advanced Settings**. These are scopes of the [Identity API](https://developer.paypal.com/api/identity/v1/).
 
 ### 3. Create PayPalNativeCheckoutClient
 
@@ -464,7 +464,7 @@ payPalNativeClient.listener = object : PayPalNativeCheckoutListener {
 
 When a payer chooses to use shipping details from their PayPal profile, use `PayPalNativeShippingListener` to listen for changes to their shipping address or shipping method.
 
-You can only implement `PayPalNativeShippingListener` if the [`shipping_preference`](/docs/api/orders/v2/#definition-experience_context_base) in the order ID is set to `GET_FROM_FILE.`
+You can only implement `PayPalNativeShippingListener` if the [`shipping_preference`](https://developer.paypal.com/docs/api/orders/v2/#definition-experience_context_base) in the order ID is set to `GET_FROM_FILE.`
 
 > **Note:** Skip this step if you created your order ID with the `shipping_preference` set to `NO_SHIPPING` or `SET_PROVIDED_ADDRESS`.
 
@@ -505,7 +505,7 @@ payPalNativeClient.shippingListener = object : PayPalNativeShippingListener {
 
 #### 5. Modify shipping details
 
-When the shipping method changes, update the order details on your server by sending a `PATCH` request to the [Update order](/docs/api/orders/v2/#orders_patch) endpoint of the Orders API.
+When the shipping method changes, update the order details on your server by sending a `PATCH` request to the [Update order](https://developer.paypal.com/docs/api/orders/v2/#orders_patch) endpoint of the Orders API.
 
 Approve or reject changes to the shipping information to see changes appear in the paysheet UI by calling either `PayPalNativePaysheetActions.approve()` or `PayPalNativePaysheetActions.reject()`.
 
@@ -523,7 +523,7 @@ For more information, visit the <a href="/docs/api/orders/v2/#orders_patch">Upda
 On your server:
 
 1. Create an `ORDER_ID` by using the <a href="/docs/api/orders/v2">Orders v2 API</a>.
-2. Pass your `ACCESS_TOKEN` in the `Authorization` header. To get an `ACCESS_TOKEN`, use the [Authentication API](/api/rest/authentication/).
+2. Pass your `ACCESS_TOKEN` in the `Authorization` header. To get an `ACCESS_TOKEN`, use the [Authentication API](https://developer.paypal.com/api/rest/authentication/).
    > **Note:** This access token is only for the sandbox environment. When you're ready to go live, request a live access token by changing the request sandbox endpoint to https://api-m.paypal.com/v1/oauth2/token.
 3. Pass the `intent`. You'll need to pass either `AUTHORIZE` or `CAPTURE` as the `intent` type. This type must match the `/authorize` or `/capture` endpoint you use to process your order.
 
@@ -571,7 +571,7 @@ paypalNativeClient.startCheckout(request)
 
 Submit your `ORDER_ID` for authorization or capture when the PayPal Android SDK calls the `onPayPalSuccess` method.
 
-Call the [`authorize`](/docs/api/orders/v2/#orders_authorize) endpoint of the Orders V2 API to place the money on hold:
+Call the [`authorize`](https://developer.paypal.com/docs/api/orders/v2/#orders_authorize) endpoint of the Orders V2 API to place the money on hold:
 
 #### Sample request: Authorize order
 
@@ -583,7 +583,7 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 ```
 <br />
 
-Call the [`capture`](/docs/api/orders/v2/#orders_capture) endpoint of the Orders V2 API to capture the money immediately:
+Call the [`capture`](https://developer.paypal.com/docs/api/orders/v2/#orders_capture) endpoint of the Orders V2 API to capture the money immediately:
 
 #### Sample request: Capture order
 
@@ -702,7 +702,7 @@ payPalWebCheckoutClient.listener = object : PayPalWebCheckoutListener {
 On your server:
 
 1. Create an `ORDER_ID` by using the <a href="/docs/api/orders/v2">Orders v2 API</a>.
-2. Pass your `ACCESS_TOKEN` in the `Authorization` header. To get an `ACCESS_TOKEN`, use the [Authentication API](/api/rest/authentication/).
+2. Pass your `ACCESS_TOKEN` in the `Authorization` header. To get an `ACCESS_TOKEN`, use the [Authentication API](https://developer.paypal.com/api/rest/authentication/).
    > **Note:** This access token is only for the sandbox environment. When you're ready to go live, request a live access token by changing the request sandbox endpoint to https://api-m.paypal.com/v1/oauth2/token.
 3. Pass the `intent`. You'll need to pass either `AUTHORIZE` or `CAPTURE` as the `intent` type. This type must match the `/authorize` or `/capture` endpoint you use to process your order.
 
@@ -761,7 +761,7 @@ class MyCardPaymentActivity: FragmentActivity {
 
 Submit your `ORDER_ID` for authorization or capture when the PayPal Android SDK calls the `onPayPalWebSuccess` method on `PayPalWebCheckoutListener`.
 
-Call the [`authorize`](/docs/api/orders/v2/#orders_authorize) endpoint of the Orders V2 API to place the money on hold:
+Call the [`authorize`](https://developer.paypal.com/docs/api/orders/v2/#orders_authorize) endpoint of the Orders V2 API to place the money on hold:
 
 #### Sample request: Authorize order
 
@@ -773,7 +773,7 @@ curl --location --request POST 'https://api-m.sandbox.paypal.com/v2/checkout/ord
 ```
 <br />
 
-Call the [`capture`](/docs/api/orders/v2/#orders_capture) endpoint of the Orders V2 API to capture the money immediately:
+Call the [`capture`](https://developer.paypal.com/docs/api/orders/v2/#orders_capture) endpoint of the Orders V2 API to capture the money immediately:
 
 #### Sample request: Capture order
 
@@ -845,7 +845,7 @@ payPalButton.setOnClickListener {
 
 ### Protect from fraud
 
-The `FraudProtection` module helps you collect data about a customer's device and match it with a session identifier on your server. For more information, see [Fraud protection](/docs/checkout/advanced/customize/fraud-protection/).
+The `FraudProtection` module helps you collect data about a customer's device and match it with a session identifier on your server. For more information, see [Fraud protection](https://developer.paypal.com/docs/checkout/advanced/customize/fraud-protection/).
 
 > **Note:** If you integrated 3D Secure before June 2020, the `liabilityShifted`, `authenticationStatus`, and `AuthenticationReason` parameters are no longer supported, but continue to work on the server.
 
@@ -882,11 +882,11 @@ Pass the result to your server, and include the client metadata ID in the paymen
 
 ## Go live
 
-If you have fulfilled the requirements for accepting Advanced Credit and Debit Card Payments for your [business account](https://www.paypal.com/myaccount/bundle/business/upgrade), review the **[Move your app to production](/api/rest/production/)** page to learn how to test and go live.
+If you have fulfilled the requirements for accepting Advanced Credit and Debit Card Payments for your [business account](https://www.paypal.com/myaccount/bundle/business/upgrade), review the **[Move your app to production](https://developer.paypal.com/api/rest/production/)** page to learn how to test and go live.
 
 If this is your first time testing in a live environment, follow these steps:
 
-1. Log into the [PayPal Developer Dashboard](/dashboard/) with your PayPal business account.
+1. Log into the [PayPal Developer Dashboard](https://developer.paypal.com/dashboard/) with your PayPal business account.
 2. Complete [production onboarding](https://www.paypal.com/bizsignup/entry?_ga=1.171321763.248280996.1670866755) so you can process card payments with your live PayPal business account.
 3. Request [Advanced Credit and Debit Card Payments](https://www.paypal.com/signin/client?flow=provisionUser&country.x=US&locale.x=en_US&_ga=1.95899167.248280996.1670866755) for your business account.
 

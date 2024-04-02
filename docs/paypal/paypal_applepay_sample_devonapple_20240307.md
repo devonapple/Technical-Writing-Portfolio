@@ -1,11 +1,11 @@
 # Integrate Apple Pay with JavaScript SDK for direct merchants
 
 ## Apple Pay integration
-        
+
 Apple Pay is a mobile payment and digital wallet service provided by Apple Inc.
 
 Buyers can use Apple Pay to make payments on the web using the Safari web browser or an iOS device.
-        
+
 Sellers can use Apple Pay to sell:
 
 <ul>
@@ -28,15 +28,13 @@ Apple Pay supports payments in 32 countries and 22 currencies:
 > **Tip:** If you want to integrate additional methods of accepting payment beyond Apple Pay, visit our <a href="https://developer.paypal.com/docs/checkout/advanced/integrate/">Advanced Checkout guide</a> for additional integration choices.
 
 ## How it works
-        
-
 
 <table>
 <tr><td>
 The Apple Pay button shows up on your website when a customer uses the Safari web browser on an eligible device.
 
 When your buyer selects the Apple Pay button:
-        
+
 <ol>
   <li>
     Your website shows the buyer a payment sheet.
@@ -48,7 +46,7 @@ When your buyer selects the Apple Pay button:
     The buyer authorizes the purchase on the payment sheet.
   </li>
 </ol>
-        
+
 The payment sheet helps streamline the checkout process by showing the customer the information needed to make the payment.
 
 Payment sheets can show the user's name, address, shipping information, and email address. You can customize this payment sheet to include the user details and payment information you need for your Apple Pay integration.
@@ -59,7 +57,7 @@ Payment sheets can show the user's name, address, shipping information, and emai
 </table>
 
 ## Integration video
-        
+
 Watch our video tutorial for this integration:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E3gUASHQMrU?si=Dq7NksDjXR08xNtL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -82,8 +80,8 @@ Apple Pay works on Safari browsers and the following versions of iOS devices:
 </a>
 
 <br />
-Currently supports Apple Pay one-time payments with the buyer present.  
-    
+Currently supports Apple Pay one-time payments with the buyer present.
+
 <ul>
   <li>
     <a href="https://www.apple.com/legal/applepayments/" target="_blank">
@@ -100,7 +98,7 @@ See Apple's developer terms for more information.
 ## 1. Set up your sandbox account to accept Apple Pay
 
 Before you can accept Apple Pay on your website, verify that your sandbox business account supports Apple Pay. Use the PayPal Developer Dashboard to set up your sandbox account to accept Apple Pay.
-        
+
 <ol>
   <li>Log into the <a target="_blank" href="https://developer.paypal.com/dashboard/applications/sandbox">PayPal Developer Dashboard</a> and go to your sandbox account.</li>
   <li>Go to <strong>Apps & Credentials</strong>.</li>
@@ -108,16 +106,16 @@ Before you can accept Apple Pay on your website, verify that your sandbox busine
   <li>Select or create an app.</li>
   <li>Scroll down to <strong>Features</strong> and check if Apple Pay is enabled. If Apple Pay isn't enabled, select the <strong> Apple Pay</strong> checkbox and select the <strong>Save</strong> link to enable Apple Pay.</li>
 </ol>
-        
+
 If you created a sandbox business account through <a target="_blank" href="https://sandbox.paypal.com/">sandbox.paypal.com</a>, and the Apple Pay status for the account shows as disabled, <a target="_blank" href="https://www.sandbox.paypal.com/bizsignup/add-product?product=payment_methods&capabilities=APPLE_PAY&_ga=1.255056589.491931369.1702610895">complete the sandbox onboarding steps</a> to enable Apple Pay.
-        
+
 > **Tip:** When your integration is ready to go live, read the <span className="boldArchText">Go live</span> section for details about the additional steps needed for Apple Pay onboarding.
 
 ## 2. Getting started in your testing environment
-    
+
 Before you develop your Apple Pay on the Web integration, you need to
 complete <a href="https://developer.paypal.com/api/rest/" target="_blank">Get started</a> to set up your PayPal account, client ID, and sandbox emails for testing.
-    
+
 <ol>
   <li>
     <strong>Download and host</strong> the domain association file for your sandbox
@@ -166,13 +164,13 @@ complete <a href="https://developer.paypal.com/api/rest/" target="_blank">Get st
 </ol>
 
 ## Create Apple Pay sandbox account
-    
+
 Create an Apple Pay sandbox account on the Apple Developer website to get
 a test wallet and test cards to test your Apple Pay integration.
 
 If you already have an Apple sandbox account, you can use that account and
 move on to the next step.
-    
+
 <ol>
   <li>
     Create an <a href="https://developer.apple.com/" target="_blank">Apple developer account</a>.
@@ -278,7 +276,7 @@ Use this script to integrate with the PayPal JavaScript SDK:
 ```
 
 Include <code>applepay</code> in the <code>components</code> list.
-    
+
 ### Integrate Apple JavaScript SDK
 
 Use this script to integrate with the Apple JavaScript SDK:
@@ -286,10 +284,10 @@ Use this script to integrate with the Apple JavaScript SDK:
 ```html
 <script src="https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js"></script>
 ```
-    
+
 PayPal's Apple Pay component interacts with your JavaScript code in 4
 areas:
-    
+
 <ol>
   <li>
     Checking merchant eligibility for Apple Pay: <code>paypal.Applepay().config()</code>.
@@ -302,7 +300,7 @@ areas:
     Handling the <code>onpaymentauthorized</code> callback: <code>paypal.Applepay().confirmOrder()</code>.
   </li>
 </ol>
-    
+
 Before you show the Apple Pay button, make sure that you can create an
 Apple Pay instance and that the device can make an Apple Pay payment.
 
@@ -315,7 +313,7 @@ Check for device and merchant eligibility before setting up the Apple Pay
 button.
 
 To check eligibility, use the PayPal JavaScript SDK API <code>paypal.Applepay().config()</code>.
-    
+
 ```html=
 <div id="applepay-container"></div>
 ```
@@ -360,7 +358,7 @@ the payment amount, and shipping information.
 The response object of the PayPal JavaScript SDK API{" "}
 <code>paypal.Applepay().config()</code> provides the following parameters
 in the <code>ApplePayPaymentRequest</code> object:
-    
+
 <ul>
   <li><code>countryCode</code></li>
   <li><code>merchantCapabilities</code></li>
@@ -383,7 +381,7 @@ const paymentRequest = {
 };
 const session = new ApplePaySession(4, paymentRequest);
 ```
-    
+
 Include the new <code>ApplePaySession</code> inside a gesture handler,
 such as an <code>onclick</code> event or an <code>addEventListener</code>{" "}
 click handler.
@@ -403,7 +401,7 @@ exception if any of the following occurs:
 
 Use <code>paypal.Applepay().validateMerchant()</code> in the <code>onvalidatemerchant</code> callback to create a validated Apple Pay
 session object:
-  
+
 ```javascript=
       children={`session.onvalidatemerchant = (event) => {
   applepay.validateMerchant({
@@ -421,14 +419,14 @@ session object:
 ```
 
 ### onpaymentauthorized callback
-  
+
 Safari calls the <code>onpaymentauthorized</code> callback with an 
 <code>event</code> object. The <code>event</code> object passes a 
 <code>token</code> which you need to send to PayPal to confirm the order.
 
 
 Capture the order using the <a href="https://developer.paypal.com/api/orders/v2" target="_blank">PayPal Orders V2 API</a>. Use <code>paypal.Applepay().confirmOrder()</code> to send the <code>orderID</code>, the Apple Pay token, billing contact details, and confirm the order.
-  
+
 ```javascript=
 session.onpaymentauthorized = (event) => {
     console.log('Your billing address is:', event.payment.billingContact);
@@ -470,21 +468,21 @@ session.onpaymentauthorized = (event) => {
 ## 6. Show the payment sheet
 
 After you have created the Apple Pay session and added the callbacks, call the <code>session.begin</code> method to show the payment sheet. You can only call the <code>begin</code> method when a buyer explicitly requests a payment, such as inside an <code>onclick</code> event. The <code>begin</code> method throws a JavaScript exception if the buyer does not explicitly request the action:
-    
+
 
 ```javascript
 session.begin();
 ```
-    
+
 After the buyer starts a payment in the browser, they use their Apple
 device to authorize the payment.
-    
+
 ### Customize payment
-    
+
 Customize the payment experience using the <a href="https://developer.apple.com/documentation/apple_pay_on_the_web" target="_blank">Apple Pay JavaScript SDK</a>.
 
 Per Apple's development guidelines, your Apple Pay integration needs to follow these rules:
-    
+
 <ol>
   <li>
     The last step of an Apple Pay transaction should be when the buyer uses the payment sheet to confirm the payment.
@@ -509,11 +507,11 @@ The commonly used customizations for Apple Pay are:
 | The shipping method for a payment request. | <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepayshippingmethod"><code>ApplePayShippingMethod</code></a><br />Call the <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaysession/1778028-onshippingmethodselected"><code>onshippingmethodselected</code></a> event handler when the user selects a shipping method in the payment sheet. |
 
 ## 7. Test your integration
-    
+
 Test your Apple Pay integration in the PayPal sandbox and production environments to ensure that your app works correctly.
 
 Use your personal sandbox login information during checkout to complete a payment using Apple Pay. Then, log into the sandbox site <a href="https://sandbox.paypal.com" target="_blank">sandbox.paypal.com</a> to see that the money has moved into your account.
-    
+
 <ol>
   <li>
     Open your test page with the Safari web browser on an iOS device or computer.
@@ -543,13 +541,13 @@ Make Apple Pay available to buyers using your website or app.
 ### Live environment
 
 If you're a new merchant, sign up for a <a href="https://www.paypal.com/us/business" target="_blank">PayPal business account</a>.
-   
+
 Use your personal production login information during checkout to complete an Apple Pay transaction. Then log into <strong>paypal.com</strong> to see the money move out of your account.
 
 ### Getting started in your live environment
 
 Verify any domain names in your live environment that will show an Apple Pay button. Apple Pay transactions only work on a domain and site registered to you.
-    
+
 <ul>
   <li>
     <a href="#download-host">
@@ -567,7 +565,7 @@ Verify any domain names in your live environment that will show an Apple Pay but
 #### Prerequisites
 
 Enable Apple Pay for your live account:
-    
+
 <ol>
   <li>
     Log into the PayPal Developer Dashboard with your live PayPal account.
@@ -587,7 +585,7 @@ Enable Apple Pay for your live account:
 </ol>
 
 Create an app:
-    
+
 <ol>
   <li>
     Log into the PayPal Developer Dashboard with your live PayPal account.
@@ -634,8 +632,8 @@ Host a domain association file for each high-level domain and subdomain that sho
 <a name="register-your-live-domain"></a>
 
 #### Register your live domain on PayPal
-    
-    
+
+
 Add all high-level domains that show the Apple Pay button.
 
 <ol>
@@ -713,7 +711,7 @@ How to test Apple Pay payments in a live environment:
 </ol>
 
 ### Troubleshoot your integration
-  
+
 Make sure that there are no browser console warnings or errors. The
 JavaScript SDK configuration attributes have distinct validation checks
 for input formatting and values.
@@ -724,7 +722,7 @@ address the issue. The library generally attempts to revert to the safe
 default values if missing or incorrect inputs exist.
 
 ## Next steps & customizations
-            
+
 Get started testing, add security to your checkout experience or
 create customizations for your audience.
 
