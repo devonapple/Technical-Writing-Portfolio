@@ -11,7 +11,7 @@
 * Process payments using third-party network token processing: [document](/docs/paypal/paypal_3pnt_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/3rd-party-token-processing/)
 
 ### Hyperwallet
-* Supplemental Data, REST API: [document](/docs/hyperwallet/hw_errorcodes_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/api/v4/resources/supplemental-data)
+* Supplemental Data, REST API: [document](/docs/hyperwallet/hw_supplementaldata_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/api/v4/resources/supplemental-data)
 * Payload Encryption: [document](/docs/hyperwallet/hw_payloadencryption_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/api/v4/overview/payload-encryption)
 * Error Codes: [document](/docs/hyperwallet/hw_errorcodes_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/api/v4/overview/errors#error-list)
 * OneBatch Guide: [document](/docs/hyperwallet/hw_onebatchguide_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/control-panel/v1/onebatch-guide)
