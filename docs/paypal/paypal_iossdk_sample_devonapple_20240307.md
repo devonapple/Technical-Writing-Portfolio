@@ -270,12 +270,13 @@ Use `PayPalNativePayments` to add a PayPal paysheet to your app. The paysheet is
 
 #### Native checkout for a first-time customer
 
-![img](https://www.paypalobjects.com/devdoc/iOS_SDK_native-checkout-first-time-flow_01.png)
-![img](https://www.paypalobjects.com/devdoc/iOS_SDK_native-checkout-first-time-flow_02.png)
+<img src="https://www.paypalobjects.com/devdoc/iOS_SDK_native-checkout-first-time-flow_01.png" alt="Mobile phone screenshots of a native checkout flow for a first-time customer, with screens that show selecting PayPal as a payment method, the login flow prompts, entering an email, the one-time passcode flow, and the one-time passcode received." style="background-color:white;padding:15px;" />
+
+<img src="https://www.paypalobjects.com/devdoc/iOS_SDK_native-checkout-first-time-flow_02.png" alt="Mobile phone screenshots of a native checkout flow for a first-time customer, with screens that show the one-time payment code entry, logging the buyer into their wallet, the in-content paysheet with a carousel of payment options, and returning the buyer to the merchant's confirmation page." style="background-color:white;padding:15px;" />
 
 #### Native checkout for a returning customer
 
-![img](https://www.paypalobjects.com/devdoc/iOS_SDK_native-checkout-repeat-time-flow.png)
+<img src="https://www.paypalobjects.com/devdoc/iOS_SDK_native-checkout-repeat-time-flow.png" alt="Mobile phone screenshots of a native checkout flow for a returning customer, with screens that show selecting PayPal as a payment method, the seamless logins through LLS, the in-content paysheet with a carousel of payment options, and returning the customer to the merchant's confirmation page." style="background-color:white;padding:15px;" />
 
 Follow these steps to add `PayPalNativePayments`:
 
