@@ -73,12 +73,6 @@ Apple Pay supports payments in 32 countries and 22 currencies:
   </tr>
 </table>
 
-## Integration video
-
-Watch our video tutorial for this integration:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E3gUASHQMrU?si=Dq7NksDjXR08xNtL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ## Know before you code
 
 Apple Pay works on Safari browsers and the following versions of iOS devices:

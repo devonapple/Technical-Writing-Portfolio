@@ -8,11 +8,6 @@ Once you integrate advanced Checkout, you can also offer options like Pay Later,
 
 This integration guide follows the code in this <a target="_blank" href="https://github.com/paypal-examples/docs-examples/tree/main/advanced-integration/v1/">GitHub sample</a>.
 
-## Integration video
-
-Watch our video tutorial for this integration:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E3gUASHQMrU?si=Dq7NksDjXR08xNtL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Know before you code
 

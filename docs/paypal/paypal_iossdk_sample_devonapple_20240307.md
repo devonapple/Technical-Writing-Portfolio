@@ -691,12 +691,12 @@ The `PaymentButtons` module provides 3 buttons that you can use in your applicat
 
 These buttons include customization options such as color, shape, size, and labels. Here's how to style the button corner radius:
 
-| Value  | Description | Button |
-|--------|-------------|--------|
-| `rectangle` | Button shape with sharp corners. | |
-| `rounded` | **Recommended**Button shape with rounded corner radius. The default button shape. | <iframe src="https://www.paypal.com/webapps/hermes/button?version=4&env=production&style.color=gold&style.shape=rect&style.size=medium&sessionID=46171950e0&locale.x=en_US&logLevel=warn&uid=f6713002fd&xcomponent=1&style.label=paypal" width="250" height="70" frameBorder="0"></iframe> |
-| `pill` | Button in pill shape. | <iframe src="https://www.paypal.com/webapps/hermes/button?version=4&env=production&style.color=gold&style.shape=pill&style.size=medium&sessionID=46171950e0&locale.x=en_US&logLevel=warn&uid=f6713002fd&xcomponent=1&style.label=paypal" width="250" height="70" frameBorder="0"></iframe> |
-| `custom(CGFloat)` | Customize the button's corner radius. The minimum value is 10 px and is applied to all 4 corners. | |
+| Value  | Description |
+|--------|-------------|
+| `rectangle` | Button shape with sharp corners. |
+| `rounded` | **Recommended**<br />Button shape with rounded corner radius. The default button shape. |
+| `pill` | Button in pill shape. |
+| `customCornerRadius` | Customize the button's corner radius. The minimum value is 10 px and is applied to all 4 corners. |
 
 Add buttons using either `UKit` or `SwiftUI` as follows:
 
