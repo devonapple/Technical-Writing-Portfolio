@@ -1,10 +1,5 @@
 # OneBatch Guide
 
-<blockquote style="width:20%;border-radius:30px;background-color:#e9faeb;border-left:0;padding:20px;margin:0 auto 40px;text-align:center;float:right;">
-<p style="color:#3abf36!important;font-weight:400!important;font-size:16px!important;"><a href="https://docs.hyperwallet.com/assets/docs/pay-portal-admin/onebatch/OneBatchGuide.pdf" target="_blank">Download</a></p>
-</blockquote>
-<br /><br /><br />
-
 Integrate OneBatch to set up mapped payments to new or existing payee accounts by uploading a request file. You can use a single request file for all of the following operations:
 
 * Register or update a payee's account.
@@ -61,11 +56,11 @@ These columns identify the payee and their parent program. Be sure to specify th
 
 | Column Heading | Description |
 | ---: | :--- |
-| **progId.clientProgramId**</br>string | The unique, client-assigned program identifier. You need to provide a `progId.clientProgramId` or `progId.programId` value. Max 75 characters. |
-| **progId.programId**</br>number | The unique, Hyperwallet-assigned program number. You need to provide a `progId.clientProgramId` or `progId.programId value`. Maximum 20 digits. |
-| **custId.clientCustomerId**</br>string | The unique, client-assigned identifier for the payee account. This ID can be any unique string. You need to provide a `custId.clientCustomerId`, `custId.walletNumber`, or `custId.inventoryControlNumber` value. Supports letters, numbers, and `+ , - . / _ ~`. Max 75 characters. |
-| **custId.walletNumber**</br>number | The unique, Hyperwallet-assigned payee account number. You need to provide a `custId.clientCustomerId`, `custId.walletNumber`, or `custId.inventoryControlNumbervalue`. Maximum 28 digits. |
-| **custId.inventoryControlNumber**</br>string | The unique, Hyperwallet-assigned inventory control number. You only need this information for instant issue card programs. You need to provide a `custId.clientCustomerId`, `custId.walletNumber`, or `custId.inventoryControlNumber` value. Max 45 characters. |
+| **`progId.clientProgramId`**</br>string | The unique, client-assigned program identifier. You need to provide a `progId.clientProgramId` or `progId.programId` value. Max 75 characters. |
+| **`progId.programId`**</br>number | The unique, Hyperwallet-assigned program number. You need to provide a `progId.clientProgramId` or `progId.programId value`. Maximum 20 digits. |
+| **`custId.clientCustomerId`**</br>string | The unique, client-assigned identifier for the payee account. This ID can be any unique string. You need to provide a `custId.clientCustomerId`, `custId.walletNumber`, or `custId.inventoryControlNumber` value. Supports letters, numbers, and `+ , - . / _ ~`. Max 75 characters. |
+| **`custId.walletNumber`**</br>number | The unique, Hyperwallet-assigned payee account number. You need to provide a `custId.clientCustomerId`, `custId.walletNumber`, or `custId.inventoryControlNumbervalue`. Maximum 28 digits. |
+| **`custId.inventoryControlNumber`**</br>string | The unique, Hyperwallet-assigned inventory control number. You only need this information for instant issue card programs. You need to provide a `custId.clientCustomerId`, `custId.walletNumber`, or `custId.inventoryControlNumber` value. Max 45 characters. |
 
 ### Profile columns
 
@@ -75,41 +70,41 @@ These columns describe a payee's profile, including identification and address i
 
 | Column Heading | Description |
 | ---: | :--- |
-| **profile.entityType**</br>string | Identifies whether the payee is an individual or a business entity. Required if you want to create a user account. This parameter supports the following values:<ul><li>`INDIVIDUAL` : an individual external accountholder; default value.</li><li>`COMPANY`: a business.</li></ul> |
-| **profile.accountType**</br>string | Identifies the type of business entity. Required if `profile.entityType = COMPANY`. This parameter supports the following values:<ul><li>`Individual`: an individual.</li><li>`Corporation`: a corporation.</li><li>`Partnership`: a partnership.</li><li>`CanadianRegisteredCharity`: a charity registered in Canada.</li></ul> |
-| **profile.firstName**</br>string | The first name of the payee or business contact. Required if you want to create a user account and `profile.entityType = INDIVIDUAL`. This field supports letters, spaces, and `' , -`. Max 50 characters. |
-| **profile.middleName**</br>string | The middle name of the payee or business contact. Use when `profile.firstName` and `profile.lastName` are provided. This field supports letters, spaces, and `' , -`. Max 50 characters. |
-| **profile.lastName**</br>string | The last name of the payee or business contact. Required if you want to create a user account and `profile.entityType = INDIVIDUAL`. This field supports letters, spaces, and `' , -`. Max 100 characters. |
-| **profile.businessName**</br>string | The business name. Required if you want to create a user account and `profile.entityType = COMPANY`. This field supports letters, numbers, spaces, and `! & ' ( ) + , - . / : ;`. Max 100 characters. |
-| **profile.businessRegistrationNumber**</br>string | The business registration number. Use when `profile.entityType = COMPANY`. This field supports numbers, letters, spaces, and `( ) + - . /`. Max 100 characters. |
-| **profile.phoneNumber**</br>string | The phone number of the payee or business contact. This field supports numbers, spaces, and `( ) . - +`. This field saves digits and strips out all other characters. Max 17 characters. |
-| **profile.mobileNumber**</br>string | The cell phone number of the payee or business contact. This field supports numbers, spaces, and `( ) . - +`. This field saves digits and strips out all other characters. Max 17 characters. |
-| **profile.dateOfBirth**</br>string | The date of birth of the payee or business contact. Format: `YYYY-MM-DD`. |
-| **profile.gender**</br>string | The gender of the payee or business contact. This parameter supports the following values:<ul><li>`M`: male</li><li>`F`: female</li></ul> |
-| **profile.employerIdentificationNumber**</br>string | The employer identifier that the payee uses for tax purposes. Applicable when `profile.entityType = COMPANY`. Max 10 characters. |
-| **profile.occupation**</br>string | The field of work or job title of the payee or business contact. Max 50 characters. |
-| **profile.passportNumber**</br>string | The passport number of the payee or business contact. Max 70 characters. |
-| **profile.passportPlaceOfBirth**</br>string | The place of birth of the payee or business contact, as noted on their passport. Max 100 characters. |
-| **profile.passportIssuingCountry**</br>string | The 2-letter ISO code of the country that has issued the passport to the payee or business contact. |
-| **profile.passportDateOfIssuance**</br>string | The date the passport was issued to the payee or business contact. Format: `YYYY-MM-DD`. |
-| **profile.passportExpiryDate**</br>string | The date the payee or business contact's passport expires. Format: `YYYY-MM-DD`. |
-| **profile.passportDepartmentalCode**</br>string | The passport departmental code for the payee or business contact. Max 45 characters. |
-| **profile.governmentId**</br>string | The government ID number of the payee or business contact. Examples include an SSN or SIN number). This field supports numbers, letters, spaces, and `( ) + - . / _`. Max 21 characters. |
-| **profile.governmentIdType**</br>string | The government ID type that was used for the payee or business contact. Use when a `profile.governmentId` value was provided. Max 50 characters. |
-| **profile.driverLicenseNumber**</br>string | The driver's license number of the payee or business contact. Max 70 characters. |
-| **profile.driverLicenseJurisdiction**</br>string | The state, province, or region that issued the driver’s license to the payee or business contact. Max 200 characters. |
-| **profile.countryOfBirth**</br>string | The 2-letter ISO code of the payee's or business contact's birth country. |
-| **profile.citizenshipCountry**</br>string | The 2-letter ISO code of the payee's or business contact's country of nationality. |
-| **profile.businessRegistrationStateProv**</br>string | The state, province, or region where the business is registered. Use when `profile.entityType = COMPANY`. This field supports letters, spaces, and `& ' ( ) -`. Max 50 characters. |
-| **profile.businessRegistrationCountry**</br>string | The 2-letter ISO code of the country where the business is registered. Use when `profile.entityType = COMPANY`. |
-| **profile.businessContactRole**</br>string | The formal position or job title of the business contact. Applicable when `profile.entityType = COMPANY`. This field supports the following values:<ul><li>`OWNER`</li><li>`DIRECTOR`</li><li>`OTHER`</li></ul> |
-| **profile.street**</br>string | The payee's street address. This field supports letters, numbers, spaces, and `# ' ( ) , - . / : ; °`. Max 100 characters. |
-| **profile.addressLine2**</br>string | The payee's address line 2. Applicable when a `profile.street` value is provided. This field supports letters, numbers, spaces, and `# ' ( ) , - . / : ; °`. Max 100 characters. |
-| **profile.addressLine3**</br>string | The payee's address line 3. Applicable when a `profile.addressLine2` value is provided. This field supports letters, numbers, spaces, and `# ' ( ) , - . / : ; °`. Max 100 characters. |
-| **profile.city**</br>string | The payee's city. This field supports letters, spaces, and `& ' ( ) -`. Max 50 characters. |
-| **profile.stateProv**</br>string | The payee's state, province, or region. Use when the payee's `profile.country` has states, provinces or regions. This field supports letters, spaces, and `& ' ( ) -`. Max 50 characters. |
-| **profile.country**</br>string | The payee's 2-letter ISO country code. |
-| **profile.postCode**</br>string | The payee's ZIP code, postal code, or equivalent. Use when the payee's `profile.country` uses ZIP codes, postal codes or equivalent identifiers. This field supports numbers, letters, spaces, and `-`. Max 16 characters. |
+| **`profile.entityType`**</br>string | Identifies whether the payee is an individual or a business entity. Required if you want to create a user account. This parameter supports the following values:<ul><li>`INDIVIDUAL` : an individual external accountholder; default value.</li><li>`COMPANY`: a business.</li></ul> |
+| **`profile.accountType`**</br>string | Identifies the type of business entity. Required if `profile.entityType = COMPANY`. This parameter supports the following values:<ul><li>`Individual`: an individual.</li><li>`Corporation`: a corporation.</li><li>`Partnership`: a partnership.</li><li>`CanadianRegisteredCharity`: a charity registered in Canada.</li></ul> |
+| **`profile.firstName`**</br>string | The first name of the payee or business contact. Required if you want to create a user account and `profile.entityType = INDIVIDUAL`. This field supports letters, spaces, and `' , -`. Max 50 characters. |
+| **`profile.middleName`**</br>string | The middle name of the payee or business contact. Use when `profile.firstName` and `profile.lastName` are provided. This field supports letters, spaces, and `' , -`. Max 50 characters. |
+| **`profile.lastName`**</br>string | The last name of the payee or business contact. Required if you want to create a user account and `profile.entityType = INDIVIDUAL`. This field supports letters, spaces, and `' , -`. Max 100 characters. |
+| **`profile.businessName`**</br>string | The business name. Required if you want to create a user account and `profile.entityType = COMPANY`. This field supports letters, numbers, spaces, and `! & ' ( ) + , - . / : ;`. Max 100 characters. |
+| **`profile.businessRegistrationNumber`**</br>string | The business registration number. Use when `profile.entityType = COMPANY`. This field supports numbers, letters, spaces, and `( ) + - . /`. Max 100 characters. |
+| **`profile.phoneNumber`**</br>string | The phone number of the payee or business contact. This field supports numbers, spaces, and `( ) . - +`. This field saves digits and strips out all other characters. Max 17 characters. |
+| **`profile.mobileNumber`**</br>string | The cell phone number of the payee or business contact. This field supports numbers, spaces, and `( ) . - +`. This field saves digits and strips out all other characters. Max 17 characters. |
+| **`profile.dateOfBirth`**</br>string | The date of birth of the payee or business contact. Format: `YYYY-MM-DD`. |
+| **`profile.gender`**</br>string | The gender of the payee or business contact. This parameter supports the following values:<ul><li>`M`: male</li><li>`F`: female</li></ul> |
+| **`profile.employerIdentificationNumber`**</br>string | The employer identifier that the payee uses for tax purposes. Applicable when `profile.entityType = COMPANY`. Max 10 characters. |
+| **`profile.occupation`**</br>string | The field of work or job title of the payee or business contact. Max 50 characters. |
+| **`profile.passportNumber`**</br>string | The passport number of the payee or business contact. Max 70 characters. |
+| **`profile.passportPlaceOfBirth`**</br>string | The place of birth of the payee or business contact, as noted on their passport. Max 100 characters. |
+| **`profile.passportIssuingCountry`**</br>string | The 2-letter ISO code of the country that has issued the passport to the payee or business contact. |
+| **`profile.passportDateOfIssuance`**</br>string | The date the passport was issued to the payee or business contact. Format: `YYYY-MM-DD`. |
+| **`profile.passportExpiryDate`**</br>string | The date the payee or business contact's passport expires. Format: `YYYY-MM-DD`. |
+| **`profile.passportDepartmentalCode`**</br>string | The passport departmental code for the payee or business contact. Max 45 characters. |
+| **`profile.governmentId`**</br>string | The government ID number of the payee or business contact. Examples include an SSN or SIN number). This field supports numbers, letters, spaces, and `( ) + - . / _`. Max 21 characters. |
+| **`profile.governmentIdType`**</br>string | The government ID type that was used for the payee or business contact. Use when a `profile.governmentId` value was provided. Max 50 characters. |
+| **`profile.driverLicenseNumber`**</br>string | The driver's license number of the payee or business contact. Max 70 characters. |
+| **`profile.driverLicenseJurisdiction`**</br>string | The state, province, or region that issued the driver’s license to the payee or business contact. Max 200 characters. |
+| **`profile.countryOfBirth`**</br>string | The 2-letter ISO code of the payee's or business contact's birth country. |
+| **`profile.citizenshipCountry`**</br>string | The 2-letter ISO code of the payee's or business contact's country of nationality. |
+| **`profile.businessRegistrationStateProv`**</br>string | The state, province, or region where the business is registered. Use when `profile.entityType = COMPANY`. This field supports letters, spaces, and `& ' ( ) -`. Max 50 characters. |
+| **`profile.businessRegistrationCountry`**</br>string | The 2-letter ISO code of the country where the business is registered. Use when `profile.entityType = COMPANY`. |
+| **`profile.businessContactRole`**</br>string | The formal position or job title of the business contact. Applicable when `profile.entityType = COMPANY`. This field supports the following values:<ul><li>`OWNER`</li><li>`DIRECTOR`</li><li>`OTHER`</li></ul> |
+| **`profile.street`**</br>string | The payee's street address. This field supports letters, numbers, spaces, and `# ' ( ) , - . / : ; °`. Max 100 characters. |
+| **`profile.addressLine2`**</br>string | The payee's address line 2. Applicable when a `profile.street` value is provided. This field supports letters, numbers, spaces, and `# ' ( ) , - . / : ; °`. Max 100 characters. |
+| **`profile.addressLine3`**</br>string | The payee's address line 3. Applicable when a `profile.addressLine2` value is provided. This field supports letters, numbers, spaces, and `# ' ( ) , - . / : ; °`. Max 100 characters. |
+| **`profile.city`**</br>string | The payee's city. This field supports letters, spaces, and `& ' ( ) -`. Max 50 characters. |
+| **`profile.stateProv`**</br>string | The payee's state, province, or region. Use when the payee's `profile.country` has states, provinces or regions. This field supports letters, spaces, and `& ' ( ) -`. Max 50 characters. |
+| **`profile.country`**</br>string | The payee's 2-letter ISO country code. |
+| **`profile.postCode`**</br>string | The payee's ZIP code, postal code, or equivalent. Use when the payee's `profile.country` uses ZIP codes, postal codes or equivalent identifiers. This field supports numbers, letters, spaces, and `-`. Max 16 characters. |
 
 ## Preference columns
 
@@ -119,9 +114,9 @@ These columns describe a payee's Pay Portal account preferences. The column head
 
 | Column Heading | Description |
 | ---: | :--- |
-| **prefs.emailAddress**</br>string | The contact email address for the payee. Account notification emails are sent to this email address. Required if you want to create a user account. Max 200 characters; needs to be a valid email address. |
-| **prefs.timeZone**</br>string | The preferred time zone for the payee's account. Defaults to Greenwich Mean Time (`GMT`) if left blank or if an incorrect time zone ID is supplied. |
-| **prefs.language**</br>string | The preferred language for the payee's account. Defaults to English (`en`) if left blank or an incorrect language code is supplied. |
+| **`prefs.emailAddress`**</br>string | The contact email address for the payee. Account notification emails are sent to this email address. Required if you want to create a user account. Max 200 characters; needs to be a valid email address. |
+| **`prefs.timeZone`**</br>string | The preferred time zone for the payee's account. Defaults to Greenwich Mean Time (`GMT`) if left blank or if an incorrect time zone ID is supplied. |
+| **`prefs.language`**</br>string | The preferred language for the payee's account. Defaults to English (`en`) if left blank or an incorrect language code is supplied. |
 
 ## External Account columns
 
@@ -142,79 +137,79 @@ If you or the payees have already provided the profile information, you can skip
 
 | Column Heading | Description |
 | ---: | :--- |
-| **ea.externalAccountType**</br>string</br>required | The external account type. Fixed string. Supported values are determined by the country-specific direct-deposit bank account, wire transfer, or paper check account. Every program needs to have an external account type. |
-| **ea.currencyCode**</br>string</br>required | The 3-letter code for the currency of the external account. Supported values are determined by the `ea.externalAccountType`. |
-| **ea.bankName**</br>string | The bank name. Max 100 characters. |
-| **ea.bankCode**</br>string | The bank code, Bank Identification Code (BIC), Society for Worldwide Interbank Financial Telecommunication (SWIFT) code, or equivalent. Max 15 characters. |
-| **ea.branchName**</br>string | The branch name. Max 50 characters. |
-| **ea.branchCode**</br>string | The branch code, branch transit number, routing number, or equivalent. Max 15 characters. |
-| **ea.accountNumber**</br>string | The bank or wire transfer account number. Max 50 characters. |
-| **ea.accountRelationship**</br>string | <p>The user's relationship with the bank accountholder. Optional. This parameter supports the following values:</p><p>For individual payees</br>`RELATIONSHIP_SELF`: the user owns the bank account.</p><p>For business payees</br>`RELATIONSHIP_OWN_COMPANY`: the bank account is owned by the user's business.</p> |
-| **ea.accountPurpose**</br>string | The purpose of the bank account, such as savings or checking. Fixed string. The external account type determines the supported values. |
-| **ea.displayName**</br>string | A user-friendly name for an account. This name shows up on the Pay Portal. Required if updating an external account, but otherwise optional. If you don't provide an `ea.displayName` when adding the external account, Hyperwallet automatically generates a value for the payee. Find this value using the Pay Portal. Max 100 characters. |
-| **ea.taxId**</br>string | The external accountholder's tax identifier. Only use this parameter for Russian bank accountholders with `entityType = COMPANY`. Max 12 characters. |
-| **ea.taxRegistrationReasonCode**</br>string | The external accountholder's tax registration reason code. Only use this parameter for Russian bank accountholders. Max 18 characters. |
-| **ea.agreementDate**</br>string | The direct deposit agreement date for the bank account. This only applies to BACSbanks. |
-| **ea.securityQuestion**</br>string | A security question to verify the external accountholder's identity. This only applies to MoneyGram accounts. Max 500 characters. |
-| **ea.securityAnswer**</br>string | The response to an `ea.securityQuestion`. Max 500 characters. |
-| **ea.reference**</br>string | A reference number. This only applies to MoneyGram accounts. Max 53 characters. |
-| **ea.instructions**</br>string | Instructions for the external accountholder. This only applies to MoneyGram accounts. Max 500 characters. |
-| **ea.isDefaultCashoutAccount**</br>boolean | When true, this account is the default auto-cashout account for the user. Default: `false`. |
-| **ea.additionalField1**</br>string | Additional identifier 1. This only applies to WUBS wire transfer accounts. This only applies to MoneyGram accounts. |
-| **ea.additionalField2**</br>string | Additional identifier 2. This only applies to WUBS wire transfer accounts. This only applies to MoneyGram accounts. |
-| **ea.bankAddress.street**</br>string | The bank's street address. Max 2000 characters. |
-| **ea.bankAddress.addressLine2**</br>string | Line 2 of the bank's address. Use this field if an `ea.bankAddress.street` value is provided. Max 100 characters. |
-| **ea.bankAddress.addressLine3**</br>string | Line 3 of the bank's address. Use this field if an `ea.bankAddress.addressLine2` value is provided. Max 100 characters. |
-| **ea.bankAddress.city**</br>string | The bank's city. Max 128 characters. |
-| **ea.bankAddress.stateProv**</br>string | The bank's state, province, or region. Use this field if the payee's `ea.bankAddress.country` has states, provinces, or regions. Max 100 characters. |
-| **ea.bankAddress.country**</br>string | The bank's 2-letter ISO country code. |
-| **ea.bankAddress.postCode**</br>string | The bank's ZIP code, postal code, or equivalent. Use this field if the payee's ea.bankAddress.country uses ZIP codes, postal codes, or equivalent identifiers. Max 32 characters. |
-| **ea.intermediaryBankName**</br>string | The intermediary bank name. This only applies to wire transfer accounts. Max 50 characters. |
-| **ea.intermediaryBankCode**</br>string | The intermediary bank code, BIC/SWIFT code, or equivalent. This only applies to wire transfer accounts. Max 25 characters. |
-| **ea.intermediaryBranchCode**</br>string | The intermediary branch code, branch transit number, routing number, or equivalent. This only applies to wire transfer accounts. Max 25 characters. |
-| **ea.intermediaryAccountNumber**</br>string | The intermediary bank or wire transfer account number. This only applies to wire transfer accounts. Max 100 characters. |
-| **ea.intermediaryAddress.street**</br>string | The intermediary bank's street address. Max 2000 characters. |
-| **ea.intermediaryAddress.addressLine2**</br>string | Line 2 of the intermediary bank's address. Use this field if an `ea.intermediaryAddress.street` value is provided. Max 100 characters. |
-| **ea.intermediaryAddress.addressLine3**</br>string | Line 3 of the intermediary bank's address. Use this field if an `ea.intermediaryAddress.addressLine2` value is provided. Max 100 characters. |
-| **ea.intermediaryAddress.city**</br>string | The intermediary bank's city. Max 128 characters. |
-| **ea.intermediaryAddress.stateProv**</br>string | The intermediary bank's state, province, or region. Use this field if the payee's `ea.intermediaryAddress.country` has states, provinces or regions. Max 100 characters. |
-| **ea.intermediaryAddress.country**</br>string | The intermediary bank's 2-letter ISO country code. |
-| **ea.intermediaryAddress.postCode**</br>string | The intermediary bank's ZIP code, postal code, or equivalent. Use this field if the payee's `ea.intermediaryAddress.country` uses ZIP codes, postal codes, or equivalent identifiers. Max 32 characters. |
-| **ea.entityType**</br>string | Identifies whether the external accountholder is an individual or a business entity. Required if you want to create an external account. This parameter supports the following values:<ul><li>`INDIVIDUAL` : an individual external accountholder; default value</li><li>`COMPANY`: a business</li></ul> |
-| **ea.accountType**</br>string | Identifies the type of business entity. Use this field if `ea.entityType = COMPANY`. This parameter supports the following values:<ul><li>`Individual`: an individual</li><li>`Corporation`: a corporation</li><li>`Partnership`: a partnership</li><li>`CanadianRegisteredCharity`: a charity registered in Canada</li></ul> |
-| **ea.firstName**</br>string | The first name of the external accountholder or business contact. Required if you want to create an external account and `ea.entityType = INDIVIDUAL`. Max 50 characters. |
-| **ea.middleName**</br>string | The middle name of the external accountholder or business contact. Use this field if `ea.firstName` and `ea.lastName` are provided. Max 50 characters. |
-| **ea.lastName**</br>string | The last name of the external accountholder or business contact. Required if you want to create an external account and `ea.entityType = INDIVIDUAL`. Max 50 characters. |
-| **ea.businessName**</br>string | The business name. Required if you want to create an external account and `ea.entityType = COMPANY`. Max 100 characters. |
-| **ea.businessRegistrationNumber**</br>string | The business registration number. Use this field if `ea.entityType = COMPANY`. Max 100 characters. |
-| **ea.phoneNumber**</br>string | The phone number of the external accountholder or business contact. This field saves digits and strips out all other characters. Max 35 characters. |
-| **ea.mobileNumber**</br>string | The cell phone number of the external accountholder or business contact. This field saves digits and strips out all other characters. Max 35 characters. |
-| **ea.dateOfBirth**</br>string | The date of birth of the external accountholder or business contact. Format: `YYYY-MM-DD`. |
-| **ea.gender**</br>string | The gender of the external accountholder or business contact. This parameter supports the following values:<ul><li>`M`: male</li><li>`F`: female</li></ul> |
-| **ea.employerIdentificationNumber**</br>string | The employer identifier that the external accountholder uses for tax purposes. Use this field if `ea.entityType = COMPANY`. Max 10 characters. |
-| **ea.occupation**</br>string | The field of work or job title of the external accountholder or business contact. Max 50 characters. |
-| **ea.passportNumber**</br>string | The passport number of the external accountholder or business contact. Max 70 characters. |
-| **ea.passportPlaceOfBirth**</br>string | The place of birth of the external accountholder or business contact, as noted on their passport. Max 100 characters. |
-| **ea.passportIssuingCountry**</br>string | The 2-letter ISO code of the country that has issued the passport to the external accountholder or business contact. |
-| **ea.passportDateOfIssuance**</br>string | The date the passport was issued to the external accountholder or business contact. Format: `YYYY-MM-DD`. |
-| **ea.passportExpiryDate**</br>string | The date the external accountholder’s or business contact's passport expires. Format: `YYYY-MM-DD`. |
-| **ea.passportDepartmentalCode**</br>string | The passport departmental code for the external accountholder or business contact. Max 45 characters. |
-| **ea.governmentId**</br>string | The external accountholder’s or business contact's government ID number, such as an SSN or SIN number. Max 70 characters. |
-| **ea.governmentIdType**</br>string | The government ID type that was used for the external accountholder or business contact. Use this field if an `ea.governmentId` value was provided. Max 50 characters. |
-| **ea.driverLicenseNumber**</br>string | The external accountholder’s or business contact's driver's license number. Max 70 characters. |
-| **ea.driverLicenseJurisdiction**</br>string | The state, province, or region that issued the external accountholder’s or business contact's driver’s license. Max 200 characters. |
-| **ea.countryOfBirth**</br>string | The 2-letter ISO code of the external accountholder's or business contact's birth country. |
-| **ea.citizenshipCountry**</br>string | The 2-letter ISO code of the external accountholder's or business contact's country of nationality. |
-| **ea.businessRegistrationStateProv**</br>string | The state, province, or region where the business is registered. Use this field if `ea.entityType = COMPANY`. Max 100 characters. |
-| **ea.businessRegistrationCountry**</br>string | The 2-letter ISO code of the country where the business is registered. Use this field if `ea.entityType = COMPANY`. |
-| **ea.businessContactRole**</br>string | The formal position or job title of the business contact. Use this field if `ea.entityType = COMPANY`. This parameter supports the following values:<ul><li>`OWNER`</li><li>`DIRECTOR`</li><li>`OTHER`</li></ul> |
-| **ea.street**</br>string | The external accountholder's street address. Max 2000 characters. |
-| **ea.addressLine2**</br>string | Line 2 of the external accountholder's address. Use this field if an `ea.street` value is provided. Max 100 characters. |
-| **ea.addressLine3**</br>string | Line 3 of the external accountholder's address. Use this field if an `ea.addressLine2value` is provided. Max 100 characters. |
-| **ea.city**</br>string | The external accountholder's city. Max 128 characters. |
-| **ea.stateProv**</br>string | The external accountholder's state, province, or region. | Use this field if the external accountholder's `ea.country` has states, provinces, or regions. Max 100 characters. |
-| **ea.country**</br>string | The external accountholder's 2-letter ISO country code. |
-| **ea.postCode**</br>string | The external accountholder's ZIP code, postal code, or equivalent. Use this field if the external accountholder's `ea.country` uses ZIP codes, postal codes, or equivalent identifiers. Max 32 characters. |
+| **`ea.externalAccountType`**</br>string</br>required | The external account type. Fixed string. Supported values are determined by the country-specific direct-deposit bank account, wire transfer, or paper check account. Every program needs to have an external account type. |
+| **`ea.currencyCode`**</br>string</br>required | The 3-letter code for the currency of the external account. Supported values are determined by the `ea.externalAccountType`. |
+| **`ea.bankName`**</br>string | The bank name. Max 100 characters. |
+| **`ea.bankCode`**</br>string | The bank code, Bank Identification Code (BIC), Society for Worldwide Interbank Financial Telecommunication (SWIFT) code, or equivalent. Max 15 characters. |
+| **`ea.branchName`**</br>string | The branch name. Max 50 characters. |
+| **`ea.branchCode`**</br>string | The branch code, branch transit number, routing number, or equivalent. Max 15 characters. |
+| **`ea.accountNumber`**</br>string | The bank or wire transfer account number. Max 50 characters. |
+| **`ea.accountRelationship`**</br>string | <p>The user's relationship with the bank accountholder. Optional. This parameter supports the following values:</p><p>For individual payees</br>`RELATIONSHIP_SELF`: the user owns the bank account.</p><p>For business payees</br>`RELATIONSHIP_OWN_COMPANY`: the bank account is owned by the user's business.</p> |
+| **`ea.accountPurpose`**</br>string | The purpose of the bank account, such as savings or checking. Fixed string. The external account type determines the supported values. |
+| **`ea.displayName`**</br>string | A user-friendly name for an account. This name shows up on the Pay Portal. Required if updating an external account, but otherwise optional. If you don't provide an `ea.displayName` when adding the external account, Hyperwallet automatically generates a value for the payee. Find this value using the Pay Portal. Max 100 characters. |
+| **`ea.taxId`**</br>string | The external accountholder's tax identifier. Only use this parameter for Russian bank accountholders with `entityType = COMPANY`. Max 12 characters. |
+| **`ea.taxRegistrationReasonCode`**</br>string | The external accountholder's tax registration reason code. Only use this parameter for Russian bank accountholders. Max 18 characters. |
+| **`ea.agreementDate`**</br>string | The direct deposit agreement date for the bank account. This only applies to BACSbanks. |
+| **`ea.securityQuestion`**</br>string | A security question to verify the external accountholder's identity. This only applies to MoneyGram accounts. Max 500 characters. |
+| **`ea.securityAnswer`**</br>string | The response to an `ea.securityQuestion`. Max 500 characters. |
+| **`ea.reference`**</br>string | A reference number. This only applies to MoneyGram accounts. Max 53 characters. |
+| **`ea.instructions`**</br>string | Instructions for the external accountholder. This only applies to MoneyGram accounts. Max 500 characters. |
+| **`ea.isDefaultCashoutAccount`**</br>boolean | When true, this account is the default auto-cashout account for the user. Default: `false`. |
+| **`ea.additionalField1`**</br>string | Additional identifier 1. This only applies to WUBS wire transfer accounts. This only applies to MoneyGram accounts. |
+| **`ea.additionalField2`**</br>string | Additional identifier 2. This only applies to WUBS wire transfer accounts. This only applies to MoneyGram accounts. |
+| **`ea.bankAddress.street`**</br>string | The bank's street address. Max 2000 characters. |
+| **`ea.bankAddress.addressLine2`**</br>string | Line 2 of the bank's address. Use this field if an `ea.bankAddress.street` value is provided. Max 100 characters. |
+| **`ea.bankAddress.addressLine3`**</br>string | Line 3 of the bank's address. Use this field if an `ea.bankAddress.addressLine2` value is provided. Max 100 characters. |
+| **`ea.bankAddress.city`**</br>string | The bank's city. Max 128 characters. |
+| **`ea.bankAddress.stateProv`**</br>string | The bank's state, province, or region. Use this field if the payee's `ea.bankAddress.country` has states, provinces, or regions. Max 100 characters. |
+| **`ea.bankAddress.country`**</br>string | The bank's 2-letter ISO country code. |
+| **`ea.bankAddress.postCode`**</br>string | The bank's ZIP code, postal code, or equivalent. Use this field if the payee's ea.bankAddress.country uses ZIP codes, postal codes, or equivalent identifiers. Max 32 characters. |
+| **`ea.intermediaryBankName`**</br>string | The intermediary bank name. This only applies to wire transfer accounts. Max 50 characters. |
+| **`ea.intermediaryBankCode`**</br>string | The intermediary bank code, BIC/SWIFT code, or equivalent. This only applies to wire transfer accounts. Max 25 characters. |
+| **`ea.intermediaryBranchCode`**</br>string | The intermediary branch code, branch transit number, routing number, or equivalent. This only applies to wire transfer accounts. Max 25 characters. |
+| **`ea.intermediaryAccountNumber`**</br>string | The intermediary bank or wire transfer account number. This only applies to wire transfer accounts. Max 100 characters. |
+| **`ea.intermediaryAddress.street`**</br>string | The intermediary bank's street address. Max 2000 characters. |
+| **`ea.intermediaryAddress.addressLine2`**</br>string | Line 2 of the intermediary bank's address. Use this field if an `ea.intermediaryAddress.street` value is provided. Max 100 characters. |
+| **`ea.intermediaryAddress.addressLine3`**</br>string | Line 3 of the intermediary bank's address. Use this field if an `ea.intermediaryAddress.addressLine2` value is provided. Max 100 characters. |
+| **`ea.intermediaryAddress.city`**</br>string | The intermediary bank's city. Max 128 characters. |
+| **`ea.intermediaryAddress.stateProv`**</br>string | The intermediary bank's state, province, or region. Use this field if the payee's `ea.intermediaryAddress.country` has states, provinces or regions. Max 100 characters. |
+| **`ea.intermediaryAddress.country`**</br>string | The intermediary bank's 2-letter ISO country code. |
+| **`ea.intermediaryAddress.postCode`**</br>string | The intermediary bank's ZIP code, postal code, or equivalent. Use this field if the payee's `ea.intermediaryAddress.country` uses ZIP codes, postal codes, or equivalent identifiers. Max 32 characters. |
+| **`ea.entityType`**</br>string | Identifies whether the external accountholder is an individual or a business entity. Required if you want to create an external account. This parameter supports the following values:<ul><li>`INDIVIDUAL` : an individual external accountholder; default value</li><li>`COMPANY`: a business</li></ul> |
+| **`ea.accountType`**</br>string | Identifies the type of business entity. Use this field if `ea.entityType = COMPANY`. This parameter supports the following values:<ul><li>`Individual`: an individual</li><li>`Corporation`: a corporation</li><li>`Partnership`: a partnership</li><li>`CanadianRegisteredCharity`: a charity registered in Canada</li></ul> |
+| **`ea.firstName`**</br>string | The first name of the external accountholder or business contact. Required if you want to create an external account and `ea.entityType = INDIVIDUAL`. Max 50 characters. |
+| **`ea.middleName`**</br>string | The middle name of the external accountholder or business contact. Use this field if `ea.firstName` and `ea.lastName` are provided. Max 50 characters. |
+| **`ea.lastName`**</br>string | The last name of the external accountholder or business contact. Required if you want to create an external account and `ea.entityType = INDIVIDUAL`. Max 50 characters. |
+| **`ea.businessName`**</br>string | The business name. Required if you want to create an external account and `ea.entityType = COMPANY`. Max 100 characters. |
+| **`ea.businessRegistrationNumber`**</br>string | The business registration number. Use this field if `ea.entityType = COMPANY`. Max 100 characters. |
+| **`ea.phoneNumber`**</br>string | The phone number of the external accountholder or business contact. This field saves digits and strips out all other characters. Max 35 characters. |
+| **`ea.mobileNumber`**</br>string | The cell phone number of the external accountholder or business contact. This field saves digits and strips out all other characters. Max 35 characters. |
+| **`ea.dateOfBirth`**</br>string | The date of birth of the external accountholder or business contact. Format: `YYYY-MM-DD`. |
+| **`ea.gender`**</br>string | The gender of the external accountholder or business contact. This parameter supports the following values:<ul><li>`M`: male</li><li>`F`: female</li></ul> |
+| **`ea.employerIdentificationNumber`**</br>string | The employer identifier that the external accountholder uses for tax purposes. Use this field if `ea.entityType = COMPANY`. Max 10 characters. |
+| **`ea.occupation`**</br>string | The field of work or job title of the external accountholder or business contact. Max 50 characters. |
+| **`ea.passportNumber`**</br>string | The passport number of the external accountholder or business contact. Max 70 characters. |
+| **`ea.passportPlaceOfBirth`**</br>string | The place of birth of the external accountholder or business contact, as noted on their passport. Max 100 characters. |
+| **`ea.passportIssuingCountry`**</br>string | The 2-letter ISO code of the country that has issued the passport to the external accountholder or business contact. |
+| **`ea.passportDateOfIssuance`**</br>string | The date the passport was issued to the external accountholder or business contact. Format: `YYYY-MM-DD`. |
+| **`ea.passportExpiryDate`**</br>string | The date the external accountholder’s or business contact's passport expires. Format: `YYYY-MM-DD`. |
+| **`ea.passportDepartmentalCode`**</br>string | The passport departmental code for the external accountholder or business contact. Max 45 characters. |
+| **`ea.governmentId`**</br>string | The external accountholder’s or business contact's government ID number, such as an SSN or SIN number. Max 70 characters. |
+| **`ea.governmentIdType`**</br>string | The government ID type that was used for the external accountholder or business contact. Use this field if an `ea.governmentId` value was provided. Max 50 characters. |
+| **`ea.driverLicenseNumber`**</br>string | The external accountholder’s or business contact's driver's license number. Max 70 characters. |
+| **`ea.driverLicenseJurisdiction`**</br>string | The state, province, or region that issued the external accountholder’s or business contact's driver’s license. Max 200 characters. |
+| **`ea.countryOfBirth`**</br>string | The 2-letter ISO code of the external accountholder's or business contact's birth country. |
+| **`ea.citizenshipCountry`**</br>string | The 2-letter ISO code of the external accountholder's or business contact's country of nationality. |
+| **`ea.businessRegistrationStateProv`**</br>string | The state, province, or region where the business is registered. Use this field if `ea.entityType = COMPANY`. Max 100 characters. |
+| **`ea.businessRegistrationCountry`**</br>string | The 2-letter ISO code of the country where the business is registered. Use this field if `ea.entityType = COMPANY`. |
+| **`ea.businessContactRole`**</br>string | The formal position or job title of the business contact. Use this field if `ea.entityType = COMPANY`. This parameter supports the following values:<ul><li>`OWNER`</li><li>`DIRECTOR`</li><li>`OTHER`</li></ul> |
+| **`ea.street`**</br>string | The external accountholder's street address. Max 2000 characters. |
+| **`ea.addressLine2`**</br>string | Line 2 of the external accountholder's address. Use this field if an `ea.street` value is provided. Max 100 characters. |
+| **`ea.addressLine3`**</br>string | Line 3 of the external accountholder's address. Use this field if an `ea.addressLine2value` is provided. Max 100 characters. |
+| **`ea.city`**</br>string | The external accountholder's city. Max 128 characters. |
+| **`ea.stateProv`**</br>string | The external accountholder's state, province, or region. | Use this field if the external accountholder's `ea.country` has states, provinces, or regions. Max 100 characters. |
+| **`ea.country`**</br>string | The external accountholder's 2-letter ISO country code. |
+| **`ea.postCode`**</br>string | The external accountholder's ZIP code, postal code, or equivalent. Use this field if the external accountholder's `ea.country` uses ZIP codes, postal codes, or equivalent identifiers. Max 32 characters. |
 
 ## Prepaid Card columns
 
@@ -226,42 +221,42 @@ When the payee and external accountholder are the same person, Hyperwallet uses 
 
 | Column Heading | Description |
 | ---: | :--- |
-| **ppc.packageName**</br>string | The card package name. Required when requesting a prepaid card. The card package name can't be updated. Needs to be a valid card package configured for the program. |
-| **ppc.entityType**</br>string | Identifies whether the cardholder is an individual or a business entity. Required if you want to create a user account. This parameter supports the following values:<ul><li>`INDIVIDUAL`: an individual payee; default value</li><li>`COMPANY`: a business</li></ul> |
-| **ppc.accountType**</br>string | Identifies the type of business entity. Required when `ppc.entityType = COMPANY`. This parameter supports the following values:<ul><li>`Individual`: an individual payee</li><li>`Corporation`: a corporations</li><li>`Partnership`: a partnership</li><li>`CanadianRegisteredCharity`: a charity registered in Canada</li></ul> |
-| **ppc.firstName**</br>string | The first name of the cardholder or business contact. Required if you want to create a prepaid card account and `ppc.entityType = INDIVIDUAL`. Max 50 characters. |
-| **ppc.middleName**</br>string | The middle name of the cardholder or business contact. Use when `ppc.firstName` and `ppc.lastName` are provided. Max 50 characters. |
-| **ppc.lastName**</br>string | The last name of the cardholder or business contact. Required if you want to create a prepaid card account and `ppc.entityType = INDIVIDUAL`. Max 50 characters. |
-| **ppc.businessName**</br>string | The business name. Required if you want to create a prepaid card account and `ppc.entityType = COMPANY`. Max 100 characters. |
-| **ppc.businessRegistrationNumber**</br>string | The business registration number. Use when `ppc.entityType = COMPANY`. Max 100 characters. |
-| **ppc.phoneNumber**</br>string | The phone number of the cardholder or business contact. This field saves digits and strips out all other characters. Max 35 characters. |
-| **ppc.mobileNumber**</br>string | The cell phone number of the cardholder or business contact. This field saves digits and strips out all other characters. Max 35 characters. |
-| **ppc.dateOfBirth**</br>string | The date of birth of the cardholder or business contact. Format: `YYYY-MM-DD`. |
-| **ppc.gender**</br>string | The gender of the cardholder or business contact. his parameter supports the following values:<ul><li>`M`: male</li><li>`F`: female</li></ul> |
-| **ppc.employerIdentificationNumber**</br>string | The employer identifier that the cardholder uses for tax purposes. Use when `ppc.entityType = COMPANY`. Max 10 characters. |
-| **ppc.occupation**</br>string | The field of work or job title of the cardholder or business contact. Max 50 characters. |
-| **ppc.passportNumber**</br>string | The passport number of the cardholder or business contact. Max 70 characters. |
-| **ppc.passportPlaceOfBirth**</br>string | The place of birth of the cardholder or business contact, as noted on their passport. Max 100 characters. |
-| **ppc.passportIssuingCountry**</br>string | The 2-letter ISO code of the country that issued the passport to the cardholder or business contact passport. |
-| **ppc.passportDateOfIssuance**</br>string | The date the passport was issued to the cardholder or business contact. Format: `YYYY-MM-DD`. |
-| **ppc.passportExpiryDate**</br>string | The date the cardholder’s or business contact's passport expires. Format: `YYYY-MM-DD`. |
-| **ppc.passportDepartmentalCode**</br>string | The passport departmental code for the cardholder or business contact. Max 45 characters. |
-| **ppc.governmentId**</br>string | The government ID number of the cardholder or business contact, such as an SSN or SIN number. Max 70 characters. |
-| **ppc.governmentIdType**</br>string | The government ID type that was used for the cardholder or business contact. Use when a `ppc.governmentId` value was provided. Max 50 characters. |
-| **ppc.driverLicenseNumber**</br>string | The driver's license number of the cardholder or business contact. Max 70 characters. |
-| **ppc.driverLicenseJurisdiction**</br>string | The state, province, or region that issued the driver’s license to the cardholder or business contact. Max 200 characters. |
-| **ppc.countryOfBirth**</br>string | The 2-letter ISO code of the cardholder's or business contact's birth country. |
-| **ppc.citizenshipCountry**</br>string | The 2-letter ISO code of the cardholder's or business contact's country of nationality. |
-| **ppc.businessRegistrationStateProv**</br>string | The state, province, or region where the business is registered. Use when `ppc.entityType = COMPANY`. Max 100 characters. |
-| **ppc.businessRegistrationCountry**</br>string | The 2-letter ISO code of the country where the business is registered. Use when `ppc.entityType = COMPANY`. |
-| **ppc.businessContactRole**</br>string | The formal position or job title of the business contact. Use when `ppc.entityType = COMPANY`. This parameter supports the following values:<ul><li>`OWNER`</li><li>`DIRECTOR`</li><li>`OTHER`</li></ul> |
-| **ppc.street**</br>string | The cardholder's street address. Max 2000 characters. |
-| **ppc.addressLine2**</br>string | The cardholder's address line 2. Use when a `ppc.street` value is provided. Max 100 characters. |
-| **ppc.addressLine3**</br>string | The cardholder's address line 3. Use when a `ppc.addressLine2` value is provided. Max 100 characters. |
-| **ppc.city**</br>string | The cardholder's city. Max 128 characters. |
-| **ppc.stateProv**</br>string | The cardholder's state, province, or region. Use when the cardholder's `ppc.country` has states, provinces or regions. Max 100 characters. |
-| **ppc.country**</br>string | The cardholder's 2-letter ISO country code. |
-| **ppc.postCode**</br>string | The cardholder's ZIP code, postal code or equivalent. Use when the cardholder's `ppc.country` uses ZIP codes, postal codes or equivalent identifiers. Max 32 characters. |
+| **`ppc.packageName`**</br>string | The card package name. Required when requesting a prepaid card. The card package name can't be updated. Needs to be a valid card package configured for the program. |
+| **`ppc.entityType`**</br>string | Identifies whether the cardholder is an individual or a business entity. Required if you want to create a user account. This parameter supports the following values:<ul><li>`INDIVIDUAL`: an individual payee; default value</li><li>`COMPANY`: a business</li></ul> |
+| **`ppc.accountType`**</br>string | Identifies the type of business entity. Required when `ppc.entityType = COMPANY`. This parameter supports the following values:<ul><li>`Individual`: an individual payee</li><li>`Corporation`: a corporations</li><li>`Partnership`: a partnership</li><li>`CanadianRegisteredCharity`: a charity registered in Canada</li></ul> |
+| **`ppc.firstName`**</br>string | The first name of the cardholder or business contact. Required if you want to create a prepaid card account and `ppc.entityType = INDIVIDUAL`. Max 50 characters. |
+| **`ppc.middleName`**</br>string | The middle name of the cardholder or business contact. Use when `ppc.firstName` and `ppc.lastName` are provided. Max 50 characters. |
+| **`ppc.lastName`**</br>string | The last name of the cardholder or business contact. Required if you want to create a prepaid card account and `ppc.entityType = INDIVIDUAL`. Max 50 characters. |
+| **`ppc.businessName`**</br>string | The business name. Required if you want to create a prepaid card account and `ppc.entityType = COMPANY`. Max 100 characters. |
+| **`ppc.businessRegistrationNumber`**</br>string | The business registration number. Use when `ppc.entityType = COMPANY`. Max 100 characters. |
+| **`ppc.phoneNumber`**</br>string | The phone number of the cardholder or business contact. This field saves digits and strips out all other characters. Max 35 characters. |
+| **`ppc.mobileNumber`**</br>string | The cell phone number of the cardholder or business contact. This field saves digits and strips out all other characters. Max 35 characters. |
+| **`ppc.dateOfBirth`**</br>string | The date of birth of the cardholder or business contact. Format: `YYYY-MM-DD`. |
+| **`ppc.gender`**</br>string | The gender of the cardholder or business contact. his parameter supports the following values:<ul><li>`M`: male</li><li>`F`: female</li></ul> |
+| **`ppc.employerIdentificationNumber`**</br>string | The employer identifier that the cardholder uses for tax purposes. Use when `ppc.entityType = COMPANY`. Max 10 characters. |
+| **`ppc.occupation`**</br>string | The field of work or job title of the cardholder or business contact. Max 50 characters. |
+| **`ppc.passportNumber`**</br>string | The passport number of the cardholder or business contact. Max 70 characters. |
+| **`ppc.passportPlaceOfBirth`**</br>string | The place of birth of the cardholder or business contact, as noted on their passport. Max 100 characters. |
+| **`ppc.passportIssuingCountry`**</br>string | The 2-letter ISO code of the country that issued the passport to the cardholder or business contact passport. |
+| **`ppc.passportDateOfIssuance`**</br>string | The date the passport was issued to the cardholder or business contact. Format: `YYYY-MM-DD`. |
+| **`ppc.passportExpiryDate`**</br>string | The date the cardholder’s or business contact's passport expires. Format: `YYYY-MM-DD`. |
+| **`ppc.passportDepartmentalCode`**</br>string | The passport departmental code for the cardholder or business contact. Max 45 characters. |
+| **`ppc.governmentId`**</br>string | The government ID number of the cardholder or business contact, such as an SSN or SIN number. Max 70 characters. |
+| **`ppc.governmentIdType`**</br>string | The government ID type that was used for the cardholder or business contact. Use when a `ppc.governmentId` value was provided. Max 50 characters. |
+| **`ppc.driverLicenseNumber`**</br>string | The driver's license number of the cardholder or business contact. Max 70 characters. |
+| **`ppc.driverLicenseJurisdiction`**</br>string | The state, province, or region that issued the driver’s license to the cardholder or business contact. Max 200 characters. |
+| **`ppc.countryOfBirth`**</br>string | The 2-letter ISO code of the cardholder's or business contact's birth country. |
+| **`ppc.citizenshipCountry`**</br>string | The 2-letter ISO code of the cardholder's or business contact's country of nationality. |
+| **`ppc.businessRegistrationStateProv`**</br>string | The state, province, or region where the business is registered. Use when `ppc.entityType = COMPANY`. Max 100 characters. |
+| **`ppc.businessRegistrationCountry`**</br>string | The 2-letter ISO code of the country where the business is registered. Use when `ppc.entityType = COMPANY`. |
+| **`ppc.businessContactRole`**</br>string | The formal position or job title of the business contact. Use when `ppc.entityType = COMPANY`. This parameter supports the following values:<ul><li>`OWNER`</li><li>`DIRECTOR`</li><li>`OTHER`</li></ul> |
+| **`ppc.street`**</br>string | The cardholder's street address. Max 2000 characters. |
+| **`ppc.addressLine2`**</br>string | The cardholder's address line 2. Use when a `ppc.street` value is provided. Max 100 characters. |
+| **`ppc.addressLine3`**</br>string | The cardholder's address line 3. Use when a `ppc.addressLine2` value is provided. Max 100 characters. |
+| **`ppc.city`**</br>string | The cardholder's city. Max 128 characters. |
+| **`ppc.stateProv`**</br>string | The cardholder's state, province, or region. Use when the cardholder's `ppc.country` has states, provinces or regions. Max 100 characters. |
+| **`ppc.country`**</br>string | The cardholder's 2-letter ISO country code. |
+| **`ppc.postCode`**</br>string | The cardholder's ZIP code, postal code or equivalent. Use when the cardholder's `ppc.country` uses ZIP codes, postal codes or equivalent identifiers. Max 32 characters. |
 
 ## Payment columns
 
@@ -271,18 +266,18 @@ These columns describe a payment made to the payee. The column headings start wi
 
 | Column Heading | Description |
 | ---: | :--- |
-| **payment.fundingClientProgramId**</br>string | The custom ID of the program that is making the payment. Needs to match the program's external group ID in the Merchant Servicing Portal. Only applies if the program is configured to support this field. Provide either a `payment.fundingClientProgramId` value or a `payment.fundingProgramId value`. If left blank, the money comes from the payee's parent program. Max 75 characters. |
-| **payment.fundingProgramId**</br>number | The Hyperwallet ID of the program that is making the payment. Maximum 28 digits. Only applies if the program is configured to support this field. Provide either a `payment.fundingClientProgramId` value or a `payment.fundingProgramId` value. If left blank, the money comes from the payee's parent program. |
-| **payment.valueDate**</br>string | The date when the money releases. The payment is queued for processing at GMT 00:00:00 (12:00 AM) on the specified date. A blank value implies that the payment is be queued for processing immediately. |
-| **payment.expiryDate**</br>string | The date when the payment funds expire. The expiration is processed at GMT 00:00:00 (12:00 AM) on the specified date. After this time, the money is no longer available. A blank value implies that there is no expiration date. |
-| **payment.amount**</br>string</br>required | The payment amount. Needs to contain the appropriate number of decimal points for the currency in `payment.currencyCode`. Max 20 characters. |
-| **payment.currencyCode**</br>string</br>required | The payment currency. Needs to be a supported 3-letter currency code that is configured for the program. |
-| **payment.clientReferenceNumber**</br>string</br>required | The client-assigned reference number for the transaction. Max 50 characters. |
-| **payment.purposeOfPayment**</br>string</br>required | The purpose of the payment. Needs to be a valid purpose code. |
-| **payment.description**</br>string | A transaction description provided by the client. The payee can see this description. Max 200 characters. |
-| **payment.memo**</br>string | An internal memo for the transaction. Not visible to the payee. Max 50 characters. |
-| **payment.securityQuestion**</br>string | A security question to verify the payee's identity. Max 100 characters. |
-| **payment.securityAnswer**</br>string | The response to `payment.securityQuestion`. Max 100 characters. |
+| **`payment.fundingClientProgramId`**</br>string | The custom ID of the program that is making the payment. Needs to match the program's external group ID in the Merchant Servicing Portal. Only applies if the program is configured to support this field. Provide either a `payment.fundingClientProgramId` value or a `payment.fundingProgramId value`. If left blank, the money comes from the payee's parent program. Max 75 characters. |
+| **`payment.fundingProgramId`**</br>number | The Hyperwallet ID of the program that is making the payment. Maximum 28 digits. Only applies if the program is configured to support this field. Provide either a `payment.fundingClientProgramId` value or a `payment.fundingProgramId` value. If left blank, the money comes from the payee's parent program. |
+| **`payment.valueDate`**</br>string | The date when the money releases. The payment is queued for processing at GMT 00:00:00 (12:00 AM) on the specified date. A blank value implies that the payment is be queued for processing immediately. |
+| **`payment.expiryDate`**</br>string | The date when the payment funds expire. The expiration is processed at GMT 00:00:00 (12:00 AM) on the specified date. After this time, the money is no longer available. A blank value implies that there is no expiration date. |
+| **`payment.amount`**</br>string</br>required | The payment amount. Needs to contain the appropriate number of decimal points for the currency in `payment.currencyCode`. Max 20 characters. |
+| **`payment.currencyCode`**</br>string</br>required | The payment currency. Needs to be a supported 3-letter currency code that is configured for the program. |
+| **`payment.clientReferenceNumber`**</br>string</br>required | The client-assigned reference number for the transaction. Max 50 characters. |
+| **`payment.purposeOfPayment`**</br>string</br>required | The purpose of the payment. Needs to be a valid purpose code. |
+| **`payment.description`**</br>string | A transaction description provided by the client. The payee can see this description. Max 200 characters. |
+| **`payment.memo`**</br>string | An internal memo for the transaction. Not visible to the payee. Max 50 characters. |
+| **`payment.securityQuestion`**</br>string | A security question to verify the payee's identity. Max 100 characters. |
+| **`payment.securityAnswer`**</br>string | The response to `payment.securityQuestion`. Max 100 characters. |
 
 ### Uploading requests
 
