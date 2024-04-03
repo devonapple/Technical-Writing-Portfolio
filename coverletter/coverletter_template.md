@@ -1,3 +1,9 @@
+# Writing sample
+
+## Document name
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada metus at nulla pretium gravida. Aenean finibus quis elit sed scelerisque. Quisque gravida libero viverra molestie lobortis. Quisque quis molestie ligula, non tristique tellus.
+
 1. How much of the content did you write? Choose one:
     * ‣ All of it ‣ More than 75% ‣ More than 50% ‣ Less than 50% ‣ Other (explain).
     * If you wrote only portions of the document, tell us which portions you wrote.
