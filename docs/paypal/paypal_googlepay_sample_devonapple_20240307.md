@@ -753,10 +753,3 @@ When testing a purchase in production, consider:
 Make sure that there are no browser console warnings or errors. The JavaScript SDK configuration attributes have distinct validation checks for input formatting and values.
 
 If the validation fails, the web browser's developer console shows warning messages that say which property is incorrect and what you need to do to address the issue. The library generally attempts to revert to the safe default values if missing or incorrect inputs exist.
-
-## Next steps & customizations
-
- Get started testing, add security to your checkout experience or create customizations for your audience.
-
-<a href="https://developer.paypal.com/docs/checkout/advanced/">Advanced credit and debit card payments</a>
-<p>Add PayPal payment buttons and customized card fields.</p>

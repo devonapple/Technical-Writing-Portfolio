@@ -1480,39 +1480,3 @@ If this is your first time testing in a live environment, follow these steps:
 </ol>
 
 > **Important:** The code for the integration checks eligibility requirements, so the payment card fields only display when the production request is successful.
-
-## Next steps & customizations
-
-Add security to your checkout integration, or create customizations for your audience.
-
-<a href="https://developer.paypal.com/docs/checkout/pay-later/us/" target="_blank">Pay Later</a>
-
-Payers buy now and pay in installments.
-
-<a href="https://developer.paypal.com/docs/checkout/pay-with-venmo/integrate/" target="_blank">Pay with Venmo</a>
-
-Add the Venmo button to your checkout integration.
-
-<a href="https://developer.paypal.com/docs/checkout/apm/" target="_blank">Alternative payment methods</a>
-
-Accept local payment methods across the globe.
-
-<a href="https://developer.paypal.com/docs/checkout/apm/apple-pay/" target="_blank">Apple Pay</a>
-
-Add Apple Pay as a payment button.
-
-<a target="_blank" href="https://developer.paypal.com/docs/checkout/advanced/customize/3d-secure/">Implement 3D Secure</a>
-
-Authenticate card holders through card issuers.
-
-<a target="_blank" href="https://developer.paypal.com/docs/api/orders/v2/#orders_capture" target="_blank">Capture payment</a>
-
-Captures payment for an order.
-
-<a href="https://developer.paypal.com/docs/api/payments/v2/#captures_refund" target="_blank">Refund a captured payment</a>
-
-Refund all or part of a captured payment.
-
-<a target="_blank" href="https://developer.paypal.com/docs/checkout/advanced/customize/rtau/">Real-time account updater</a>
-
-Reduce declines by getting card updates from the issuer.
