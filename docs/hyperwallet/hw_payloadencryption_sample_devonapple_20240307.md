@@ -83,17 +83,17 @@ This algorithm sample shows how to construct a request using the HS256 algorithm
 
 #### Algorithm example
 
-**Header: algorithm token type**
+##### Header: algorithm token type
 
 ```json
 {
   "alg": "HS256",
-  typ": "JWT",
+  "typ": "JWT",
   "kid": "01-2822"
 }
 ```
 
-**Payload: data**
+##### Payload: data
 
 ```json
 {
@@ -103,9 +103,9 @@ This algorithm sample shows how to construct a request using the HS256 algorithm
   "createdOn" : "201910-30T22:15:45",
   "c1ientUserId" : "CSK7b8Ffch",
   "profi1eType" : "INDIVIDUAL",
-  "firstName" : John",
+  "firstName" : "John",
   "lastName" : "Smith",
-  dateOfBirth" : "1980-01-01",
+  "dateOfBirth" : "1980-01-01",
   "email" : "john@company.com",
   "addressLine1" : "123 Maln Street",
   "city" : "New York",
@@ -117,7 +117,7 @@ This algorithm sample shows how to construct a request using the HS256 algorithm
   "links" : [
     {
       "params" {
-        "rel" : :self"
+        "rel" : "self"
       },
       "href" : "https://uat-api.paylution.com/rest/v4/users/usr-
       f9154e16-94e8-4686-a84e-a75688ace7b5"
@@ -126,9 +126,9 @@ This algorithm sample shows how to construct a request using the HS256 algorithm
 }
 ```
 
-**Verify signature**
+##### Verify signature
 
-```json
+```
 HMACSHA256(
   base64UrlEncode(header) +
   base64UrlEncode(payload) ,

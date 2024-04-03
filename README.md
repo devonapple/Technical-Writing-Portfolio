@@ -5,13 +5,13 @@
 ### PayPal
 * Integrate card payments in Android apps: [document](/docs/paypal/paypal_androidsdk_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/android/)
 * Integrate card payments in iOS apps: [document](/docs/paypal/paypal_iossdk_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/ios/)
-* Integrate card payments with JavaScript SDK: [sample document](/docs/paypal/paypal_axointegration_sample_devonapple_20240307.pdf) and [live](https://developer.paypal.com/docs/checkout/advanced/sdk/v1/)
+* Integrate card payments with JavaScript SDK: [document](/docs/paypal/paypal_axointegration_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/sdk/v1/)
 * Integrate Apple Pay with JavaScript SDK: [document](/docs/paypal/paypal_applepay_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/apm/google-pay/)
-* Integrate Google Pay with JavaScript SDK: [sample document](/docs/paypal/paypal_googlepay_sample_devonapple_20240307.pdf) and [live](https://developer.paypal.com/docs/checkout/apm/google-pay/)
+* Integrate Google Pay with JavaScript SDK: [document](/docs/paypal/paypal_googlepay_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/apm/google-pay/)
 * Process payments using third-party network token processing: [document](/docs/paypal/paypal_3pnt_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/3rd-party-token-processing/)
 
 ### Hyperwallet
-* Supplemental Data, REST API: [document](/docs/hyperwallet/hw_errorcodes_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/api/v4/resources/supplemental-data)
+* Supplemental Data, REST API: [document](/docs/hyperwallet/hw_supplementaldata_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/api/v4/resources/supplemental-data)
 * Payload Encryption: [document](/docs/hyperwallet/hw_payloadencryption_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/api/v4/overview/payload-encryption)
 * Error Codes: [document](/docs/hyperwallet/hw_errorcodes_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/api/v4/overview/errors#error-list)
 * OneBatch Guide: [document](/docs/hyperwallet/hw_onebatchguide_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/control-panel/v1/onebatch-guide)

@@ -8,11 +8,6 @@ Once you integrate advanced Checkout, you can also offer options like Pay Later,
 
 This integration guide follows the code in this <a target="_blank" href="https://github.com/paypal-examples/docs-examples/tree/main/advanced-integration/v1/">GitHub sample</a>.
 
-## Integration video
-
-Watch our video tutorial for this integration:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E3gUASHQMrU?si=Dq7NksDjXR08xNtL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Know before you code
 
@@ -58,7 +53,7 @@ One of the requirements to run this sample application is to have npm installed.
 
 Install the following third-party libraries to set up your integration. Here is a sample command to install them all at the same time:
 
-```bash=
+```bash
 npm install dotenv ejs express node-fetch
 ```
 
@@ -76,7 +71,7 @@ A `package.json` file has a list of the packages and version numbers needed for 
 
 The following snippet is an example of a `package.json` file for a PayPal integration. Compare this sample to the `package.json` in your project:
 
-```json=
+```json
 {
   "name": "@paypalcorp/advanced-integration",
   "version": "1.0.0",
@@ -188,7 +183,7 @@ You'll need to save the <code>checkout.ejs</code> file in a folder named <code>/
 
 ##### /server/server.js
 
-```javascript=
+```javascript
 import express from "express";
 import fetch from "node-fetch";
 import "dotenv/config";
@@ -375,7 +370,7 @@ app.listen(PORT, () => {
 
  This section of code imports the dependencies for your Node.js application:
 
-```javascript=
+```javascript
 import express from "express";
 import fetch from "node-fetch";
 import "dotenv/config";
@@ -397,14 +392,14 @@ import "dotenv/config";
 
 This section of code collects the environment variables, sets up the port to run your server, and sets the base sandbox URL:
 
-```javascript"=
+```javascript"
 const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PORT = 8888 } = process.env;
 const base = "https://api-m.sandbox.paypal.com";
 ```
 
 Lines 7-10 start the express Node.js web application framework:
 
-```javascript=7
+```javascript
 const app = express();
 app.set("view engine", "ejs");
 app.set("views", "./server/views");
@@ -417,7 +412,7 @@ Line 8 declares that the rendering engine uses Embedded JavaScript templates.
 
 A client token uniquely identifies your payer. You need a client token for the payer so your app can use the hosted card fields. The following code sample creates a client token for you by making a <code>POST</code> call to the <code>/v1/identity/generate-token</code> endpoint:
 
-```javascript=42
+```javascript
 /**
  * Generate a client token for rendering the hosted card fields.
  * See https://developer.paypal.com/docs/checkout/advanced/sdk/v1/#link-integratebackend
@@ -440,7 +435,7 @@ const generateClientToken = async () => {
 
 This code runs your app on <code>localhost</code>, using the port <code>8888</code> that you set up in line 5 of the API call:
 
-```javascript=176
+```javascript
 app.listen(PORT, () => {
   console.log(`Node server listening at http://localhost:${PORT}/`);
 });
@@ -450,7 +445,7 @@ app.listen(PORT, () => {
 
 Set up your app's checkout page to load this section of code when it's rendered by your server:
 
-```javascript=140
+```javascript
 // render checkout page with client id & unique client token
 app.get("/", async (req, res) => {
   try {
@@ -505,7 +500,7 @@ This <code>createOrder()</code> callback returns a promise that contains the <co
 
 > **Important:** To keep your integration secure, don't pass dollar amounts in your finished integration. Define your <code>purchase_units</code> payload on the server side and pass the <code>cart</code> array from the front-end to the server.
 
-```javascript=61
+```javascript
 /**
  * Create an order to start the transaction.
  * See https://developer.paypal.com/docs/api/orders/v2/#orders_create
@@ -588,7 +583,7 @@ This section of the <code>createOrder()</code> function provides 3 negative test
 
 Remove the <code>//</code> from the beginning of a line to simulate that error. the <code>createOrder()</code> call will pass that line as a <a href="https://developer.paypal.com/tools/sandbox/negative-testing/request-headers/" target="_blank"><code>PayPal-Mock-Response</code></a> header in the <code>POST</code> request to the Orders v2 API:
 
-```javascript=90
+```javascript
 // Uncomment one of these to force an error for negative testing (in sandbox mode only). Documentation:
 // https://developer.paypal.com/tools/sandbox/negative-testing/request-headers/
 // "PayPal-Mock-Response": '{"mock_application_codes": "MISSING_REQUIRED_PARAMETER"}'
@@ -600,7 +595,7 @@ Remove the <code>//</code> from the beginning of a line to simulate that error. 
 
 This section of code defines the <code>captureOrder()</code> function. Call the function to capture the order and move money from the payer's payment method to the seller:
 
-```javascript="103
+```javascript
 /**
  * Capture payment for the created order to complete the transaction.
  * See https://developer.paypal.com/docs/api/orders/v2/#orders_capture
@@ -660,7 +655,7 @@ This section of the <code>captureOrder()</code> function provides 3 negative tes
 
 Remove the <code>//</code> from the beginning of a line to simulate that error. The <code>captureOrder()</code> call will pass that line as a <a href="https://developer.paypal.com/docs/api/orders/v2/#orders_capture" target="_blank"><code>PayPal-Mock-Response</code></a> header in the <code>POST</code> request to the <a href="https://developer.paypal.com/docs/api/orders/v2/#orders_capture" target="_blank">Capture payment</a> endpoint of the Orders v2 API:
 
-```javascript=116
+```javascript
 // Uncomment one of these to force an error for negative testing (in sandbox mode only). Documentation:
 // https://developer.paypal.com/tools/sandbox/negative-testing/request-headers/
 // "PayPal-Mock-Response": '{"mock_application_codes": "INSTRUMENT_DECLINED"}'
@@ -678,7 +673,7 @@ This command starts the server on <code>localhost:8888</code>. You can specify a
 
 ##### server/views/checkout.ejs
 
-```html=
+```html
 <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -791,7 +786,7 @@ This command starts the server on <code>localhost:8888</code>. You can specify a
 
 This section calls the JavaScript SDK that defines the PayPal buttons:
 
-```javascript=7
+```javascript
 <link
   rel="stylesheet"
   type="text/css"
@@ -812,7 +807,7 @@ This section calls the JavaScript SDK that defines the PayPal buttons:
 
 Include the PayPal Checkout button before you request the credit card fields, or on the same page that you request this information. For more information, see Section 8, <strong>Required Use of PayPal Checkout, PayPal Credit</strong>, in the <a href="https://www.paypal.com/us/legalhub/pocpsa-full?_ga=1.169690530.248280996.1670866755#pocpsa-full-8" target="_blank">PayPal Online Card Payments Services Agreement</a>.
 
-```javascript=18
+```javascript
 <div id="paypal-button-container" class="paypal-button-container"></div>
 ```
 
@@ -820,7 +815,7 @@ Include the PayPal Checkout button before you request the credit card fields, or
 
 This section of code shows how to create the form fields and <strong>Submit</strong> button you need to take card payments:
 
-```javascript=19
+```javascript
 <div class="card_container">
   <form id="card-form">
     <label for="card-number">Card Number</label>
@@ -922,7 +917,7 @@ This section of code shows how to create the form fields and <strong>Submit</str
 
 This code sample renders the hosted card fields for an eligible payment by importing the <code>/client/app.js</code> file that you created:
 
-```javascript=102
+```javascript
 <script src="app.js"></script>
 ```
 
@@ -951,7 +946,7 @@ You'll need to save the <code>app.js</code> file in a folder named <code>/client
 
 ##### /client/app.js
 
-```javascript=
+```javascript
 async function createOrderCallback() {
   try {
     const response = await fetch("/api/orders", {
@@ -1146,7 +1141,7 @@ if (window.paypal.HostedFields.isEligible()) {
 
 This code sample defines the <code>createOrder()</code> function:
 
-```javascript=
+```javascript
 async function createOrderCallback() {
   try {
     const response = await fetch("/api/orders", {
@@ -1187,7 +1182,7 @@ async function createOrderCallback() {
 
 This code sample defines the <code>onApprove()</code> function:
 
-```javascript=38
+```javascript
 async function onApproveCallback(data, actions) {
   try {
     const response = await fetch(`/api/orders/${data.orderID}/capture`, {
@@ -1272,7 +1267,7 @@ async function onApproveCallback(data, actions) {
 
 This section calls the JavaScript SDK that defines the PayPal buttons:
 
-```javascript=99
+```javascript
 window.paypal
   .Buttons({
     createOrder: createOrderCallback,
@@ -1285,7 +1280,7 @@ window.paypal
 
 This section declares a <code>resultMessage</code> function that shows a message to the user by passing data to the <code>result-message</code> HTML element container in line 100 of the <code>/server/views/checkout.ejs</code>:
 
-```javascript=106
+```javascript
 // Example function to show a result to the user. Your site's UI library can be used instead.
 function resultMessage(message) {
   const container = document.querySelector("#result-message");
@@ -1302,7 +1297,7 @@ Hosted card fields use the JavaScript SDK to help non-PCI-compliant sellers save
 
 This code sample checks to see if a payment is eligible for hosted card fields. If not, the hosted card fields won’t show up during the payment flow:
 
-```javascript=112
+```javascript
 // If this returns false or the card fields aren't visible, see Step #1.
 if (window.paypal.HostedFields.isEligible()) {
   // Renders card fields
@@ -1320,7 +1315,7 @@ You can modify this code to show a custom message for eligible or ineligible pay
 
 This code sample renders the hosted card fields for an eligible payment:
 
-```javascript=114
+```javascript
 // Renders card fields
   window.paypal.HostedFields.render({
     // Call your server to set up the transaction
@@ -1366,7 +1361,7 @@ This code sample renders the hosted card fields for an eligible payment:
 
 This code sample captures the payment when it is eligible for hosted card fields. Add this code to the PayPal button in <code>/client/app.js</code>, right after rendering the card fields:
 
-```javascript=140
+```javascript
 .then((cardFields) => {
     document.querySelector("#card-form").addEventListener("submit", (event) => {
       event.preventDefault();
@@ -1485,39 +1480,3 @@ If this is your first time testing in a live environment, follow these steps:
 </ol>
 
 > **Important:** The code for the integration checks eligibility requirements, so the payment card fields only display when the production request is successful.
-
-## Next steps & customizations
-
-Add security to your checkout integration, or create customizations for your audience.
-
-<a href="https://developer.paypal.com/docs/checkout/pay-later/us/" target="_blank">Pay Later</a>
-
-Payers buy now and pay in installments.
-
-<a href="https://developer.paypal.com/docs/checkout/pay-with-venmo/integrate/" target="_blank">Pay with Venmo</a>
-
-Add the Venmo button to your checkout integration.
-
-<a href="https://developer.paypal.com/docs/checkout/apm/" target="_blank">Alternative payment methods</a>
-
-Accept local payment methods across the globe.
-
-<a href="https://developer.paypal.com/docs/checkout/apm/apple-pay/" target="_blank">Apple Pay</a>
-
-Add Apple Pay as a payment button.
-
-<a target="_blank" href="https://developer.paypal.com/docs/checkout/advanced/customize/3d-secure/">Implement 3D Secure</a>
-
-Authenticate card holders through card issuers.
-
-<a target="_blank" href="https://developer.paypal.com/docs/api/orders/v2/#orders_capture" target="_blank">Capture payment</a>
-
-Captures payment for an order.
-
-<a href="https://developer.paypal.com/docs/api/payments/v2/#captures_refund" target="_blank">Refund a captured payment</a>
-
-Refund all or part of a captured payment.
-
-<a target="_blank" href="https://developer.paypal.com/docs/checkout/advanced/customize/rtau/">Real-time account updater</a>
-
-Reduce declines by getting card updates from the issuer.

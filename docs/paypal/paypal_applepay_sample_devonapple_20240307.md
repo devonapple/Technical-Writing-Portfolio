@@ -2,21 +2,30 @@
 
 ## Apple Pay integration
 
-Apple Pay is a mobile payment and digital wallet service provided by Apple Inc.
-
-Buyers can use Apple Pay to make payments on the web using the Safari web browser or an iOS device.
-
-Sellers can use Apple Pay to sell:
-
-<ul>
-  <li>Physical goods, such as clothes and electronics.</li>
-  <li>Digital goods, such as software.</li>
-  <li>Intangible professional services, such as concerts or gym memberships.</li>
-</ul>
-
-<a target="_blank" href="https://developer.apple.com/documentation/passkit/apple_pay">Visit this site</a> for more information about Apple Pay.
-
-<img src="https://www.paypalobjects.com/ppdevdocs/img/applepay-sheet-xxl-m.png"/>
+<table>
+  <tr>
+    <td>
+      <p>
+        Apple Pay is a mobile payment and digital wallet service provided by Apple Inc.
+      </p>
+      <p>
+        Buyers can use Apple Pay to make payments on the web using the Safari web browser or an iOS device.
+      </p>
+      <p>
+        Sellers can use Apple Pay to sell:
+      </p>
+      <ul>
+        <li>Physical goods, such as clothes and electronics.</li>
+        <li>Digital goods, such as software.</li>
+        <li>Intangible professional services, such as concerts or gym memberships.</li>
+      </ul>
+      <a target="_blank" href="https://developer.apple.com/documentation/passkit/apple_pay">Visit this site</a> for more information about Apple Pay.
+    </td>
+    <td>
+      <img src="https://www.paypalobjects.com/ppdevdocs/img/applepay-sheet-xxl-m.png" alt="Completed Apple Pay checkout integration" width="800"/>
+    </td>
+  <tr>
+</table>
 
 ### Supported countries and currencies
 
@@ -25,42 +34,44 @@ Apple Pay supports payments in 32 countries and 22 currencies:
 * **Countries:** Australia, Austria, Belgium, Bulgaria, Canada, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, United States, United Kingdom
 * **Currencies:** `AUD`, `BRL`, `CAD`, `CHF`, `CZK`, `DKK`, `EUR`, `GBP`, `HKD`, `HUF`, `ILS`, `JPY`, `MXN`, `NOK`, `NZD`, `PHP`, `PLN`, `SEK`, `SGD`, `THB`, `TWD`, `USD`
 
-> **Tip:** If you want to integrate additional methods of accepting payment beyond Apple Pay, visit our <a href="https://developer.paypal.com/docs/checkout/advanced/integrate/">Advanced Checkout guide</a> for additional integration choices.
+> **Tip:** If you want to integrate additional methods of accepting payment beyond Apple Pay, visit our <a href="https://developer.paypal.com/docs/checkout/advanced/integrate/" target="_blank">Advanced Checkout guide</a> for additional integration choices.
 
 ## How it works
 
 <table>
-<tr><td>
-The Apple Pay button shows up on your website when a customer uses the Safari web browser on an eligible device.
-
-When your buyer selects the Apple Pay button:
-
-<ol>
-  <li>
-    Your website shows the buyer a payment sheet.
-  </li>
-  <li>
-    The buyer confirms the purchase details, such as the shipping address and payment method.
-  </li>
-  <li>
-    The buyer authorizes the purchase on the payment sheet.
-  </li>
-</ol>
-
-The payment sheet helps streamline the checkout process by showing the customer the information needed to make the payment.
-
-Payment sheets can show the user's name, address, shipping information, and email address. You can customize this payment sheet to include the user details and payment information you need for your Apple Pay integration.
-
-<a href="https://support.apple.com/en-us/HT208531" target="_blank">Visit this site</a> for more details about Apple Pay's compatibility.
-
-</td><td><img src="https://www.paypalobjects.com/ppdevdocs/img/applepay_mobile.png"/></td></tr>
+  <tr>
+    <td>
+    <p>
+      The Apple Pay button shows up on your website when a customer uses the Safari web browser on an eligible device.
+    </p>
+    <p>
+      When your buyer selects the Apple Pay button:
+    </p>
+    <ol>
+      <li>
+        Your website shows the buyer a payment sheet.
+      </li>
+      <li>
+        The buyer confirms the purchase details, such as the shipping address and payment method.
+      </li>
+      <li>
+        The buyer authorizes the purchase on the payment sheet.
+      </li>
+    </ol>
+    <p>
+      The payment sheet helps streamline the checkout process by showing the customer the information needed to make the payment.
+    </p><p>
+      Payment sheets can show the user's name, address, shipping information, and email address. You can customize this payment sheet to include the user details and payment information you need for your Apple Pay integration.
+    </p>
+    <p>
+    <a href="https://support.apple.com/en-us/HT208531" target="_blank">Visit this site</a> for more details about Apple Pay's compatibility.
+    </p>
+    </td>
+    <td>
+      <img src="https://www.paypalobjects.com/ppdevdocs/img/applepay_mobile.png" alt="Screenshot of an Apple Pay payment sheet on a mobile device" width="400"/>
+    </td>
+  </tr>
 </table>
-
-## Integration video
-
-Watch our video tutorial for this integration:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E3gUASHQMrU?si=Dq7NksDjXR08xNtL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Know before you code
 
@@ -84,14 +95,10 @@ Currently supports Apple Pay one-time payments with the buyer present.
 
 <ul>
   <li>
-    <a href="https://www.apple.com/legal/applepayments/" target="_blank">
-Review Apple's terms and conditions for the Apple Pay platform.
-</a>
+    <a href="https://www.apple.com/legal/applepayments/" target="_blank">Review Apple's terms and conditions for the Apple Pay platform.</a>
   </li>
   <li>
-    <a href="https://developer.apple.com/app-store/review/guidelines/" target="_blank">
-See Apple's developer terms for more information.
-</a>
+    <a href="https://developer.apple.com/app-store/review/guidelines/" target="_blank">See Apple's developer terms for more information.</a>
   </li>
 </ul>
 
@@ -109,7 +116,7 @@ Before you can accept Apple Pay on your website, verify that your sandbox busine
 
 If you created a sandbox business account through <a target="_blank" href="https://sandbox.paypal.com/">sandbox.paypal.com</a>, and the Apple Pay status for the account shows as disabled, <a target="_blank" href="https://www.sandbox.paypal.com/bizsignup/add-product?product=payment_methods&capabilities=APPLE_PAY&_ga=1.255056589.491931369.1702610895">complete the sandbox onboarding steps</a> to enable Apple Pay.
 
-> **Tip:** When your integration is ready to go live, read the <span className="boldArchText">Go live</span> section for details about the additional steps needed for Apple Pay onboarding.
+> **Tip:** When your integration is ready to go live, read the <strong>Go live</strong> section for details about the additional steps needed for Apple Pay onboarding.
 
 ## 2. Getting started in your testing environment
 
@@ -200,7 +207,7 @@ The following example uses the <a href="https://developer.paypal.com/docs/api/or
 
 #### server.js
 
-```javascript=
+```javascript
 import * as PayPal from "./paypal-api.js";\n
 /* Create Order route Handler */
 app.post("/api/orders", async (req, res) => {
@@ -219,7 +226,7 @@ app.post("/api/orders/:orderID/capture", async (req, res) => {
 
 #### paypal-api.js
 
-```javascript=
+```javascript
 // create an order
 export async function createOrder() {
   const purchaseAmount = "100.00";
@@ -314,11 +321,11 @@ button.
 
 To check eligibility, use the PayPal JavaScript SDK API <code>paypal.Applepay().config()</code>.
 
-```html=
+```html
 <div id="applepay-container"></div>
 ```
 
-```javascript=
+```javascript
 if (!window.ApplePaySession) {
   console.error('This device does not support Apple Pay');
 }
@@ -365,7 +372,7 @@ in the <code>ApplePayPaymentRequest</code> object:
   <li><code>supportedNetworks</code></li>
 </ul>
 
-```javascript=
+```javascript
 const paymentRequest = {
   countryCode: applepayConfig.countryCode,
   merchantCapabilities: applepayConfig.merchantCapabilities,
@@ -402,7 +409,7 @@ exception if any of the following occurs:
 Use <code>paypal.Applepay().validateMerchant()</code> in the <code>onvalidatemerchant</code> callback to create a validated Apple Pay
 session object:
 
-```javascript=
+```javascript
       children={`session.onvalidatemerchant = (event) => {
   applepay.validateMerchant({
     validationUrl: event.validationURL,
@@ -427,7 +434,7 @@ Safari calls the <code>onpaymentauthorized</code> callback with an 
 
 Capture the order using the <a href="https://developer.paypal.com/api/orders/v2" target="_blank">PayPal Orders V2 API</a>. Use <code>paypal.Applepay().confirmOrder()</code> to send the <code>orderID</code>, the Apple Pay token, billing contact details, and confirm the order.
 
-```javascript=
+```javascript
 session.onpaymentauthorized = (event) => {
     console.log('Your billing address is:', event.payment.billingContact);
     console.log('Your shipping address is:', event.payment.shippingContact);
@@ -720,12 +727,3 @@ If the validation fails, the web browser's developer console shows warning
 messages that say which property is incorrect and what you need to do to
 address the issue. The library generally attempts to revert to the safe
 default values if missing or incorrect inputs exist.
-
-## Next steps & customizations
-
-Get started testing, add security to your checkout experience or
-create customizations for your audience.
-
-<a href="https://developer.paypal.com/docs/checkout/advanced/">Advanced credit and debit card payments</a>
-
-Add PayPal payment buttons and customized card fields.

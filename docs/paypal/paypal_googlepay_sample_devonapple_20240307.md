@@ -16,7 +16,7 @@
       </p>
     </td>
     <td>
-      <img width="800" src="https://paypalobjects.com/devdoc/sdk_mobile_googlepay.png" alt="Google Pay mobile web illustration"/>
+      <img src="https://paypalobjects.com/devdoc/sdk_mobile_googlepay.png" alt="Google Pay mobile web illustration" width="800"/>
     </td>
   <tr>
 </table>
@@ -28,7 +28,7 @@ Google Pay supports payments in 32 countries and 22 currencies:
 * **Countries:** Australia, Austria, Belgium, Bulgaria, Canada, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, United States, United Kingdom
 * **Currencies:** `AUD`, `BRL`, `CAD`, `CHF`, `CZK`, `DKK`, `EUR`, `GBP`, `HKD`, `HUF`, `ILS`, `JPY`, `MXN`, `NOK`, `NZD`, `PHP`, `PLN`, `SEK`, `SGD`, `THB`, `TWD`, `USD`
 
-> **Tip:** If you want to integrate additional methods of accepting payment beyond Google Pay, visit our <a href="https://developer.paypal.com/docs/checkout/advanced/integrate/">Advanced Checkout guide</a> for additional integration choices.
+> **Tip:** If you want to integrate additional methods of accepting payment beyond Google Pay, visit our <a href="https://developer.paypal.com/docs/checkout/advanced/integrate/" target="_blank">Advanced Checkout guide</a> for additional integration choices.
 
 ## How it works
 
@@ -83,9 +83,7 @@ Direct merchants can use the PayPal Developer Dashboard to set up their sandbox 
 
 <ol>
   <li>
-    Log into the PayPal <a href="https://developer.paypal.com/dashboard/" target="_blank">
-      Developer Dashboard
-    </a> and go to your sandbox account.
+    Log into the PayPal <a href="https://developer.paypal.com/dashboard/" target="_blank">Developer Dashboard</a> and go to your sandbox account.
   </li>
   <li>
     Go to <strong>Apps & Credentials</strong>.
@@ -102,11 +100,11 @@ Direct merchants can use the PayPal Developer Dashboard to set up their sandbox 
 If you created a sandbox business account through <a href="https://sandbox.paypal.com" target="_blank" >
     sandbox.paypal.com</a>, and the Google Pay status for the account shows as disabled, <a href="https://www.sandbox.paypal.com/bizsignup/add-product?product=payment_methods&capabilities=GOOGLE_PAY" target="_blank">complete the sandbox onboarding steps</a> to enable Google Pay.
 
-> **Tip:** When your integration is ready to go live, read the <span className="boldText">Go live</span> section for details about the additional steps needed for Google Pay onboarding.
+> **Tip:** When your integration is ready to go live, read the <strong>Go live</strong> section for details about the additional steps needed for Google Pay onboarding.
 
 This screenshot shows the Google Pay sandbox settings in the mobile and digital payments section of the PayPal Developer Dashboard. This only applies to direct merchant integrations:
 
-<img width="400" src="https://paypalobjects.com/devdoc/sdk_acdc_acceptpayments.png" alt="Google Pay sandbox settings in the PayPal Developer Dashboard"/>
+<img src="https://paypalobjects.com/devdoc/sdk_acdc_acceptpayments.png" alt="Google Pay sandbox settings in the PayPal Developer Dashboard" width="400"/>
 
 ## 2. Getting started in your testing environment
 
@@ -129,7 +127,7 @@ Find the complete sample code in the <a href="https://github.com/paypal-examples
 
 #### server.js
 
-```javascript=
+```javascript
 import * as PayPal from "./paypal-api.js";
 
 /* Create Order route Handler */
@@ -150,7 +148,7 @@ app.post("/api/orders/:orderID/capture", async (req, res) => {
 
 #### paypal-api.js
 
-```javascript=
+```javascript
 // create an order
 export async function createOrder() {
   const purchaseAmount = "100.00";
@@ -202,7 +200,7 @@ You need to integrate with the Google Pay JavaScript SDK and PayPal JavaScript S
 
 Use this script to integrate with the PayPal JavaScript SDK:
 
-```javascript=
+```javascript
 <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD&buyer-country=US&merchant-id=SUB_MERCHANT_ID&components=googlepay"></script>
 ```
 
@@ -212,7 +210,7 @@ Include <code>googlepay</code> in the <code>components</code> list.
 
 Use this script to integrate with the Google Pay JavaScript SDK:
 
-```javascript=
+```javascript
 <script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
 ```
 
@@ -239,7 +237,7 @@ Check whether the Google Pay API supports a device, browser, and payment method:
   <li>Call the <code>isReadyToPay()</code> method to check compatibility and render the Google Pay Button.</li>
 </ul>
 
-```javascript=
+```javascript
 /**
  * Initialize Google PaymentsClient after Google-hosted JavaScript has loaded
  *
@@ -288,7 +286,7 @@ The response object of the PayPal JavaScript SDK API <code>paypal.Googlepay().co
   <li><code>merchantInfo</code></li>
 </ul>
 
-```javascript=
+```javascript
 /* Note: the \`googlePayConfig\` object in this request is the response from \`paypal.Googlepay().config()\` */
 async function getGooglePaymentDataRequest() {
   const googlePayConfig = await paypal.Googlepay().config();
@@ -308,7 +306,7 @@ function getGoogleTransactionInfo(){
 }
 ```
 
-For more details about the response parameters, see the <span className="boldText"><code>ConfigResponse</code></span> section.
+For more details about the response parameters, see the <strong><code>ConfigResponse</code></strong> section.
 
 For more details about how Google Pay handles <code>paymentDataRequest</code>, refer to steps 8, 9, and 10 in <a target="_blank" href="https://developers.google.com/pay/api/web/guides/tutorial#paymentdatarequest">Google's developer documentation</a>.
 
@@ -318,7 +316,7 @@ For more details about how Google Pay handles <code>paymentDataRequest</code>, r
 
 Register a click event handler for the Google Pay purchase button. Call <code>loadPaymentData()</code> in the event handler when the user interacts with the purchase button and pass the <code>PaymentDataRequest</code> object.
 
-```javascript=
+```javascript
 /* Show Google Pay payment sheet when Google Pay payment button is clicked */
 async function onGooglePaymentButtonClicked() {
   const paymentDataRequest = await getGooglePaymentDataRequest();
@@ -345,9 +343,9 @@ If the order confirmation status is <code>APPROVED</code>, capture the order usi
 
 For more details, see step 11 of <a target="_blank" href="https://developers.google.com/pay/api/web/guides/tutorial#authorize-payments">Google's developer documentation</a>.
 
-> **Tip:** You can see an <a target="_blank" href="https://developers.google.com/pay/api/web/guides/tutorial#authorize-payments_1">example of an Authorize Payments call</a> in the <span className="boldText">Put it all together</span> section of Google's developer documentation.
+> **Tip:** You can see an <a target="_blank" href="https://developers.google.com/pay/api/web/guides/tutorial#authorize-payments_1">example of an Authorize Payments call</a> in the <strong>Put it all together</strong> section of Google's developer documentation.
 
-```javascript=
+```javascript
 async function processPayment(paymentData) {
   return new Promise(async function (resolve, reject) {
     try {
@@ -437,7 +435,7 @@ The following code samples show a Google Pay integration:
 
 ### HTML
 
-```html=
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -469,7 +467,7 @@ The following code samples show a Google Pay integration:
 
 ### JavaScript
 
-```javascript=
+```javascript
 /*
 * Define the version of the Google Pay API referenced when creating your
 * configuration
@@ -644,7 +642,7 @@ When the payer completes authentication, confirm that the <code>liability_shift<
   </li>
 </ul>
 
-```javascript=
+```javascript
 ...
 const { status } = await paypal.Googlepay().confirmOrder({
   orderId: id,
@@ -691,7 +689,7 @@ Use your personal sandbox login information during checkout to complete a paymen
     Add a test card to your Google Wallet on your device. Google provides test cards through their <a target="_blank" href="https://developers.google.com/pay/api/web/guides/resources/test-card-suite">Test card suite</a>.
   </li>
   <li>
-    Tap the <span className="boldText">Google Pay</span> button to open a pop-up with the Google Pay payment sheet.
+    Tap the <strong>Google Pay</strong> button to open a pop-up with the Google Pay payment sheet.
   </li>
   <li>
     Make a payment using the Google Pay payment sheet.
@@ -755,10 +753,3 @@ When testing a purchase in production, consider:
 Make sure that there are no browser console warnings or errors. The JavaScript SDK configuration attributes have distinct validation checks for input formatting and values.
 
 If the validation fails, the web browser's developer console shows warning messages that say which property is incorrect and what you need to do to address the issue. The library generally attempts to revert to the safe default values if missing or incorrect inputs exist.
-
-## Next steps & customizations
-
- Get started testing, add security to your checkout experience or create customizations for your audience.
-
-<a href="https://developer.paypal.com/docs/checkout/advanced/">Advanced credit and debit card payments</a>
-<p>Add PayPal payment buttons and customized card fields.</p>
