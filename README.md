@@ -17,25 +17,25 @@
 * OneBatch Guide: [document](/docs/hyperwallet/hw_onebatchguide_sample_devonapple_20240307.md), and [live](https://docs.hyperwallet.com/content/control-panel/v1/onebatch-guide).
 
 ## DITA
-* Entertainment Center User Guide: [cover letter](/docs/generic/entertainmentcenter_coverletter_devonapple.pdf), and [sample document](/docs/generic/entertainmentcenter_sample_devonapple.pdf).
-* User Guide, Playing in a Tabletop Roleplaying Game, Full Document (uses profiling): [sample document](/docs/ttrpg/ttrpg_userguide_sample_gm_20190830.pdf).
-  * User Guide, Playing in a Tabletop Roleplaying Game, GM only (uses profiling): [sample document](/docs/ttrpg/ttrpg_userguide_sample_gm_20190830.pdf).
-  * User Guide, Playing in a Tabletop Roleplaying Game, Player only (uses profiling): [sample document](/docs/ttrpg/ttrpg_userguide_sample_player_20190830.pdf).
+* Entertainment Center User Guide: [cover letter](/docs/generic/entertainmentcenter_coverletter_devonapple.pdf), and [document](/docs/generic/entertainmentcenter_sample_devonapple.pdf).
+* User Guide, Playing in a Tabletop Roleplaying Game, Full Document (uses profiling): [document](/docs/ttrpg/ttrpg_userguide_sample_gm_20190830.pdf).
+  * User Guide, Playing in a Tabletop Roleplaying Game, GM only (uses profiling): [document](/docs/ttrpg/ttrpg_userguide_sample_gm_20190830.pdf).
+  * User Guide, Playing in a Tabletop Roleplaying Game, Player only (uses profiling): [document](/docs/ttrpg/ttrpg_userguide_sample_player_20190830.pdf).
 
 ## User assistance
-* Granting Credit for Mental Health First Aid in KP Learn: [cover letter](/docs/kp/kplearn_mhfa_coverletter_devonapple.pdf), and [sample document](/docs/kp/kplearn_mhfa_sample_devonapple.pdf).
-* Microsoft Teams Job Aid: [cover letter](/docs/kp/msteams_jobaid_coverletter_devonapple_20190610.pdf), and [sample document](/docs/kp/msteams_jobaid_sample_devonapple_20190610.pdf).
-* KP Learn, Task Overview: [cover letter](/docs/kp/kplearn_taskoverview_coverletter_devonapple.pdf.pdf), and [sample document](/docs/kp/kplearn_taskoverview_sample_devonapple.pdf).
+* Granting Credit for Mental Health First Aid in KP Learn: [cover letter](/docs/kp/kplearn_mhfa_coverletter_devonapple.pdf), and [document](/docs/kp/kplearn_mhfa_sample_devonapple.pdf).
+* Microsoft Teams Job Aid: [cover letter](/docs/kp/msteams_jobaid_coverletter_devonapple_20190610.pdf), and [document](/docs/kp/msteams_jobaid_sample_devonapple_20190610.pdf).
+* KP Learn, Task Overview: [cover letter](/docs/kp/kplearn_taskoverview_coverletter_devonapple.pdf.pdf), and [document](/docs/kp/kplearn_taskoverview_sample_devonapple.pdf).
 
 ## APIs
-* Sample Parameter Table, REST API: [cover letter](/docs/generic/operationapi_coverletter_devonapple.pdf), and [sample document](/docs/generic/operationapi_sample_devonapple.md).
-* Ergo Wallet, REST API: [sample document](https://github.com/devonapple/ergo_wiki/blob/master/Ergo-REST-API_temp.md).
-* Music Server, REST API: [sample document](/docs/generic/musicapi_sample_devonapple.pdf).
-* Weather Forecast API Definitions: [sample document](/docs/generic/forecast_sample_devonapple.md).
-* Music Server API with playlists (Swagger): [sample document](https://app.swaggerhub.com/apis/devonapple/music-api/0.3.0).
+* Sample Parameter Table, REST API: [cover letter](/docs/generic/operationapi_coverletter_devonapple.pdf), and [document](/docs/generic/operationapi_sample_devonapple.md).
+* Ergo Wallet, REST API: [document](https://github.com/devonapple/ergo_wiki/blob/master/Ergo-REST-API_temp.md).
+* Music Server, REST API: [document](/docs/generic/musicapi_sample_devonapple.pdf).
+* Weather Forecast API Definitions: [document](/docs/generic/forecast_sample_devonapple.md).
+* Music Server API with playlists (Swagger): [document](https://app.swaggerhub.com/apis/devonapple/music-api/0.3.0).
 
 ## Standards
-* Sample API Style Guide: [cover letter](/docs/paypal/styleguide_coverletter_devonapple.pdf), and [sample document](/docs/paypal/styleguide_sample_devonapple.md).
+* Sample API Style Guide: [cover letter](/docs/paypal/styleguide_coverletter_devonapple.pdf), and [document](/docs/paypal/styleguide_sample_devonapple.md).
 
 ## Conceptual
 * REST and SOAP APIs: Which is Better for Your Service?: [document](/docs/generic/restsoap_article_devonapple.md).
