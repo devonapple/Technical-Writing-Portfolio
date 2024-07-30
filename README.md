@@ -16,6 +16,17 @@
 * Error Codes: [document](/docs/hyperwallet/hw_errorcodes_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/api/v4/overview/errors#error-list).
 * OneBatch Guide: [document](/docs/hyperwallet/hw_onebatchguide_sample_devonapple_20240307.md) and [live](https://docs.hyperwallet.com/content/control-panel/v1/onebatch-guide).
 
+## DITA
+* Entertainment Center User Guide: [sample document](/docs/generic/entertainmentcenter_sample_devonapple.pdf) and [cover letter](/docs/generic/entertainmentcenter_coverletter_devonapple.pdf).
+* User Guide, Playing in a Tabletop Roleplaying Game, Full Document (uses profiling): [sample document](/docs/ttrpg/ttrpg_userguide_sample_gm_20190830.pdf).
+  * User Guide, Playing in a Tabletop Roleplaying Game, GM only (uses profiling): [sample document](/docs/ttrpg/ttrpg_userguide_sample_gm_20190830.pdf).
+  * User Guide, Playing in a Tabletop Roleplaying Game, Player only (uses profiling): [sample document](/docs/ttrpg/ttrpg_userguide_sample_player_20190830.pdf).
+
+## User assistance
+* Granting Credit for Mental Health First Aid in KP Learn: [sample document](/docs/kp/kplearn_mhfa_sample_devonapple.pdf) and [cover letter](/docs/kp/kplearn_mhfa_coverletter_devonapple.pdf).
+* Microsoft Teams Job Aid: [sample document](/docs/kp/msteams_jobaid_sample_devonapple_20190610.pdf) and [cover letter](/docs/kp/msteams_jobaid_coverletter_devonapple_20190610.pdf).
+* KP Learn, Task Overview: [sample document](/docs/kp/kplearn_taskoverview_sample_devonapple.pdf) and [cover letter](/docs/kp/kplearn_taskoverview_coverletter_devonapple.pdf.pdf).
+
 ## APIs
 * Sample Parameter Table, REST API: [sample document](/docs/generic/operationapi_sample_devonapple.md) and [cover letter](/docs/generic/operationapi_coverletter_devonapple.pdf).
 * Ergo Wallet, REST API: [sample document](https://github.com/devonapple/ergo_wiki/blob/master/Ergo-REST-API_temp.md).
@@ -28,14 +39,3 @@
 
 ## Conceptual
 * REST and SOAP APIs: Which is Better for Your Service?: [document](/docs/generic/restsoap_article_devonapple.md).
-
-## DITA
-* Entertainment Center User Guide: [sample document](/docs/generic/entertainmentcenter_sample_devonapple.pdf) and [cover letter](/docs/generic/entertainmentcenter_coverletter_devonapple.pdf).
-* User Guide, Playing in a Tabletop Roleplaying Game, Full Document (uses profiling): [sample document](/docs/ttrpg/ttrpg_userguide_sample_gm_20190830.pdf).
-  * User Guide, Playing in a Tabletop Roleplaying Game, GM only (uses profiling): [sample document](/docs/ttrpg/ttrpg_userguide_sample_gm_20190830.pdf).
-  * User Guide, Playing in a Tabletop Roleplaying Game, Player only (uses profiling): [sample document](/docs/ttrpg/ttrpg_userguide_sample_player_20190830.pdf).
-
-## User assistance
-* Granting Credit for Mental Health First Aid in KP Learn: [sample document](/docs/kp/kplearn_mhfa_sample_devonapple.pdf) and [cover letter](/docs/kp/kplearn_mhfa_coverletter_devonapple.pdf).
-* Microsoft Teams Job Aid: [sample document](/docs/kp/msteams_jobaid_sample_devonapple_20190610.pdf) and [cover letter](/docs/kp/msteams_jobaid_coverletter_devonapple_20190610.pdf).
-* KP Learn, Task Overview: [sample document](/docs/kp/kplearn_taskoverview_sample_devonapple.pdf) and [cover letter](/docs/kp/kplearn_taskoverview_coverletter_devonapple.pdf.pdf).
