@@ -3,11 +3,11 @@
 ## Integration guides
 
 ### PayPal
-* Integrate card payments in Android apps: [document](/docs/paypal/paypal_androidsdk_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/android/).
-* Integrate card payments in iOS apps: [document](/docs/paypal/paypal_iossdk_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/ios/).
+* Integrate card payments in Android apps: [cover letter](/docs/paypal/paypal_androidsdk_coverletter_devonapple_20240729.pdf), [document](/docs/paypal/paypal_androidsdk_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/android/).
+* Integrate card payments in iOS apps: [cover letter](/docs/paypal/paypal_iossdk_coverletter_devonapple_2024030.pdf), [document](/docs/paypal/paypal_iossdk_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/ios/).
 * Integrate card payments with JavaScript SDK: [document](/docs/paypal/paypal_axointegration_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/sdk/v1/).
-* Integrate Apple Pay with JavaScript SDK: [document](/docs/paypal/paypal_applepay_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/apm/google-pay/).
-* Integrate Google Pay with JavaScript SDK: [document](/docs/paypal/paypal_googlepay_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/apm/google-pay/).
+* Integrate Apple Pay with JavaScript SDK: [cover letter](/docs/paypal/paypal_applepay_coverletter_devonapple_20240307.pdf), [document](/docs/paypal/paypal_applepay_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/apm/google-pay/).
+* Integrate Google Pay with JavaScript SDK: [cover letter](h/docs/paypal/paypal_googlepay_coverletter_devonapple_20240307.pdf), [document](/docs/paypal/paypal_googlepay_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/apm/google-pay/).
 * Process payments using third-party network token processing: [document](/docs/paypal/paypal_3pnt_sample_devonapple_20240307.md) and [live](https://developer.paypal.com/docs/checkout/advanced/3rd-party-token-processing/).
 
 ### Hyperwallet
