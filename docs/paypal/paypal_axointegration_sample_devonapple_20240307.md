@@ -1,4 +1,4 @@
-# Integrate card payments with JS SDK for direct merchants
+# Integrate card payments with JavaScript SDK for direct merchants
 
 ## How it works
 
